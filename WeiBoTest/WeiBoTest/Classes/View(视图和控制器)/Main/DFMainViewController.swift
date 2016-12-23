@@ -13,23 +13,129 @@ class DFMainViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        setUpClildControllers()
+        
+        setupComposeButton()
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    @objc fileprivate func composeStatus(){
+        
+        print("撰写微博")
+        
     }
-    */
-
+    
+    fileprivate lazy var composeButton : UIButton = UIButton.cz_imageButton("tabbar_compose_icon_add`", backgroundImageName: "tabbar_compose_button")
+    
 }
+
+
+extension DFMainViewController {
+    
+    
+    
+    fileprivate func setupComposeButton(){
+        
+        tabBar.addSubview(composeButton)
+        
+        let count = CGFloat(childViewControllers.count)
+        
+        let w = tabBar.bounds.width / count - 1
+        
+        composeButton.frame = tabBar.bounds.insetBy(dx: 2 * w, dy: 0)
+        
+        composeButton.addTarget(self, action: #selector(composeStatus), for: .touchUpInside)
+        
+        
+    }
+    
+    
+    /// 设置所有子控制器
+    fileprivate func setUpClildControllers(){
+        
+        let dicDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+        
+        let jsonPath = (dicDir as String).appending("main.json")
+        
+        var data = NSData(contentsOfFile: jsonPath)
+        
+        if data == nil {
+            
+            let path = Bundle.main.path(forResource: "main.json", ofType: nil)
+            
+            data = NSData(contentsOfFile: path!)
+        }
+        
+        guard let array = try? JSONSerialization.jsonObject(with: data! as Data, options: []) as? [[String: AnyObject]]
+            else {
+                return
+        }
+        
+        
+        var arrayM = [UIViewController]()
+        
+        for dict in array! {
+            
+            arrayM.append(controller(dict: dict))
+            
+        }
+        
+        
+        viewControllers = arrayM
+        
+    }
+    
+    
+    
+    /// 使用字典创建一个子控制器
+    ///
+    /// - Parameter dict: 信息字典 [clsName, titile, imageName]
+    /// - Returns: 子控制器
+    fileprivate func controller(dict: [String : AnyObject]) -> UIViewController {
+        
+        guard let clsName = dict["clsName"] as? String,
+            let title = dict["title"] as? String,
+            let imageName = dict["imageName"] as? String,
+            let cls = NSClassFromString(Bundle.main.namespace + "." + clsName) as? UIViewController.Type
+        else {
+            return UIViewController()
+        }
+        
+        let vc = cls.init()
+        
+        vc.title = title
+        
+        vc.tabBarItem.image = UIImage(named: "tabbar_" + imageName)
+        
+        vc.tabBarItem.selectedImage = UIImage(named: "tabbar_" + imageName + "_selected")?.withRenderingMode(.alwaysOriginal)
+        
+        vc.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.orange], for: .highlighted)
+        
+        vc.tabBarItem.setTitleTextAttributes([NSFontAttributeName : UIFont.systemFont(ofSize: 12
+            )], for: UIControlState(rawValue: 0))
+        
+        
+        let nav = DFNavigationViewController(rootViewController: vc)
+        
+        return nav
+        
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

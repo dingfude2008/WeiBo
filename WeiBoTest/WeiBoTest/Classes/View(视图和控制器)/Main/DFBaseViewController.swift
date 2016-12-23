@@ -10,26 +10,52 @@ import UIKit
 
 class DFBaseViewController: UIViewController {
 
+    
+    lazy var navigationBar = UINavigationBar(frame: CGRect(x:0, y:0, width:UIScreen.cz_screenWidth(), height:64))
+    
+    lazy var navItem = UINavigationItem()
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        
+        
+        setupUI()
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override var title: String? {
+        
+        didSet{
+        
+            navItem.title = title
+            
+        }
+        
     }
-    */
+
+}
+
+
+extension DFBaseViewController {
+    
+    func setupUI(){
+        
+        view.backgroundColor = UIColor.cz_random()
+        
+        view.addSubview(navigationBar)
+        
+        navigationBar.barTintColor = UIColor.cz_color(withHex: 0xF6F6F6)
+        
+        navigationBar.items = [navItem]
+        
+        
+        
+        
+    }
 
 }
