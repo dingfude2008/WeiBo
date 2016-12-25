@@ -98,6 +98,13 @@ extension DFMainViewController {
             
         }
         
+        let arr = (arrayM as NSArray)
+        
+        let isOK = arr.write(toFile: "/Users/dingfude/Desktop/demo.plist", atomically: true)
+        
+        
+        print(isOK)
+        
         
         viewControllers = arrayM
         
@@ -114,12 +121,15 @@ extension DFMainViewController {
         guard let clsName = dict["clsName"] as? String,
             let title = dict["title"] as? String,
             let imageName = dict["imageName"] as? String,
-            let cls = NSClassFromString(Bundle.main.namespace + "." + clsName) as? UIViewController.Type
+            let cls = NSClassFromString(Bundle.main.namespace + "." + clsName) as? DFBaseViewController.Type,
+            let visitorDict = dict["visitorInfo"] as? [String: String]
         else {
             return UIViewController()
         }
         
         let vc = cls.init()
+        
+        vc.visitorInfoDictionary = visitorDict
         
         vc.title = title
         

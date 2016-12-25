@@ -11,6 +11,38 @@ import UIKit
 class DFVisitorView: UIView {
 
     
+    // MARK: 设置访客视图信息
+    ///
+    /// - Parameter dict: [imageName / message]
+    var visitorInfo : [String: String]? {
+    
+        didSet{
+            guard let imageName = visitorInfo?["imageName"],
+                let message = visitorInfo?["message"] else{
+                return
+            }
+            
+            tipLabel.text = message
+            
+            // 设置头像，如果是首页不用设置
+            if imageName == "" {
+                
+                startAnimation()
+                
+                return
+            }
+            
+            iconView.image = UIImage(named: imageName)
+            
+            houseIconView.isHidden = true
+            
+            maskIconView.isHidden = true
+            
+        }
+    
+    }
+    
+    
     override init(frame: CGRect){
         super.init(frame: frame)
         setupUI()
@@ -23,10 +55,17 @@ class DFVisitorView: UIView {
     }
     
     
+
+    
+    
     
     
     /// 私用控件
     fileprivate lazy var iconView = UIImageView(image: UIImage(named: "visitordiscover_feed_image_smallicon"))
+    
+    // 遮罩视图
+    fileprivate lazy var maskIconView = UIImageView(image: UIImage(named: "visitordiscover_feed_mask_smallicon"))
+    
     
     fileprivate lazy var houseIconView = UIImageView(image: UIImage(named: "visitordiscover_feed_image_house"))
     
@@ -61,10 +100,12 @@ class DFVisitorView: UIView {
 extension DFVisitorView {
 
     func setupUI(){
-        backgroundColor = UIColor.white
+        backgroundColor = UIColor.cz_color(withHex: 0xEDEDED)
         
         // 1, 添加布局
         addSubview(iconView)
+        
+        addSubview(maskIconView)
         
         addSubview(houseIconView)
         
@@ -74,6 +115,7 @@ extension DFVisitorView {
         
         addSubview(loginButton)
         
+        tipLabel.textAlignment = .center
         
         // 2,取消 autoresizing
         // 纯代码默认开启 autoresizing
@@ -189,10 +231,51 @@ extension DFVisitorView {
                                          multiplier: 1.0,
                                          constant: 0))
         
+        // 遮罩头像
         
+        // 定义 VFL 中控件名称与实际名称的映射关系
+        let viewDict = ["maskIconView":maskIconView,
+                        "registerButton":registerButton] as [String : Any];
         
+        // 定义 VFL 中 （）指定的常数映射关系
+        let metrics = ["spacing":20]
+        
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "H:|-0-[maskIconView]-0-|",
+            options: [],
+            metrics: nil,
+            views: viewDict))
+        
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "V:|-0-[maskIconView]-(spacing)-[registerButton]",
+            options: [],
+            metrics: metrics,
+            views: viewDict))
         
         
     }
+    
+    
+    
+    
+    func startAnimation() {
+        
+        let anim = CABasicAnimation(keyPath: "transform.rotation")
+        
+        anim.toValue = 2 * M_PI
+        
+        anim.duration = 15
+        
+        anim.repeatCount = MAXFLOAT
+        
+        // 完成动画不删除， 如果 iconView被释放， 也一同销毁
+        // home 切换也会接着动画
+        anim.isRemovedOnCompletion = false
+        
+        iconView.layer.add(anim, forKey: nil)
+        
+    }
+    
+    
 
 }

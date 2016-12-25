@@ -21,6 +21,9 @@ class DFBaseViewController: UIViewController, UITableViewDataSource, UITableView
     /// 登陆标记
     var userLogon = false
     
+    // 访客信息字典
+    var visitorInfoDictionary : [String : String]?
+    
     var tableView : UITableView?
     
     var refreshControl : UIRefreshControl?
@@ -115,6 +118,7 @@ extension DFBaseViewController {
         
     }
     
+    
     fileprivate func setupNavigationBar(){
         
         view.addSubview(navigationBar)
@@ -151,6 +155,8 @@ extension DFBaseViewController {
     fileprivate func setupVisitorView(){
         
         let visitorView = DFVisitorView(frame: view.bounds)
+        
+        visitorView.visitorInfo = visitorInfoDictionary
         
         view.insertSubview(visitorView, belowSubview: navigationBar)
         
