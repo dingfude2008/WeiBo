@@ -17,6 +17,9 @@ class DFHomeViewController: DFBaseViewController {
     
     fileprivate lazy var statusList = [String]()
     
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,14 +37,20 @@ class DFHomeViewController: DFBaseViewController {
     
     
     override func loadData() {
-        
-        for i in 0..<32 {
+
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) { 
+            for i in 0..<15 {
+                
+                self.statusList.insert(i.description, at: 0)
+                
+            }
             
-//            statusList.insert(i.description, at: 0)
+            self.refreshControl?.endRefreshing()
             
-            statusList.append(i.description)
-            
+            self.tableView?.reloadData()
         }
+        
+        
     }
     
     
