@@ -75,38 +75,52 @@ extension DFMainViewController {
         
         let jsonPath = (dicDir as String).appending("main.json")
         
-        var data = NSData(contentsOfFile: jsonPath)
+        var data = NSData(contentsOfFile: jsonPath) as? Data
         
         if data == nil {
             
             let path = Bundle.main.path(forResource: "main.json", ofType: nil)
             
-            data = NSData(contentsOfFile: path!)
+            data = NSData(contentsOfFile: path!)  as? Data
         }
         
-        guard let array = try? JSONSerialization.jsonObject(with: data! as Data, options: []) as? [[String: AnyObject]]
-            else {
-                return
+        
+        
+        // : Definition conflicts with previous value
+        guard let dataA = data,
+            let arrayA = try? JSONSerialization.jsonObject(with: dataA,  options: []) as? [[String : AnyObject]],
+            let array = arrayA else {
+            return
         }
         
         
         var arrayM = [UIViewController]()
         
-        for dict in array! {
+        for dict in array {
             
             arrayM.append(controller(dict: dict))
             
         }
         
-        let arr = (arrayM as NSArray)
         
-        let isOK = arr.write(toFile: "/Users/dingfude/Desktop/demo.plist", atomically: true)
+        let dataQ = try! JSONSerialization.data(withJSONObject: array, options: [.prettyPrinted])
+        
+        
+        let isOK =  (dataQ as NSData).write(toFile: "/Users/dingfude/Desktop/demo.json", atomically: true)
         
         
         print(isOK)
         
+//        let isOK = dataQ.write(toFile: "/Users/dingfude/Desktop/demo.plist", atomically: true)
         
-        viewControllers = arrayM
+        
+        
+//        dataQ.write(to: <#T##URL#>, options: <#T##Data.WritingOptions#>)
+        
+        
+//
+//        
+//        viewControllers = arrayM
         
     }
     
