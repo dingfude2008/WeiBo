@@ -35,7 +35,7 @@ class DFHomeViewController: DFBaseViewController {
     
     override func loadData() {
         
-        for i in 0..<15 {
+        for i in 0..<19 {
             
 //            statusList.insert(i.description, at: 0)
             
