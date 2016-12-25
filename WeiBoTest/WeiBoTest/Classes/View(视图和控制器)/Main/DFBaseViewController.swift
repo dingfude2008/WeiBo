@@ -11,15 +11,21 @@ import UIKit
 
 // 利用 extension 把方法分类，便于阅读和维护
 // extension 不能有属性
-// extension 中不能重写父类方法。重写是子类的职责，扩展是对类的扩展
+// extension 中不能重写父类'本类'中方法。重写是子类的职责，扩展是对类的扩展
+// 如果方法声明在extension中，是可以在重写的。
 
 /// 所有主控制器的基类控制器
 class DFBaseViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     
+    /// 登陆标记
+    var userLogon = false
+    
     var tableView : UITableView?
     
     var refreshControl : UIRefreshControl?
+    
+    var isPullup = false
     
     lazy var navigationBar = UINavigationBar(frame: CGRect(x:0, y:0, width:UIScreen.cz_screenWidth(), height:64))
     
@@ -83,7 +89,9 @@ class DFBaseViewController: UIViewController, UITableViewDataSource, UITableView
     
     // 准备空的数据源方法
     func loadData() {
-    
+        
+        // 如果子类不实现任何方法，默认关闭上下拉刷新
+        refreshControl?.endRefreshing()
     }
     
     
@@ -100,9 +108,11 @@ extension DFBaseViewController {
         // UINavigationController  + TableView 默认会启动自动缩进，需要改回 fasle
         automaticallyAdjustsScrollViewInsets = false
         
-        self.setupNavigationBar()
+        setupNavigationBar()
         
-        self.setupTableView()
+        userLogon ? setupTableView() : setupVisitorView()
+        
+        
     }
     
     fileprivate func setupNavigationBar(){
@@ -112,6 +122,9 @@ extension DFBaseViewController {
         navigationBar.barTintColor = UIColor.cz_color(withHex: 0xF6F6F6)
         
         navigationBar.items = [navItem]
+        
+        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.gray]
+        
     }
     
     fileprivate func setupTableView(){
@@ -131,6 +144,15 @@ extension DFBaseViewController {
         tableView?.addSubview(refreshControl!)
         
         refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
+        
+    }
+    
+    
+    fileprivate func setupVisitorView(){
+        
+        let visitorView = DFVisitorView(frame: view.bounds)
+        
+        view.insertSubview(visitorView, belowSubview: navigationBar)
         
     }
 
@@ -155,6 +177,28 @@ extension DFBaseViewController {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath)
+    }
+    
+    // 在显示最后一行的时候做上拉刷新
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        
+        let row = indexPath.row
+        
+        let section = tableView.numberOfSections - 1
+        
+        let count = tableView.numberOfRows(inSection: section)
+        
+        if row == count - 1 && !isPullup {
+        
+            isPullup = true
+            
+            print("上拉刷新")
+            
+            loadData()
+        }
+        
+        
     }
     
     

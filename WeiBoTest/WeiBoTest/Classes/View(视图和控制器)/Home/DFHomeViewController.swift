@@ -38,14 +38,23 @@ class DFHomeViewController: DFBaseViewController {
     
     override func loadData() {
 
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) { 
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+            
             for i in 0..<15 {
                 
-                self.statusList.insert(i.description, at: 0)
-                
+                if self.isPullup {
+                    
+                    self.statusList.append("上拉 \(i)")
+                    
+                }else {
+                    
+                    self.statusList.insert("下拉\(i)", at: 0)
+                }
             }
             
             self.refreshControl?.endRefreshing()
+            
+            self.isPullup = false
             
             self.tableView?.reloadData()
         }
