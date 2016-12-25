@@ -20,7 +20,7 @@ class DFHomeViewController: DFBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
         
         print("111 - >\(supportedInterfaceOrientations)")
         
@@ -35,14 +35,21 @@ class DFHomeViewController: DFBaseViewController {
     
     override func loadData() {
         
-        
-        for i in 0..<22 {
+        print("开始加载")
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) { 
             
-//            statusList.insert(i.description, at: 0)
+            for i in 0..<15 {
+                
+                self.statusList.insert(i.description, at: 0)
+            }
             
-            statusList.append(i.description)
+            self.refreshControl?.endRefreshing()
             
+            print("刷新表格")
+            
+            self.tableView?.reloadData()
         }
+        
     }
     
     

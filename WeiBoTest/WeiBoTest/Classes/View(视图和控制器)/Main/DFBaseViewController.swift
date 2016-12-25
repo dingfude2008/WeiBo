@@ -19,6 +19,8 @@ class DFBaseViewController: UIViewController, UITableViewDataSource, UITableView
     
     var tableView : UITableView?
     
+    var refreshControl : UIRefreshControl?
+    
     lazy var navigationBar = UINavigationBar(frame: CGRect(x:0, y:0, width:UIScreen.cz_screenWidth(), height:64))
     
     lazy var navItem = UINavigationItem()
@@ -123,6 +125,16 @@ extension DFBaseViewController {
         tableView?.delegate = self
         
         tableView?.contentInset = UIEdgeInsets(top: navigationBar.bounds.height, left: 0, bottom: tabBarController?.tabBar.bounds.height ?? 49, right: 0)
+        
+        refreshControl = UIRefreshControl()
+        
+        tableView?.addSubview(refreshControl!)
+        
+        
+        // 监听方法。  这里调用了具体的子类的loadData
+        refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
+        
+        
         
     }
 
