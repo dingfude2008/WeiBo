@@ -8,37 +8,85 @@
 
 import UIKit
 
+// 定义全局常量
+fileprivate let cellID = "cellID"
+
+
 class DFHomeViewController: DFBaseViewController {
 
+    
+    fileprivate lazy var statusList = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        print("111 - >\(supportedInterfaceOrientations)")
+        
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-    }
     
     @objc fileprivate func showFriends() {
         
         self.navigationController?.pushViewController(DFDemoViewController(), animated: true)
     }
+    
+    
+    override func loadData() {
+        
+        for i in 0..<15 {
+            
+            statusList.insert(i.description, at: 0)
+        }
+        
+    }
+    
 
 }
 
 
+// MARK: - 表格数据源方法
+extension DFHomeViewController{
+    
+    // 具体的数据源方法实现
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return statusList.count
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        // 取cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
+        
+//        let cell = tableView.dequeueReusableCell(withIdentifier: <#T##String#>, for: <#T##IndexPath#>)
+        
+        
+        
+        // 设置cell
+        cell.textLabel?.text = statusList[indexPath.row]//    "\(indexPath.row)"
+        
+        // 返回cell
+        return cell
+    }
+    
+    
+}
+
+
+// MARK: - 设置 UI
 extension DFHomeViewController {
     
     override func setupUI() {
         super.setupUI()
         
         
-        navItem.rightBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showFriends))
+        navItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showFriends))
+        
+        
+        tableView?.register(NSClassFromString("UITableViewCell"), forCellReuseIdentifier: cellID)
+        
+        
         
     }
     

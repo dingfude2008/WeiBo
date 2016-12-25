@@ -21,9 +21,25 @@ class DFMainViewController: UITabBarController {
     }
     
     
+    @objc fileprivate func testBack(){
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
     @objc fileprivate func composeStatus(){
         
         print("撰写微博")
+        
+        let v = DFModalViewController()
+        
+        v.view.backgroundColor = UIColor.black
+                
+        let nav = DFNavigationViewController(rootViewController: v)
+        
+        nav.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "返回", target: self, action: #selector(testBack), isBack: true)
+        
+        
+        present(nav, animated: true, completion: nil)
         
     }
     
