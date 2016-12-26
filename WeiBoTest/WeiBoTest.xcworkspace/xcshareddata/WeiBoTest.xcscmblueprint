@@ -1,0 +1,32 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "051FC2976E1D5EA268B38D4A11C255A79288429A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "32020021-2495-424d-818f-723b8d87c451++853" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "051FC2976E1D5EA268B38D4A11C255A79288429A" : 9223372036854775807,
+    "32020021-2495-424d-818f-723b8d87c451++853" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "76994B44-621C-4F35-8376-C8270EFFBF66",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "051FC2976E1D5EA268B38D4A11C255A79288429A" : "WeiBoTest\/",
+    "32020021-2495-424d-818f-723b8d87c451++853" : "WeiBoTest\/WeiBoTest\/WeiBoTest\/Classes\/Tools(%E5%B7%A5%E5%85%B7)\/CZAdditions\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "WeiBoTest",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "WeiBoTest\/WeiBoTest.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git.oschina.net:dingfude\/WeiBoTest.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "051FC2976E1D5EA268B38D4A11C255A79288429A"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/code.taobao.org\/svn\/Group10",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "32020021-2495-424d-818f-723b8d87c451++853"
+    }
+  ]
+}

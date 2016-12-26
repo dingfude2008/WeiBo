@@ -19,7 +19,7 @@ class DFBaseViewController: UIViewController, UITableViewDataSource, UITableView
 
     
     /// 登陆标记
-    var userLogon = false
+    var userLogon = true
     
     // 访客信息字典
     var visitorInfoDictionary : [String : String]?
@@ -164,6 +164,7 @@ extension DFBaseViewController {
         tableView?.delegate = self
         
         tableView?.contentInset = UIEdgeInsets(top: navigationBar.bounds.height, left: 0, bottom: tabBarController?.tabBar.bounds.height ?? 49, right: 0)
+        
         
         refreshControl = UIRefreshControl()
         

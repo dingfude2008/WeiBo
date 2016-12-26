@@ -17,9 +17,6 @@ class DFHomeViewController: DFBaseViewController {
     
     fileprivate lazy var statusList = [String]()
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,6 +35,25 @@ class DFHomeViewController: DFBaseViewController {
     
     override func loadData() {
 
+        let urlString = "https://api.weibo.com/2/statuses/public_timeline.json"
+        
+        let params = ["access_token" : "2.0055AFfCxR3neD64a0a1e2b7qMS3WE"]
+
+        DFNetwokrManager.shard.request(URLString: urlString, parameters: params as [String : AnyObject]) { (json, isSuccess) in
+            print(json ?? "")
+        }
+        
+//        DFNetwokrManager.shard.get(urlString,
+//                                   parameters: params,
+//                                   progress: nil,
+//                                   success: { (_, json) in
+//                                    print(json ?? "")
+//        }) { (_, error) in
+//            print("网络错误\(error)")
+//        }
+        
+        
+        
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
             
             for i in 0..<15 {
