@@ -51,7 +51,6 @@ class DFMainViewController: UITabBarController {
 extension DFMainViewController {
     
     
-    
     fileprivate func setupComposeButton(){
         
         tabBar.addSubview(composeButton)
@@ -85,8 +84,6 @@ extension DFMainViewController {
         }
         
         
-        
-        // : Definition conflicts with previous value
         guard let dataA = data,
             let arrayA = try? JSONSerialization.jsonObject(with: dataA,  options: []) as? [[String : AnyObject]],
             let array = arrayA else {
@@ -103,24 +100,18 @@ extension DFMainViewController {
         }
         
         
-        let dataQ = try! JSONSerialization.data(withJSONObject: array, options: [.prettyPrinted])
-        
-        
-        let isOK =  (dataQ as NSData).write(toFile: "/Users/dingfude/Desktop/demo.json", atomically: true)
-        
-        
-        print(isOK)
+//        let dataQ = try! JSONSerialization.data(withJSONObject: array, options: [.prettyPrinted])
+//        
+//        
+//        let isOK =  (dataQ as NSData).write(toFile: "/Users/dingfude/Desktop/demo.json", atomically: true)
+//        
+//        
+//        print(isOK)
         
 //        let isOK = dataQ.write(toFile: "/Users/dingfude/Desktop/demo.plist", atomically: true)
         
         
-        
-//        dataQ.write(to: <#T##URL#>, options: <#T##Data.WritingOptions#>)
-        
-        
-//
-//        
-//        viewControllers = arrayM
+        viewControllers = arrayM
         
     }
     
@@ -151,7 +142,7 @@ extension DFMainViewController {
         
         vc.tabBarItem.selectedImage = UIImage(named: "tabbar_" + imageName + "_selected")?.withRenderingMode(.alwaysOriginal)
         
-        vc.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.orange], for: .highlighted)
+        vc.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.orange], for: .selected)
         
         vc.tabBarItem.setTitleTextAttributes([NSFontAttributeName : UIFont.systemFont(ofSize: 12
             )], for: UIControlState(rawValue: 0))

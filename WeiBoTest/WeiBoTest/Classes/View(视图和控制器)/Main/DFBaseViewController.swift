@@ -129,6 +129,7 @@ extension DFBaseViewController {
         
         navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.gray]
         
+        
     }
     
     fileprivate func setupTableView(){

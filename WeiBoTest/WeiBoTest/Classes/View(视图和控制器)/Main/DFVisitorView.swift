@@ -55,10 +55,6 @@ class DFVisitorView: UIView {
     }
     
     
-
-    
-    
-    
     
     /// 私用控件
     fileprivate lazy var iconView = UIImageView(image: UIImage(named: "visitordiscover_feed_image_smallicon"))
@@ -90,10 +86,6 @@ class DFVisitorView: UIView {
         backgroundImageName: "common_button_white_disable")
     
     
-    
-    
-    
-
 }
 
 
@@ -101,6 +93,7 @@ extension DFVisitorView {
 
     func setupUI(){
         backgroundColor = UIColor.cz_color(withHex: 0xEDEDED)
+        
         
         // 1, 添加布局
         addSubview(iconView)
