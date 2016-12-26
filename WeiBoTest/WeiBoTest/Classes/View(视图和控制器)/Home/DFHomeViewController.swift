@@ -99,12 +99,11 @@ extension DFHomeViewController{
 // MARK: - 设置 UI
 extension DFHomeViewController {
     
-    override func setupUI() {
-        super.setupUI()
+    override func setupTableView() {
         
+        super.setupTableView()
         
         navItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showFriends))
-        
         
         tableView?.register(NSClassFromString("UITableViewCell"), forCellReuseIdentifier: cellID)
         

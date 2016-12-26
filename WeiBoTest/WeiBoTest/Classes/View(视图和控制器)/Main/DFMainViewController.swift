@@ -70,6 +70,7 @@ extension DFMainViewController {
     /// 设置所有子控制器
     fileprivate func setUpClildControllers(){
         
+        // 先从沙盒中获取上次已经下载的json，如果没有加载bundle中的
         let dicDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         
         let jsonPath = (dicDir as String).appending("main.json")

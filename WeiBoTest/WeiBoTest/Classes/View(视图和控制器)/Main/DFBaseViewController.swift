@@ -35,7 +35,6 @@ class DFBaseViewController: UIViewController, UITableViewDataSource, UITableView
     lazy var navItem = UINavigationItem()
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -101,10 +100,25 @@ class DFBaseViewController: UIViewController, UITableViewDataSource, UITableView
 
 }
 
+
+// MARK: - 事件
+extension DFBaseViewController {
+
+    func register(){
+        print("register")
+    }
+    
+    func login(){
+        print("login")
+    }
+    
+}
+
+
 // MARK: - UI界面设计
 extension DFBaseViewController {
     
-    func setupUI(){
+    fileprivate func setupUI(){
         
         view.backgroundColor = UIColor.cz_random()
         
@@ -123,16 +137,23 @@ extension DFBaseViewController {
         
         view.addSubview(navigationBar)
         
+        // 设置这个bar的背景颜色
         navigationBar.barTintColor = UIColor.cz_color(withHex: 0xF6F6F6)
         
         navigationBar.items = [navItem]
         
-        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.gray]
+        // 字体颜色
+        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.darkGray]
+        
+        // 设置系统按钮的文字颜色
+        navigationBar.tintColor = UIColor.orange
+        
+        
         
         
     }
     
-    fileprivate func setupTableView(){
+    func setupTableView(){
         
         tableView = UITableView(frame: view.bounds, style: .plain)
         
@@ -160,6 +181,15 @@ extension DFBaseViewController {
         visitorView.visitorInfo = visitorInfoDictionary
         
         view.insertSubview(visitorView, belowSubview: navigationBar)
+        
+        visitorView.registerButton.addTarget(self, action: #selector(register), for: .touchUpInside)
+        
+        visitorView.loginButton.addTarget(self, action: #selector(login), for: .touchUpInside)
+        
+        navItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: .plain, target: self, action: #selector(register))
+
+        navItem.rightBarButtonItem = UIBarButtonItem(title: "登陆", style: .plain, target: self, action: #selector(login))
+        
         
     }
 

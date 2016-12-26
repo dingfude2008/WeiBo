@@ -38,12 +38,12 @@ class DFDemoViewController: DFBaseViewController {
 
 extension DFDemoViewController {
 
-    override func setupUI() {
-        super.setupUI()
+    override func setupTableView() {
         
+        super.setupTableView()
         
-        navItem.rightBarButtonItem = UIBarButtonItem(title: "Next", target: self, action: #selector(goNext))
-        
+//        navItem.rightBarButtonItem = UIBarButtonItem(title: "Next", target: self, action: #selector(goNext))
+//        
         
     }
 }
