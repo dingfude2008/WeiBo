@@ -18,7 +18,11 @@ class DFNetwokrManager: AFHTTPSessionManager {
 
     static let shard = DFNetwokrManager()
     
+    // 网络令牌
     var accessToken : String? = "2.0055AFfCxR3neD64a0a1e2b7qMS3WE" // 默认值
+    
+    // 用户id
+    var uid : String?  = "2439288592"
     
     func tokenRequest(method : DFHTTPMethod = .GET, URLString : String, parameters:[String: AnyObject]?, complection:@escaping (_ json : Any?, _ isSuccess: Bool)->()){
         

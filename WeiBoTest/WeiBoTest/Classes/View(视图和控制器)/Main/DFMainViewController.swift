@@ -18,6 +18,19 @@ class DFMainViewController: UITabBarController {
         
         setupComposeButton()
         
+        
+//        DFNetwokrManager.shard.getUid { (uid) in
+//            print("uid : \(uid)")
+//            
+//            
+//        }
+        
+        DFNetwokrManager.shard.unreadCount { (unread) in
+            
+            print("未读微博 \(unread)条")
+            
+        }
+
     }
     
     
