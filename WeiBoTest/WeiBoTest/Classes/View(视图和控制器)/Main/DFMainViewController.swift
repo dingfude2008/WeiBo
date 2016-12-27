@@ -10,27 +10,25 @@ import UIKit
 
 class DFMainViewController: UITabBarController {
 
+    
+    /// 定时器
+    fileprivate var timer : Timer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         
         setUpClildControllers()
         
         setupComposeButton()
         
-        
-//        DFNetwokrManager.shard.getUid { (uid) in
-//            print("uid : \(uid)")
-//            
-//            
-//        }
-        
-        DFNetwokrManager.shard.unreadCount { (unread) in
-            
-            print("未读微博 \(unread)条")
-            
-        }
+        setupTimer()
 
+    }
+    
+    deinit {
+        timer?.invalidate()
     }
     
     
@@ -58,6 +56,30 @@ class DFMainViewController: UITabBarController {
     
     fileprivate lazy var composeButton : UIButton = UIButton.cz_imageButton("tabbar_compose_icon_add`", backgroundImageName: "tabbar_compose_button")
     
+}
+
+
+// MARK: - 定时器相关方法
+extension DFMainViewController {
+    
+    fileprivate func setupTimer(){
+    
+        timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+    }
+    
+    
+    /// 定时更新方法
+    @objc fileprivate func updateTime(){
+        
+        DFNetwokrManager.shard.unreadCount { (unread) in
+            
+            
+            self.tabBar.items?[0].badgeValue = unread > 0 ? "\(unread)" : nil
+            
+            
+        }
+        
+    }
 }
 
 
