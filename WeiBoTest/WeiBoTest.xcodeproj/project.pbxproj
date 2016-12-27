@@ -29,9 +29,12 @@
 		AD89B9F31E0ACB8D00D20E72 /* DFHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD89B9F21E0ACB8D00D20E72 /* DFHomeViewController.swift */; };
 		AD8CB78C1E0FA55E00BA3CC3 /* DFVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8CB78B1E0FA55E00BA3CC3 /* DFVisitorView.swift */; };
 		AD9A27F61E11089500B1B4E3 /* DFNetwokrManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9A27F51E11089500B1B4E3 /* DFNetwokrManager.swift */; };
+		AD9A27F81E111B1800B1B4E3 /* DFNetworking+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9A27F71E111B1800B1B4E3 /* DFNetworking+Extension.swift */; };
 		AD9B784B1E0CD12E002F6BEA /* DFDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9B784A1E0CD12E002F6BEA /* DFDemoViewController.swift */; };
 		AD9B784F1E0CD7D2002F6BEA /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9B784E1E0CD7D2002F6BEA /* UIBarButtonItem+Extensions.swift */; };
 		ADA8C3161E0E1E99001CA74E /* DFModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8C3151E0E1E99001CA74E /* DFModalViewController.swift */; };
+		ADAB54D41E1234C200E0CCC5 /* DFStatue.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB54D31E1234C200E0CCC5 /* DFStatue.swift */; };
+		ADAB54D61E1234EB00E0CCC5 /* DFStatuesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB54D51E1234EB00E0CCC5 /* DFStatuesListViewModel.swift */; };
 		C9E32DCED09678901ACA536F /* Pods_WeiBoTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4D222A027863A6EFFC0BA20 /* Pods_WeiBoTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,9 +76,12 @@
 		AD89B9F21E0ACB8D00D20E72 /* DFHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFHomeViewController.swift; sourceTree = "<group>"; };
 		AD8CB78B1E0FA55E00BA3CC3 /* DFVisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFVisitorView.swift; sourceTree = "<group>"; };
 		AD9A27F51E11089500B1B4E3 /* DFNetwokrManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFNetwokrManager.swift; sourceTree = "<group>"; };
+		AD9A27F71E111B1800B1B4E3 /* DFNetworking+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DFNetworking+Extension.swift"; sourceTree = "<group>"; };
 		AD9B784A1E0CD12E002F6BEA /* DFDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFDemoViewController.swift; sourceTree = "<group>"; };
 		AD9B784E1E0CD7D2002F6BEA /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
 		ADA8C3151E0E1E99001CA74E /* DFModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFModalViewController.swift; sourceTree = "<group>"; };
+		ADAB54D31E1234C200E0CCC5 /* DFStatue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFStatue.swift; sourceTree = "<group>"; };
+		ADAB54D51E1234EB00E0CCC5 /* DFStatuesListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFStatuesListViewModel.swift; sourceTree = "<group>"; };
 		B4D222A027863A6EFFC0BA20 /* Pods_WeiBoTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeiBoTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -178,6 +184,7 @@
 		AD89B9D91E0AC82000D20E72 /* Model(模型) */ = {
 			isa = PBXGroup;
 			children = (
+				ADAB54D31E1234C200E0CCC5 /* DFStatue.swift */,
 			);
 			path = "Model(模型)";
 			sourceTree = "<group>";
@@ -242,6 +249,7 @@
 		AD89B9E01E0AC82000D20E72 /* ViewModel(视图模型) */ = {
 			isa = PBXGroup;
 			children = (
+				ADAB54D51E1234EB00E0CCC5 /* DFStatuesListViewModel.swift */,
 			);
 			path = "ViewModel(视图模型)";
 			sourceTree = "<group>";
@@ -277,6 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				AD9A27F51E11089500B1B4E3 /* DFNetwokrManager.swift */,
+				AD9A27F71E111B1800B1B4E3 /* DFNetworking+Extension.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -415,13 +424,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD877D8D1E0B727F00299081 /* NSArray+CZAddition.m in Sources */,
+				AD9A27F81E111B1800B1B4E3 /* DFNetworking+Extension.swift in Sources */,
 				AD877D991E0B76E200299081 /* Bundle+Extension.swift in Sources */,
 				AD89B9E71E0ACA2100D20E72 /* DFNavigationViewController.swift in Sources */,
 				AD9B784B1E0CD12E002F6BEA /* DFDemoViewController.swift in Sources */,
 				AD877D8E1E0B727F00299081 /* NSAttributedString+CZAdditon.m in Sources */,
 				AD877D921E0B727F00299081 /* UILabel+CZAddition.m in Sources */,
 				AD89B9E91E0ACA6700D20E72 /* DFBaseViewController.swift in Sources */,
+				ADAB54D41E1234C200E0CCC5 /* DFStatue.swift in Sources */,
 				AD89B9F11E0ACAE200D20E72 /* DFProfileViewController.swift in Sources */,
+				ADAB54D61E1234EB00E0CCC5 /* DFStatuesListViewModel.swift in Sources */,
 				ADA8C3161E0E1E99001CA74E /* DFModalViewController.swift in Sources */,
 				AD9B784F1E0CD7D2002F6BEA /* UIBarButtonItem+Extensions.swift in Sources */,
 				AD89B9C71E0AC29B00D20E72 /* AppDelegate.swift in Sources */,

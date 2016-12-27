@@ -28,6 +28,7 @@ class DFBaseViewController: UIViewController, UITableViewDataSource, UITableView
     
     var refreshControl : UIRefreshControl?
     
+    // 上拉刷新标记
     var isPullup = false
     
     lazy var navigationBar = UINavigationBar(frame: CGRect(x:0, y:0, width:UIScreen.cz_screenWidth(), height:64))
