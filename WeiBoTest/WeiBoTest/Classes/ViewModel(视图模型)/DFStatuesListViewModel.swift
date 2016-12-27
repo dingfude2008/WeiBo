@@ -9,17 +9,31 @@
 import Foundation
 import YYModel
 
+
+// 上拉刷新的最大尝试次数
+private let maxPullupTryTimes = 3
+
 class DFStatuesListViewModel {
-    
     
     /// 总的数据源
     lazy var statuesList = [DFStatue]()
     
+    // 上拉刷新的错误次数
+    fileprivate var pullupErrorTimes = 0
+    
     /// 加载表格数据
     ///
-    /// - Parameter complection: 是否完成
-    func loadStatus(pullup : Bool, complection:@escaping (_ isSuccess:Bool)->()){
-    
+    /// - Parameter complection: 是否完成  是否成功， 是否需要刷新列表
+    func loadStatus(pullup : Bool, complection:@escaping (_ isSuccess:Bool,_ shouldRefresh:Bool)->()){
+        
+        if pullupErrorTimes > maxPullupTryTimes {
+            
+            complection(false, false)
+            
+            return
+        }
+        
+        
         // 最新的数据也就是时间最大的
         let since_id : Int64 = (pullup ? 0 : (statuesList.first?.id ?? 0))
         
@@ -30,7 +44,7 @@ class DFStatuesListViewModel {
             
             guard let array = NSArray.yy_modelArray(with: DFStatue.self, json: (list ?? [])) as? [DFStatue]  else {
                 // 到这里说明转换失败了，isSuccess 是 false
-                complection(isSuccess)
+                complection(isSuccess, false)
                 
                 return
             }
@@ -47,7 +61,17 @@ class DFStatuesListViewModel {
             }
             
             
-            complection(isSuccess)
+            if pullup && array.count == 0 {
+            
+                self.pullupErrorTimes += 1
+                
+                complection(isSuccess, false)
+            }
+            else {
+                complection(isSuccess, true)
+            }
+            
+            
         }
     
     }

@@ -36,7 +36,7 @@ class DFHomeViewController: DFBaseViewController {
     
     override func loadData() {
 
-        listViewModel.loadStatus(pullup: self.isPullup) { (isSuccess) in
+        listViewModel.loadStatus(pullup: self.isPullup) { (isSuccess, shouldRefresh) in
             
             print(self.isPullup ?"上拉数据加载完成" : "下拉数据加载完成")
 
@@ -44,13 +44,13 @@ class DFHomeViewController: DFBaseViewController {
 
             self.isPullup = false
 
-            self.tableView?.reloadData()
+            if shouldRefresh {
+                
+                print("刷新表格")
+                self.tableView?.reloadData()
+            }
         }
     }
-    
-    
-    
-
 }
 
 
