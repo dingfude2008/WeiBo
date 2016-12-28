@@ -17,7 +17,6 @@ class DFNavigationViewController: UINavigationController {
         
         navigationBar.isHidden = true
         
-        
     }
     
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {

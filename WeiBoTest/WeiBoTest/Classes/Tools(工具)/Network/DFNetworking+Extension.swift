@@ -30,7 +30,7 @@ extension DFNetwokrManager {
         let parameters = ["since_id":"\(since_id)",
                           "max_id":"\(max_id > 0 ? max_id - 1 : 0)"]
         
-        DFNetwokrManager.shard.tokenRequest(URLString: urlString, parameters: parameters as [String : AnyObject]?) { (json, isSuccess) in
+        DFNetwokrManager.shared.tokenRequest(URLString: urlString, parameters: parameters as [String : AnyObject]?) { (json, isSuccess) in
             print(json ?? "")
             
             guard let jsonDic = json as? [String : AnyObject],
@@ -53,7 +53,7 @@ extension DFNetwokrManager {
         
         let parameters = ["uid":"\(uid)"]
         
-        DFNetwokrManager.shard.tokenRequest(URLString: urlString, parameters: parameters as [String : AnyObject]?) { (json, isSuccess) in
+        DFNetwokrManager.shared.tokenRequest(URLString: urlString, parameters: parameters as [String : AnyObject]?) { (json, isSuccess) in
             print(json ?? "")
             
             let dict = json as? [String: AnyObject]
@@ -69,7 +69,7 @@ extension DFNetwokrManager {
         
         let urlString = "https://api.weibo.com/2/account/get_uid.json"
         
-        DFNetwokrManager.shard.tokenRequest(URLString: urlString, parameters: nil as [String : AnyObject]?) { (json, isSuccess) in
+        DFNetwokrManager.shared.tokenRequest(URLString: urlString, parameters: nil as [String : AnyObject]?) { (json, isSuccess) in
             print(json ?? "")
             
             let dict = json as? [String: AnyObject]

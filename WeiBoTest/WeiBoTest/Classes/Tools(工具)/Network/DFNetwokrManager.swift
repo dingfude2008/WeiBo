@@ -16,10 +16,21 @@ enum DFHTTPMethod {
 
 class DFNetwokrManager: AFHTTPSessionManager {
 
-    static let shard = DFNetwokrManager()
+    static let shared = DFNetwokrManager()
     
     // 网络令牌
-    var accessToken : String? = "2.0055AFfCxR3neD64a0a1e2b7qMS3WE" // 默认值
+    var accessToken : String? //  = "2.0055AFfCxR3neD64a0a1e2b7qMS3WE" // 默认值
+    
+    /// 计算性属性（只读属性，省略了 get）
+    var userLogon : Bool {
+        
+//        get {
+//           return DFNetwokrManager.shared.accessToken != nil
+//        }
+        
+        return DFNetwokrManager.shared.accessToken != nil
+    }
+    
     
     // 用户id
     var uid : String?  = "2439288592"

@@ -16,10 +16,6 @@ import UIKit
 
 /// 所有主控制器的基类控制器
 class DFBaseViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
-    
-    /// 登陆标记
-    var userLogon = true
     
     // 访客信息字典
     var visitorInfoDictionary : [String : String]?
@@ -42,7 +38,7 @@ class DFBaseViewController: UIViewController, UITableViewDataSource, UITableView
         
         setupUI()
      
-        loadData()
+        DFNetwokrManager.shared.userLogon ? loadData() : ()
         
     }
     
@@ -111,6 +107,8 @@ extension DFBaseViewController {
     
     func login(){
         print("login")
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: WeiBoTestUserLogin), object: nil)
     }
     
 }
@@ -128,8 +126,7 @@ extension DFBaseViewController {
         
         setupNavigationBar()
         
-        userLogon ? setupTableView() : setupVisitorView()
-        
+        DFNetwokrManager.shared.userLogon ? setupTableView() : setupVisitorView()
         
     }
     

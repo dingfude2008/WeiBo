@@ -40,7 +40,7 @@ class DFStatuesListViewModel {
         let max_id   : Int64 = (!pullup ? 0: (statuesList.last?.id ?? 0))
         
         
-        DFNetwokrManager.shard.statusList(since_id: since_id, max_id: max_id) { (list, isSuccess) in
+        DFNetwokrManager.shared.statusList(since_id: since_id, max_id: max_id) { (list, isSuccess) in
             
             guard let array = NSArray.yy_modelArray(with: DFStatue.self, json: (list ?? [])) as? [DFStatue]  else {
                 // 到这里说明转换失败了，isSuccess 是 false

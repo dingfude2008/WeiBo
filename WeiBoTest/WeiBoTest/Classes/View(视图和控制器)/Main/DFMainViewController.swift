@@ -27,11 +27,26 @@ class DFMainViewController: UITabBarController {
 
         delegate = self
         
+        NotificationCenter.default.addObserver(self, selector: #selector(userLogin), name: NSNotification.Name(rawValue: WeiBoTestUserLogin), object: nil)
+        
+        
     }
     
     deinit {
         timer?.invalidate()
+        
+        NotificationCenter.default.removeObserver(self)
+        
     }
+    
+    
+    
+    @objc fileprivate func userLogin(n: Notification){
+        
+        print(#function)
+        
+    }
+    
     
     
     @objc fileprivate func testBack(){
@@ -132,7 +147,11 @@ extension DFMainViewController {
     /// 定时更新方法
     @objc fileprivate func updateTime(){
         
-        DFNetwokrManager.shard.unreadCount { (unread) in
+        if !DFNetwokrManager.shared.userLogon {
+            return
+        }
+        
+        DFNetwokrManager.shared.unreadCount { (unread) in
             
             
             self.tabBar.items?[0].badgeValue = unread > 0 ? "\(unread)" : nil

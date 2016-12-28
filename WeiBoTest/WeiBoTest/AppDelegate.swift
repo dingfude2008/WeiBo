@@ -69,9 +69,9 @@ extension AppDelegate {
             
             let jsonPath = docDir.appending("/main.json")
 
-            let result = data?.write(toFile: jsonPath, atomically: true)
+            _ = data?.write(toFile: jsonPath, atomically: true)
             
-            print("保存json 结果\(result)，路径\(jsonPath)")
+//            print("保存json 结果\(result)，路径\(jsonPath)")
             
         }
         

@@ -32,6 +32,7 @@
 		AD9A27F81E111B1800B1B4E3 /* DFNetworking+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9A27F71E111B1800B1B4E3 /* DFNetworking+Extension.swift */; };
 		AD9B784B1E0CD12E002F6BEA /* DFDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9B784A1E0CD12E002F6BEA /* DFDemoViewController.swift */; };
 		AD9B784F1E0CD7D2002F6BEA /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9B784E1E0CD7D2002F6BEA /* UIBarButtonItem+Extensions.swift */; };
+		AD9CFA271E13681A0014F870 /* WeBoTestCommond.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9CFA261E13681A0014F870 /* WeBoTestCommond.swift */; };
 		ADA8C3161E0E1E99001CA74E /* DFModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8C3151E0E1E99001CA74E /* DFModalViewController.swift */; };
 		ADAB54D41E1234C200E0CCC5 /* DFStatue.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB54D31E1234C200E0CCC5 /* DFStatue.swift */; };
 		ADAB54D61E1234EB00E0CCC5 /* DFStatuesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB54D51E1234EB00E0CCC5 /* DFStatuesListViewModel.swift */; };
@@ -79,6 +80,7 @@
 		AD9A27F71E111B1800B1B4E3 /* DFNetworking+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DFNetworking+Extension.swift"; sourceTree = "<group>"; };
 		AD9B784A1E0CD12E002F6BEA /* DFDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFDemoViewController.swift; sourceTree = "<group>"; };
 		AD9B784E1E0CD7D2002F6BEA /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
+		AD9CFA261E13681A0014F870 /* WeBoTestCommond.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeBoTestCommond.swift; sourceTree = "<group>"; };
 		ADA8C3151E0E1E99001CA74E /* DFModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFModalViewController.swift; sourceTree = "<group>"; };
 		ADAB54D31E1234C200E0CCC5 /* DFStatue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFStatue.swift; sourceTree = "<group>"; };
 		ADAB54D51E1234EB00E0CCC5 /* DFStatuesListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFStatuesListViewModel.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				AD9A27F41E10FCCD00B1B4E3 /* Network */,
 				AD877D971E0B763300299081 /* Extension */,
 				AD877D791E0B727F00299081 /* CZAdditions */,
+				AD9CFA261E13681A0014F870 /* WeBoTestCommond.swift */,
 			);
 			path = "Tools(工具)";
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				AD89B9C71E0AC29B00D20E72 /* AppDelegate.swift in Sources */,
 				AD89B9E51E0AC9D900D20E72 /* DFMainViewController.swift in Sources */,
 				AD89B9ED1E0ACACF00D20E72 /* DFMessageViewController.swift in Sources */,
+				AD9CFA271E13681A0014F870 /* WeBoTestCommond.swift in Sources */,
 				AD89B9EF1E0ACAD800D20E72 /* DFDiscoverViewController.swift in Sources */,
 				AD877D951E0B727F00299081 /* UIViewController+CZAddition.m in Sources */,
 				AD877D931E0B727F00299081 /* UIScreen+CZAddition.m in Sources */,
