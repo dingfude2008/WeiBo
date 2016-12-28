@@ -25,6 +25,8 @@ class DFMainViewController: UITabBarController {
         
         setupTimer()
 
+        delegate = self
+        
     }
     
     deinit {
@@ -59,12 +61,71 @@ class DFMainViewController: UITabBarController {
 }
 
 
+// MARK: - UITabBarControllerDelegate
+extension DFMainViewController : UITabBarControllerDelegate {
+
+    
+    /// 将要跳转控制器
+    ///
+    /// - Parameters:
+    ///   - tabBarController: self
+    ///   - viewController: 目标控制器
+    /// - Returns: 是否跳转
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        
+        let nav = childViewControllers[0] as! DFNavigationViewController
+        
+        if nav.isEqual(viewController) && selectedIndex == 0 {
+            
+            let vc = nav.viewControllers[0] as! DFBaseViewController
+            
+            vc.tableView?.setContentOffset(CGPoint(x: 0, y: -64), animated: true)
+            
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.45, execute: { 
+                
+                vc.loadData()
+            })
+            
+            vc.tabBarItem.badgeValue = nil
+            
+            UIApplication.shared.applicationIconBadgeNumber = 0
+            
+        }
+        
+        
+        
+        
+        
+        
+        
+        return !viewController.isMember(of: UIViewController.self)
+    }
+    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        
+//        let idx = (childViewControllers as NSArray).index(of: viewController)
+//        
+//        if selectedIndex == 0 && selectedIndex == idx {
+//            print("是第一个")
+//        }
+//    
+//        
+////        selectController
+        
+        
+    }
+    
+    
+
+}
+
+
 // MARK: - 定时器相关方法
 extension DFMainViewController {
     
     fileprivate func setupTimer(){
     
-        timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 8.0, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
     }
     
     
@@ -76,6 +137,8 @@ extension DFMainViewController {
             
             self.tabBar.items?[0].badgeValue = unread > 0 ? "\(unread)" : nil
             
+            
+            UIApplication.shared.applicationIconBadgeNumber = unread
             
         }
         
@@ -92,7 +155,10 @@ extension DFMainViewController {
         
         let count = CGFloat(childViewControllers.count)
         
-        let w = tabBar.bounds.width / count - 1
+        
+        /// 这里-1，是为了让中间的按钮更大一点，防止点进空白的控制器
+        //  不-1的话，可以在tabar 的代理方法中判断，如果是UIViewController的实例，就不跳转
+        let w = tabBar.bounds.width / count
         
         composeButton.frame = tabBar.bounds.insetBy(dx: 2 * w, dy: 0)
         
