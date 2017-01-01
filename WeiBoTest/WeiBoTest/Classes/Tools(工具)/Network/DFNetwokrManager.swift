@@ -16,7 +16,20 @@ enum DFHTTPMethod {
 
 class DFNetwokrManager: AFHTTPSessionManager {
 
-    static let shared = DFNetwokrManager()
+    // 分布在静态去， 常量，闭包
+    // 等于
+    //static let shared = DFNetwokrManager()
+    
+    static let shared : DFNetwokrManager = {
+        
+        let instance = DFNetwokrManager()
+        
+        instance.responseSerializer.acceptableContentTypes?.insert("text/plain")
+        
+        return instance
+    }()
+    
+    
     
     // 网络令牌
     var accessToken : String? //  = "2.0055AFfCxR3neD64a0a1e2b7qMS3WE" // 默认值
@@ -70,15 +83,11 @@ class DFNetwokrManager: AFHTTPSessionManager {
         
         let failure = { (task : URLSessionDataTask?, error: Error)->() in
             
-            // HTTPURLResponse
-            // NSHTTPURLResponse
-            // print(error)
+//            if (task?.response as? HTTPURLResponse)?.statusCode == 400 {
+//                 print(error)
+//            }
             
-            if (task?.response as? HTTPURLResponse)?.statusCode == 400 {
-                 print(error)
-            }
-            
-            
+            print(error)
             complection(nil, false)
         }
         

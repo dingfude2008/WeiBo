@@ -63,16 +63,16 @@ class DFMainViewController: UITabBarController {
         
         print("撰写微博")
         
-        let v = DFOAuthViewController()
-        
-        v.view.backgroundColor = UIColor.white
-        
-        // 这里不适用自己封装的，自己封装的把默认的tarbar隐藏掉了
-        let nav = UINavigationController(rootViewController: v)
-        
-        nav.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "返回", target: self, action: #selector(testBack), isBack: true)
-        
-        present(nav, animated: true, completion: nil)
+//        let v = DFOAuthViewController()
+//        
+////        v.view.backgroundColor = UIColor.white
+//        
+//        // 这里不适用自己封装的，自己封装的把默认的tarbar隐藏掉了
+//        let nav = UINavigationController(rootViewController: v)
+//        
+//        nav.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "返回", target: self, action: #selector(testBack), isBack: true)
+//        
+//        present(nav, animated: true, completion: nil)
         
     }
     
@@ -240,7 +240,6 @@ extension DFMainViewController {
         viewControllers = arrayM
         
     }
-    
     
     
     /// 使用字典创建一个子控制器

@@ -79,14 +79,63 @@ extension DFNetwokrManager {
             complection(uid)
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
 }
+
+
+extension DFNetwokrManager {
+
+    func loadAccessToken(code: String){
+    
+        let urlString = "https://api.weibo.com/oauth2/access_token"
+        
+        let params = ["client_id" : WBAppKey,
+                      "client_secret" : WBAppSecret,
+                      "grant_type" : "authorization_code",
+                      "code" : code,
+                      "redirect_uri" : redirect_uri]
+        
+        request(method: .POST, URLString: urlString, parameters:params as [String : AnyObject]?) { (json, isSuccess) in
+            print(json ?? "")
+        }
+    
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
