@@ -17,8 +17,6 @@ class DFMainViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        
         setUpClildControllers()
         
         setupComposeButton()
@@ -31,6 +29,8 @@ class DFMainViewController: UITabBarController {
         
         
     }
+    
+    
     
     deinit {
         timer?.invalidate()
@@ -45,6 +45,11 @@ class DFMainViewController: UITabBarController {
         
         print(#function)
         
+        let nav = UINavigationController(rootViewController: DFOAuthViewController())
+        
+        // modal 模态控制器，通常和UINavitionContrller 一起用
+        present(nav, animated: true, completion: nil)
+        
     }
     
     
@@ -58,14 +63,14 @@ class DFMainViewController: UITabBarController {
         
         print("撰写微博")
         
-        let v = DFModalViewController()
+        let v = DFOAuthViewController()
         
-        v.view.backgroundColor = UIColor.black
-                
-        let nav = DFNavigationViewController(rootViewController: v)
+        v.view.backgroundColor = UIColor.white
+        
+        // 这里不适用自己封装的，自己封装的把默认的tarbar隐藏掉了
+        let nav = UINavigationController(rootViewController: v)
         
         nav.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "返回", target: self, action: #selector(testBack), isBack: true)
-        
         
         present(nav, animated: true, completion: nil)
         
