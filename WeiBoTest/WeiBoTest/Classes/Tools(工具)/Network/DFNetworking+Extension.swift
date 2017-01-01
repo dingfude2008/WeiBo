@@ -47,7 +47,7 @@ extension DFNetwokrManager {
     
         let urlString = "https://rm.api.weibo.com/2/remind/unread_count.json"
         
-        guard let uid = uid else {
+        guard let uid = userAccount.uid else {
             return
         }
         
@@ -96,9 +96,19 @@ extension DFNetwokrManager {
         
         request(method: .POST, URLString: urlString, parameters:params as [String : AnyObject]?) { (json, isSuccess) in
             print(json ?? "")
+            
+            self.userAccount.yy_modelSet(with: (json as? [String : AnyObject]) ?? [:])
+            
+            print(self.userAccount)
+            
+            self.userAccount.saveAccount()
         }
     
     }
+    
+    
+    
+    
 }
 
 

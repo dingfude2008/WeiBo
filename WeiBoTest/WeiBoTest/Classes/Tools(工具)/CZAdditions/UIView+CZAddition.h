@@ -1,8 +1,7 @@
 //
 //  UIView+CZAddition.h
-//  003-小画板
 //
-//  Created by pkxing on 16/5/11.
+//  Created by 刘凡 on 16/5/11.
 //  Copyright © 2016年 itheima. All rights reserved.
 //
 
@@ -10,7 +9,7 @@
 
 @interface UIView (CZAddition)
 
-/// 返回屏幕截图
+/// 返回视图截图
 - (UIImage *)cz_snapshotImage;
 
 @end

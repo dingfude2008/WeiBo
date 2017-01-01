@@ -8,15 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		AD6CFB141E1933560064D06A /* DFUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6CFB131E1933560064D06A /* DFUserAccount.swift */; };
-		AD877D8D1E0B727F00299081 /* NSArray+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = AD877D7C1E0B727F00299081 /* NSArray+CZAddition.m */; };
-		AD877D8E1E0B727F00299081 /* NSAttributedString+CZAdditon.m in Sources */ = {isa = PBXBuildFile; fileRef = AD877D7E1E0B727F00299081 /* NSAttributedString+CZAdditon.m */; };
-		AD877D8F1E0B727F00299081 /* NSObject+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = AD877D801E0B727F00299081 /* NSObject+CZAddition.m */; };
-		AD877D901E0B727F00299081 /* UIButton+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = AD877D821E0B727F00299081 /* UIButton+CZAddition.m */; };
-		AD877D911E0B727F00299081 /* UIColor+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = AD877D841E0B727F00299081 /* UIColor+CZAddition.m */; };
-		AD877D921E0B727F00299081 /* UILabel+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = AD877D861E0B727F00299081 /* UILabel+CZAddition.m */; };
-		AD877D931E0B727F00299081 /* UIScreen+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = AD877D881E0B727F00299081 /* UIScreen+CZAddition.m */; };
-		AD877D941E0B727F00299081 /* UIView+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = AD877D8A1E0B727F00299081 /* UIView+CZAddition.m */; };
-		AD877D951E0B727F00299081 /* UIViewController+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = AD877D8C1E0B727F00299081 /* UIViewController+CZAddition.m */; };
+		AD6CFB2E1E19440C0064D06A /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6CFB171E19440C0064D06A /* NSArray+Log.m */; };
+		AD6CFB2F1E19440C0064D06A /* NSAttributedString+CZAdditon.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6CFB191E19440C0064D06A /* NSAttributedString+CZAdditon.m */; };
+		AD6CFB301E19440C0064D06A /* NSObject+CZRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6CFB1B1E19440C0064D06A /* NSObject+CZRuntime.m */; };
+		AD6CFB311E19440C0064D06A /* NSString+CZBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6CFB1D1E19440C0064D06A /* NSString+CZBase64.m */; };
+		AD6CFB321E19440C0064D06A /* NSString+CZHash.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6CFB1F1E19440C0064D06A /* NSString+CZHash.m */; };
+		AD6CFB331E19440C0064D06A /* NSString+CZPath.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6CFB211E19440C0064D06A /* NSString+CZPath.m */; };
+		AD6CFB341E19440C0064D06A /* UIButton+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6CFB231E19440C0064D06A /* UIButton+CZAddition.m */; };
+		AD6CFB351E19440C0064D06A /* UIColor+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6CFB251E19440C0064D06A /* UIColor+CZAddition.m */; };
+		AD6CFB361E19440C0064D06A /* UILabel+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6CFB271E19440C0064D06A /* UILabel+CZAddition.m */; };
+		AD6CFB371E19440C0064D06A /* UIScreen+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6CFB291E19440C0064D06A /* UIScreen+CZAddition.m */; };
+		AD6CFB381E19440C0064D06A /* UIView+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6CFB2B1E19440C0064D06A /* UIView+CZAddition.m */; };
+		AD6CFB391E19440C0064D06A /* UIViewController+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6CFB2D1E19440C0064D06A /* UIViewController+CZAddition.m */; };
 		AD877D991E0B76E200299081 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD877D981E0B76E200299081 /* Bundle+Extension.swift */; };
 		AD877D9B1E0B825100299081 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = AD877D9A1E0B825100299081 /* main.json */; };
 		AD89B9C71E0AC29B00D20E72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD89B9C61E0AC29B00D20E72 /* AppDelegate.swift */; };
@@ -45,25 +48,31 @@
 		4AF718AD705ED045705C27A5 /* Pods-WeiBoTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiBoTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeiBoTest/Pods-WeiBoTest.debug.xcconfig"; sourceTree = "<group>"; };
 		5CA185177CF14B93DFF61D7F /* Pods-WeiBoTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiBoTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeiBoTest/Pods-WeiBoTest.release.xcconfig"; sourceTree = "<group>"; };
 		AD6CFB131E1933560064D06A /* DFUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFUserAccount.swift; sourceTree = "<group>"; };
-		AD877D7A1E0B727F00299081 /* CZAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZAdditions.h; sourceTree = "<group>"; };
-		AD877D7B1E0B727F00299081 /* NSArray+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+CZAddition.h"; sourceTree = "<group>"; };
-		AD877D7C1E0B727F00299081 /* NSArray+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+CZAddition.m"; sourceTree = "<group>"; };
-		AD877D7D1E0B727F00299081 /* NSAttributedString+CZAdditon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+CZAdditon.h"; sourceTree = "<group>"; };
-		AD877D7E1E0B727F00299081 /* NSAttributedString+CZAdditon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+CZAdditon.m"; sourceTree = "<group>"; };
-		AD877D7F1E0B727F00299081 /* NSObject+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CZAddition.h"; sourceTree = "<group>"; };
-		AD877D801E0B727F00299081 /* NSObject+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CZAddition.m"; sourceTree = "<group>"; };
-		AD877D811E0B727F00299081 /* UIButton+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CZAddition.h"; sourceTree = "<group>"; };
-		AD877D821E0B727F00299081 /* UIButton+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CZAddition.m"; sourceTree = "<group>"; };
-		AD877D831E0B727F00299081 /* UIColor+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CZAddition.h"; sourceTree = "<group>"; };
-		AD877D841E0B727F00299081 /* UIColor+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CZAddition.m"; sourceTree = "<group>"; };
-		AD877D851E0B727F00299081 /* UILabel+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+CZAddition.h"; sourceTree = "<group>"; };
-		AD877D861E0B727F00299081 /* UILabel+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+CZAddition.m"; sourceTree = "<group>"; };
-		AD877D871E0B727F00299081 /* UIScreen+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+CZAddition.h"; sourceTree = "<group>"; };
-		AD877D881E0B727F00299081 /* UIScreen+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+CZAddition.m"; sourceTree = "<group>"; };
-		AD877D891E0B727F00299081 /* UIView+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CZAddition.h"; sourceTree = "<group>"; };
-		AD877D8A1E0B727F00299081 /* UIView+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CZAddition.m"; sourceTree = "<group>"; };
-		AD877D8B1E0B727F00299081 /* UIViewController+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CZAddition.h"; sourceTree = "<group>"; };
-		AD877D8C1E0B727F00299081 /* UIViewController+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CZAddition.m"; sourceTree = "<group>"; };
+		AD6CFB151E19440C0064D06A /* CZAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZAdditions.h; sourceTree = "<group>"; };
+		AD6CFB161E19440C0064D06A /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
+		AD6CFB171E19440C0064D06A /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
+		AD6CFB181E19440C0064D06A /* NSAttributedString+CZAdditon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+CZAdditon.h"; sourceTree = "<group>"; };
+		AD6CFB191E19440C0064D06A /* NSAttributedString+CZAdditon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+CZAdditon.m"; sourceTree = "<group>"; };
+		AD6CFB1A1E19440C0064D06A /* NSObject+CZRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CZRuntime.h"; sourceTree = "<group>"; };
+		AD6CFB1B1E19440C0064D06A /* NSObject+CZRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CZRuntime.m"; sourceTree = "<group>"; };
+		AD6CFB1C1E19440C0064D06A /* NSString+CZBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CZBase64.h"; sourceTree = "<group>"; };
+		AD6CFB1D1E19440C0064D06A /* NSString+CZBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CZBase64.m"; sourceTree = "<group>"; };
+		AD6CFB1E1E19440C0064D06A /* NSString+CZHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CZHash.h"; sourceTree = "<group>"; };
+		AD6CFB1F1E19440C0064D06A /* NSString+CZHash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CZHash.m"; sourceTree = "<group>"; };
+		AD6CFB201E19440C0064D06A /* NSString+CZPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CZPath.h"; sourceTree = "<group>"; };
+		AD6CFB211E19440C0064D06A /* NSString+CZPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CZPath.m"; sourceTree = "<group>"; };
+		AD6CFB221E19440C0064D06A /* UIButton+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CZAddition.h"; sourceTree = "<group>"; };
+		AD6CFB231E19440C0064D06A /* UIButton+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CZAddition.m"; sourceTree = "<group>"; };
+		AD6CFB241E19440C0064D06A /* UIColor+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CZAddition.h"; sourceTree = "<group>"; };
+		AD6CFB251E19440C0064D06A /* UIColor+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CZAddition.m"; sourceTree = "<group>"; };
+		AD6CFB261E19440C0064D06A /* UILabel+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+CZAddition.h"; sourceTree = "<group>"; };
+		AD6CFB271E19440C0064D06A /* UILabel+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+CZAddition.m"; sourceTree = "<group>"; };
+		AD6CFB281E19440C0064D06A /* UIScreen+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+CZAddition.h"; sourceTree = "<group>"; };
+		AD6CFB291E19440C0064D06A /* UIScreen+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+CZAddition.m"; sourceTree = "<group>"; };
+		AD6CFB2A1E19440C0064D06A /* UIView+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CZAddition.h"; sourceTree = "<group>"; };
+		AD6CFB2B1E19440C0064D06A /* UIView+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CZAddition.m"; sourceTree = "<group>"; };
+		AD6CFB2C1E19440C0064D06A /* UIViewController+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CZAddition.h"; sourceTree = "<group>"; };
+		AD6CFB2D1E19440C0064D06A /* UIViewController+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CZAddition.m"; sourceTree = "<group>"; };
 		AD877D961E0B72AB00299081 /* WeiBoTest_Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeiBoTest_Bridge.h; sourceTree = "<group>"; };
 		AD877D981E0B76E200299081 /* Bundle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		AD877D9A1E0B825100299081 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
@@ -122,25 +131,31 @@
 		AD877D791E0B727F00299081 /* CZAdditions */ = {
 			isa = PBXGroup;
 			children = (
-				AD877D7A1E0B727F00299081 /* CZAdditions.h */,
-				AD877D7B1E0B727F00299081 /* NSArray+CZAddition.h */,
-				AD877D7C1E0B727F00299081 /* NSArray+CZAddition.m */,
-				AD877D7D1E0B727F00299081 /* NSAttributedString+CZAdditon.h */,
-				AD877D7E1E0B727F00299081 /* NSAttributedString+CZAdditon.m */,
-				AD877D7F1E0B727F00299081 /* NSObject+CZAddition.h */,
-				AD877D801E0B727F00299081 /* NSObject+CZAddition.m */,
-				AD877D811E0B727F00299081 /* UIButton+CZAddition.h */,
-				AD877D821E0B727F00299081 /* UIButton+CZAddition.m */,
-				AD877D831E0B727F00299081 /* UIColor+CZAddition.h */,
-				AD877D841E0B727F00299081 /* UIColor+CZAddition.m */,
-				AD877D851E0B727F00299081 /* UILabel+CZAddition.h */,
-				AD877D861E0B727F00299081 /* UILabel+CZAddition.m */,
-				AD877D871E0B727F00299081 /* UIScreen+CZAddition.h */,
-				AD877D881E0B727F00299081 /* UIScreen+CZAddition.m */,
-				AD877D891E0B727F00299081 /* UIView+CZAddition.h */,
-				AD877D8A1E0B727F00299081 /* UIView+CZAddition.m */,
-				AD877D8B1E0B727F00299081 /* UIViewController+CZAddition.h */,
-				AD877D8C1E0B727F00299081 /* UIViewController+CZAddition.m */,
+				AD6CFB151E19440C0064D06A /* CZAdditions.h */,
+				AD6CFB161E19440C0064D06A /* NSArray+Log.h */,
+				AD6CFB171E19440C0064D06A /* NSArray+Log.m */,
+				AD6CFB181E19440C0064D06A /* NSAttributedString+CZAdditon.h */,
+				AD6CFB191E19440C0064D06A /* NSAttributedString+CZAdditon.m */,
+				AD6CFB1A1E19440C0064D06A /* NSObject+CZRuntime.h */,
+				AD6CFB1B1E19440C0064D06A /* NSObject+CZRuntime.m */,
+				AD6CFB1C1E19440C0064D06A /* NSString+CZBase64.h */,
+				AD6CFB1D1E19440C0064D06A /* NSString+CZBase64.m */,
+				AD6CFB1E1E19440C0064D06A /* NSString+CZHash.h */,
+				AD6CFB1F1E19440C0064D06A /* NSString+CZHash.m */,
+				AD6CFB201E19440C0064D06A /* NSString+CZPath.h */,
+				AD6CFB211E19440C0064D06A /* NSString+CZPath.m */,
+				AD6CFB221E19440C0064D06A /* UIButton+CZAddition.h */,
+				AD6CFB231E19440C0064D06A /* UIButton+CZAddition.m */,
+				AD6CFB241E19440C0064D06A /* UIColor+CZAddition.h */,
+				AD6CFB251E19440C0064D06A /* UIColor+CZAddition.m */,
+				AD6CFB261E19440C0064D06A /* UILabel+CZAddition.h */,
+				AD6CFB271E19440C0064D06A /* UILabel+CZAddition.m */,
+				AD6CFB281E19440C0064D06A /* UIScreen+CZAddition.h */,
+				AD6CFB291E19440C0064D06A /* UIScreen+CZAddition.m */,
+				AD6CFB2A1E19440C0064D06A /* UIView+CZAddition.h */,
+				AD6CFB2B1E19440C0064D06A /* UIView+CZAddition.m */,
+				AD6CFB2C1E19440C0064D06A /* UIViewController+CZAddition.h */,
+				AD6CFB2D1E19440C0064D06A /* UIViewController+CZAddition.m */,
 			);
 			path = CZAdditions;
 			sourceTree = "<group>";
@@ -448,17 +463,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD877D8D1E0B727F00299081 /* NSArray+CZAddition.m in Sources */,
+				AD6CFB351E19440C0064D06A /* UIColor+CZAddition.m in Sources */,
 				AD9A27F81E111B1800B1B4E3 /* DFNetworking+Extension.swift in Sources */,
 				AD877D991E0B76E200299081 /* Bundle+Extension.swift in Sources */,
 				AD89B9E71E0ACA2100D20E72 /* DFNavigationViewController.swift in Sources */,
+				AD6CFB311E19440C0064D06A /* NSString+CZBase64.m in Sources */,
 				AD9B784B1E0CD12E002F6BEA /* DFDemoViewController.swift in Sources */,
-				AD877D8E1E0B727F00299081 /* NSAttributedString+CZAdditon.m in Sources */,
-				AD877D921E0B727F00299081 /* UILabel+CZAddition.m in Sources */,
+				AD6CFB301E19440C0064D06A /* NSObject+CZRuntime.m in Sources */,
 				AD89B9E91E0ACA6700D20E72 /* DFBaseViewController.swift in Sources */,
+				AD6CFB321E19440C0064D06A /* NSString+CZHash.m in Sources */,
+				AD6CFB391E19440C0064D06A /* UIViewController+CZAddition.m in Sources */,
 				ADAB54D41E1234C200E0CCC5 /* DFStatue.swift in Sources */,
+				AD6CFB371E19440C0064D06A /* UIScreen+CZAddition.m in Sources */,
 				AD6CFB141E1933560064D06A /* DFUserAccount.swift in Sources */,
 				AD89B9F11E0ACAE200D20E72 /* DFProfileViewController.swift in Sources */,
+				AD6CFB331E19440C0064D06A /* NSString+CZPath.m in Sources */,
+				AD6CFB381E19440C0064D06A /* UIView+CZAddition.m in Sources */,
 				ADAB54D61E1234EB00E0CCC5 /* DFStatuesListViewModel.swift in Sources */,
 				ADA8C3161E0E1E99001CA74E /* DFModalViewController.swift in Sources */,
 				AD9B784F1E0CD7D2002F6BEA /* UIBarButtonItem+Extensions.swift in Sources */,
@@ -466,15 +486,13 @@
 				AD89B9E51E0AC9D900D20E72 /* DFMainViewController.swift in Sources */,
 				AD89B9ED1E0ACACF00D20E72 /* DFMessageViewController.swift in Sources */,
 				AD9CFA2A1E136B1F0014F870 /* DFOAuthViewController.swift in Sources */,
+				AD6CFB2E1E19440C0064D06A /* NSArray+Log.m in Sources */,
 				AD9CFA271E13681A0014F870 /* WeBoTestCommond.swift in Sources */,
 				AD89B9EF1E0ACAD800D20E72 /* DFDiscoverViewController.swift in Sources */,
-				AD877D951E0B727F00299081 /* UIViewController+CZAddition.m in Sources */,
-				AD877D931E0B727F00299081 /* UIScreen+CZAddition.m in Sources */,
-				AD877D941E0B727F00299081 /* UIView+CZAddition.m in Sources */,
-				AD877D8F1E0B727F00299081 /* NSObject+CZAddition.m in Sources */,
-				AD877D901E0B727F00299081 /* UIButton+CZAddition.m in Sources */,
+				AD6CFB341E19440C0064D06A /* UIButton+CZAddition.m in Sources */,
+				AD6CFB361E19440C0064D06A /* UILabel+CZAddition.m in Sources */,
+				AD6CFB2F1E19440C0064D06A /* NSAttributedString+CZAdditon.m in Sources */,
 				AD8CB78C1E0FA55E00BA3CC3 /* DFVisitorView.swift in Sources */,
-				AD877D911E0B727F00299081 /* UIColor+CZAddition.m in Sources */,
 				AD89B9F31E0ACB8D00D20E72 /* DFHomeViewController.swift in Sources */,
 				AD9A27F61E11089500B1B4E3 /* DFNetwokrManager.swift in Sources */,
 			);

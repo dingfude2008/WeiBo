@@ -1,8 +1,7 @@
 //
 //  UIScreen+CZAddition.m
-//  001-Meituan
 //
-//  Created by pkxing on 16/5/17.
+//  Created by 刘凡 on 16/5/17.
 //  Copyright © 2016年 itcast. All rights reserved.
 //
 
