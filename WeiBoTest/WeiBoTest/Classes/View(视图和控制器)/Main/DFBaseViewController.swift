@@ -44,7 +44,7 @@ class DFBaseViewController: UIViewController, UITableViewDataSource, UITableView
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(loginSuccess),
-            name: WeiBoTestUserLoginSuccessNotification,
+            name: NSNotification.Name(rawValue: WeiBoTestUserLoginSuccessNotification),
             object: nil)
     }
     
@@ -114,6 +114,11 @@ extension DFBaseViewController {
     @objc fileprivate func loginSuccess(n: NSNotification){
         
         print("登陆成功 : \(n)")
+        
+        // 登陆前，左边是注册，右边是登陆
+        
+        navItem.leftBarButtonItem = nil
+        navItem.rightBarButtonItem = nil
         
         // 更新 UI
         // 当调用 view 时，发现 view = nil, 会重新调用 loadView ->  viewDidLoad
@@ -188,6 +193,8 @@ extension DFBaseViewController {
         
         tableView?.contentInset = UIEdgeInsets(top: navigationBar.bounds.height, left: 0, bottom: tabBarController?.tabBar.bounds.height ?? 49, right: 0)
         
+        // 这里的强行解包是因为上面刚赋值，一定有
+        tableView?.scrollIndicatorInsets = tableView!.contentInset
         
         refreshControl = UIRefreshControl()
         
