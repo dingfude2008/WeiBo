@@ -59,7 +59,11 @@ class DFNetwokrManager: AFHTTPSessionManager {
         
         guard let token = userAccount.access_token  else {
             
+            //  toke 过期
+            //  发送通知登陆，下次请求的时候检查发现就直接跳转登陆界面
             print("token 为 nil")
+            
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: WeiBoTestUserShouldLoginNotification), object: nil)
             
             complection(nil, false)
             
@@ -89,9 +93,12 @@ class DFNetwokrManager: AFHTTPSessionManager {
         
         let failure = { (task : URLSessionDataTask?, error: Error)->() in
             
-//            if (task?.response as? HTTPURLResponse)?.statusCode == 400 {
-//                 print(error)
-//            }
+            // token 过期
+            if (task?.response as? HTTPURLResponse)?.statusCode == 400 {
+                // print(error)
+                
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: WeiBoTestUserShouldLoginNotification), object: "bad token")
+            }
             
             print(error)
             complection(nil, false)

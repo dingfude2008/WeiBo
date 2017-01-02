@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class DFMainViewController: UITabBarController {
 
@@ -45,10 +46,29 @@ class DFMainViewController: UITabBarController {
         
         print(#function)
         
-        let nav = UINavigationController(rootViewController: DFOAuthViewController())
+        var when = DispatchTime.now()
         
-        // modal 模态控制器，通常和UINavitionContrller 一起用
-        present(nav, animated: true, completion: nil)
+        // token 过期
+        if n.object != nil {
+        
+            // 渐变
+            SVProgressHUD.setDefaultMaskType(.gradient)
+            SVProgressHUD.showInfo(withStatus: "用户登陆已过期，请重新登陆")
+            
+            when = DispatchTime.now() + 1
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            
+            let nav = UINavigationController(rootViewController: DFOAuthViewController())
+            
+            // modal 模态控制器，通常和UINavitionContrller 一起用
+            self.present(nav, animated: true, completion: nil)
+            
+        }
+        
+        
+
         
     }
     

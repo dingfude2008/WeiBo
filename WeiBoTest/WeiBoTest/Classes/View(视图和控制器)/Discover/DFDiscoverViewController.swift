@@ -14,6 +14,9 @@ class DFDiscoverViewController: DFBaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        // 模拟teken过期
+        DFNetwokrManager.shared.userAccount.access_token = "12"
+        
     }
 
     override func didReceiveMemoryWarning() {
