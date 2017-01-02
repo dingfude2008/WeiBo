@@ -23,6 +23,8 @@ class DFMainViewController: UITabBarController {
         setupComposeButton()
         
         setupTimer()
+        
+        setupNewFeature()
 
         delegate = self
         
@@ -154,8 +156,30 @@ extension DFMainViewController : UITabBarControllerDelegate {
         
         
     }
+}
+
+
+// MARK: - 设置新特性界面
+extension DFMainViewController {
+
+    fileprivate func setupNewFeature() {
     
-    
+        // 0. 判断是否登录
+        if !DFNetwokrManager.shared.userLogon {
+            return
+        }
+        
+        // 1. 添加新特性
+        
+        let frame = view.bounds
+        let v = isNewVersion ? DFNewFeatureView(frame:frame) : DFWelecomView(frame:frame)
+        
+        view.addSubview(v)
+    }
+
+    fileprivate var isNewVersion : Bool {
+        return false
+    }
 
 }
 

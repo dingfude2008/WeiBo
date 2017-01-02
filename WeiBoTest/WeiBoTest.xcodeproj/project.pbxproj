@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AD6829E11E1A3FE7001C8074 /* DFTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6829E01E1A3FE7001C8074 /* DFTitleButton.swift */; };
+		AD6829E51E1A4C36001C8074 /* DFNewFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6829E41E1A4C36001C8074 /* DFNewFeatureView.swift */; };
+		AD6829E71E1A4C4A001C8074 /* DFWelecomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6829E61E1A4C4A001C8074 /* DFWelecomView.swift */; };
 		AD6CFB141E1933560064D06A /* DFUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6CFB131E1933560064D06A /* DFUserAccount.swift */; };
 		AD6CFB2E1E19440C0064D06A /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6CFB171E19440C0064D06A /* NSArray+Log.m */; };
 		AD6CFB2F1E19440C0064D06A /* NSAttributedString+CZAdditon.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6CFB191E19440C0064D06A /* NSAttributedString+CZAdditon.m */; };
@@ -49,6 +51,8 @@
 		4AF718AD705ED045705C27A5 /* Pods-WeiBoTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiBoTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeiBoTest/Pods-WeiBoTest.debug.xcconfig"; sourceTree = "<group>"; };
 		5CA185177CF14B93DFF61D7F /* Pods-WeiBoTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiBoTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeiBoTest/Pods-WeiBoTest.release.xcconfig"; sourceTree = "<group>"; };
 		AD6829E01E1A3FE7001C8074 /* DFTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFTitleButton.swift; sourceTree = "<group>"; };
+		AD6829E41E1A4C36001C8074 /* DFNewFeatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFNewFeatureView.swift; sourceTree = "<group>"; };
+		AD6829E61E1A4C4A001C8074 /* DFWelecomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFWelecomView.swift; sourceTree = "<group>"; };
 		AD6CFB131E1933560064D06A /* DFUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFUserAccount.swift; sourceTree = "<group>"; };
 		AD6CFB151E19440C0064D06A /* CZAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZAdditions.h; sourceTree = "<group>"; };
 		AD6CFB161E19440C0064D06A /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
@@ -128,6 +132,15 @@
 				AD6829E01E1A3FE7001C8074 /* DFTitleButton.swift */,
 			);
 			path = TitleButton;
+			sourceTree = "<group>";
+		};
+		AD6829E31E1A4936001C8074 /* NewFeature */ = {
+			isa = PBXGroup;
+			children = (
+				AD6829E41E1A4C36001C8074 /* DFNewFeatureView.swift */,
+				AD6829E61E1A4C4A001C8074 /* DFWelecomView.swift */,
+			);
+			path = NewFeature;
 			sourceTree = "<group>";
 		};
 		AD6CFB121E19332C0064D06A /* Model */ = {
@@ -262,6 +275,7 @@
 		AD89B9DD1E0AC82000D20E72 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				AD6829E31E1A4936001C8074 /* NewFeature */,
 				AD6829DF1E1A3FBB001C8074 /* TitleButton */,
 				AD89B9F21E0ACB8D00D20E72 /* DFHomeViewController.swift */,
 				AD9B784A1E0CD12E002F6BEA /* DFDemoViewController.swift */,
@@ -480,6 +494,7 @@
 				AD89B9E71E0ACA2100D20E72 /* DFNavigationViewController.swift in Sources */,
 				AD6CFB311E19440C0064D06A /* NSString+CZBase64.m in Sources */,
 				AD9B784B1E0CD12E002F6BEA /* DFDemoViewController.swift in Sources */,
+				AD6829E71E1A4C4A001C8074 /* DFWelecomView.swift in Sources */,
 				AD6CFB301E19440C0064D06A /* NSObject+CZRuntime.m in Sources */,
 				AD89B9E91E0ACA6700D20E72 /* DFBaseViewController.swift in Sources */,
 				AD6CFB321E19440C0064D06A /* NSString+CZHash.m in Sources */,
@@ -502,6 +517,7 @@
 				AD9CFA271E13681A0014F870 /* WeBoTestCommond.swift in Sources */,
 				AD89B9EF1E0ACAD800D20E72 /* DFDiscoverViewController.swift in Sources */,
 				AD6CFB341E19440C0064D06A /* UIButton+CZAddition.m in Sources */,
+				AD6829E51E1A4C36001C8074 /* DFNewFeatureView.swift in Sources */,
 				AD6CFB361E19440C0064D06A /* UILabel+CZAddition.m in Sources */,
 				AD6CFB2F1E19440C0064D06A /* NSAttributedString+CZAdditon.m in Sources */,
 				AD8CB78C1E0FA55E00BA3CC3 /* DFVisitorView.swift in Sources */,
