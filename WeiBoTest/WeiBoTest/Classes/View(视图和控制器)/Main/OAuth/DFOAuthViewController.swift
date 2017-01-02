@@ -127,7 +127,11 @@ extension DFOAuthViewController : UIWebViewDelegate {
                 SVProgressHUD.showInfo(withStatus: "请求成功")
                 
                 
-//                close()
+                NotificationCenter.default.post(
+                    name: NSNotification.Name(rawValue: WeiBoTestUserLoginSuccessNotification),
+                    object: nil)
+                
+                self.close()
                 
             }
             

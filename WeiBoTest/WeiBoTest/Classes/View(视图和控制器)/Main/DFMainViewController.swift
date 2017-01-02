@@ -25,7 +25,7 @@ class DFMainViewController: UITabBarController {
 
         delegate = self
         
-        NotificationCenter.default.addObserver(self, selector: #selector(userLogin), name: NSNotification.Name(rawValue: WeiBoTestUserLogin), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(userLogin), name: NSNotification.Name(rawValue: WeiBoTestUserShouldLoginNotification), object: nil)
         
         
     }

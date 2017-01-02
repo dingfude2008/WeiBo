@@ -40,6 +40,16 @@ class DFBaseViewController: UIViewController, UITableViewDataSource, UITableView
      
         DFNetwokrManager.shared.userLogon ? loadData() : ()
         
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(loginSuccess),
+            name: WeiBoTestUserLoginSuccessNotification,
+            object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     
@@ -101,6 +111,21 @@ class DFBaseViewController: UIViewController, UITableViewDataSource, UITableView
 // MARK: - 事件
 extension DFBaseViewController {
 
+    @objc fileprivate func loginSuccess(n: NSNotification){
+        
+        print("登陆成功 : \(n)")
+        
+        // 更新 UI
+        // 当调用 view 时，发现 view = nil, 会重新调用 loadView ->  viewDidLoad
+        
+        view = nil
+        
+        // 注销通知  ->  重新执行 viewDidLoad会再次注册通知
+        
+        NotificationCenter.default.removeObserver(self)
+        
+    }
+    
     func register(){
         print("register")
     }
@@ -108,7 +133,7 @@ extension DFBaseViewController {
     func login(){
         print("login")
         
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: WeiBoTestUserLogin), object: nil)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: WeiBoTestUserShouldLoginNotification), object: nil)
     }
     
 }

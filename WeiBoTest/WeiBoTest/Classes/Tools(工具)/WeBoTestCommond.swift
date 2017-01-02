@@ -25,5 +25,8 @@ let redirect_uri = "http://www.sz-hema.com/"
 //let secret = "c0733c56ed9f6a670301b975d7b6faeb"
 
 
-let WeiBoTestUserLogin = "WeiBoTestUserLogin"           // 登陆通知
+let WeiBoTestUserShouldLoginNotification = "WeiBoTestUserShouldLoginNotification"       // 应该登陆通知
+
+
+let WeiBoTestUserLoginSuccessNotification = "WeiBoTestUserShouldLoginNotification"      // 登陆成功通知
 
