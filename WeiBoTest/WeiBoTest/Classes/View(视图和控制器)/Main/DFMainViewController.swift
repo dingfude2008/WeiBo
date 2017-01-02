@@ -170,15 +170,39 @@ extension DFMainViewController {
         }
         
         // 1. 添加新特性
-        
         let frame = view.bounds
-        let v = isNewVersion ? DFNewFeatureView(frame:frame) : DFWelecomView(frame:frame)
+        let v = isNewVersion ? DFNewFeatureView.newFeatureView() : DFWelecomView.welecomView()
         
         view.addSubview(v)
     }
-
+    /**
+     版本号
+     - 在 AppStore 每次升级应用程序，版本号都需要增加，不能递减
+     
+     - 组成 主版本号.次版本号.修订版本号
+     - 主版本号：意味着大的修改，使用者也需要做大的适应
+     - 次版本号：意味着小的修改，某些函数和方法的使用或者参数有变化
+     - 修订版本号：框架／程序内部 bug 的修订，不会对使用者造成任何的影响
+     */
     fileprivate var isNewVersion : Bool {
-        return false
+        
+        // 比较当前版本和沙盒中的版本
+        let currentVersion : String = (Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String) ?? ""
+        
+        print("当前版本号:\(currentVersion)")
+        
+        let path : String = ("version" as NSString).cz_appendDocumentDir()
+        
+        let sandBoxVersion : String = (try? String(contentsOfFile: path)) ?? ""
+        
+        print("沙盒版本:\(sandBoxVersion)")
+        
+        // 写入沙盒
+        _ = try? currentVersion.write(toFile: path, atomically: true, encoding: .utf8)
+        
+        // TEST
+//        return currentVersion != sandBoxVersion
+        return true
     }
 
 }
