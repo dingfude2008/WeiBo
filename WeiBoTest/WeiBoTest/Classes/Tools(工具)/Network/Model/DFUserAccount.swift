@@ -8,6 +8,9 @@
 
 import UIKit
 
+fileprivate let accountFile : NSString = "useraccount.json"
+
+
 class DFUserAccount: NSObject {
 
     // 网络令牌
@@ -33,6 +36,41 @@ class DFUserAccount: NSObject {
         return yy_modelDescription()
     }
     
+    
+    override init() {
+    
+        super.init()
+        
+        // 从磁盘中加载json -> 字典
+        guard let path = accountFile.cz_appendDocumentDir(),
+            let data = NSData(contentsOfFile: path),
+            let dict = try? JSONSerialization.jsonObject(with: data as Data, options: []) else {
+            return
+        }
+        
+        
+        // 字典转模型 设置属性值
+        self.yy_modelSet(withJSON: dict)
+        
+        
+        // token 过期的处理
+        
+//        expiresDate = Date(timeIntervalSinceNow: -3600 * 24)
+        
+        if expiresDate?.compare(Date()) != .orderedDescending {
+            // token 过期
+            
+            
+            access_token = nil
+            
+            uid = nil
+            
+            // 删除 本地文件
+            try? FileManager.default.removeItem(atPath: path)
+            
+        }
+    
+    }
     
     
     
@@ -60,16 +98,10 @@ class DFUserAccount: NSObject {
         dict.removeValue(forKey: "expires_in")
         
         guard let data = try? JSONSerialization.data(withJSONObject: dict, options: []),
-            let filePath = ("useraccount.json" as NSString).cz_appendDocumentDir()
+            let filePath = accountFile.cz_appendDocumentDir()
         else {
             return
         }
-        
-        
-        
-//        let data = try? JSONSerialization.data(withJSONObject: dict, options: [])
-        
-        
         
         let isOK = (data as NSData).write(toFile: filePath, atomically: true)
         

@@ -111,13 +111,27 @@ extension DFOAuthViewController : UIWebViewDelegate {
         
         range = NSMakeRange(range.location + 6, absoluteString.characters.count - range.location - 6)
         
-        let access = (absoluteString as NSString).substring(with: range)
+        let code = (absoluteString as NSString).substring(with: range)
         
         
         print("access : \(access)")
         
         
-        DFNetwokrManager.shared.loadAccessToken(code: access)
+        DFNetwokrManager.shared.loadAccessToken(code: code) { (isSuccess) in
+            
+            if !isSuccess {
+            
+                SVProgressHUD.showInfo(withStatus: "请求失败")
+            } else {
+                
+                SVProgressHUD.showInfo(withStatus: "请求成功")
+                
+                
+//                close()
+                
+            }
+            
+        }
         
         return false
     }

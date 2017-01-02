@@ -84,7 +84,7 @@ extension DFNetwokrManager {
 
 extension DFNetwokrManager {
 
-    func loadAccessToken(code: String){
+    func loadAccessToken(code: String, completion:@escaping(_ isSuccess: Bool)->()){
     
         let urlString = "https://api.weibo.com/oauth2/access_token"
         
@@ -95,13 +95,19 @@ extension DFNetwokrManager {
                       "redirect_uri" : redirect_uri]
         
         request(method: .POST, URLString: urlString, parameters:params as [String : AnyObject]?) { (json, isSuccess) in
-            print(json ?? "")
             
-            self.userAccount.yy_modelSet(with: (json as? [String : AnyObject]) ?? [:])
+            print(json ?? "网络请求失败")
             
-            print(self.userAccount)
+            if isSuccess {
+                
+                self.userAccount.yy_modelSet(with: (json as? [String : AnyObject]) ?? [:])
+                
+                print(self.userAccount)
+                
+                self.userAccount.saveAccount()
+            }
             
-            self.userAccount.saveAccount()
+            completion(isSuccess)
         }
     
     }
