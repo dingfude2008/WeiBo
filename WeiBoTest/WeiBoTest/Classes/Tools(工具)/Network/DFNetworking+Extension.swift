@@ -98,21 +98,43 @@ extension DFNetwokrManager {
             
             print(json ?? "网络请求失败")
             
-            if isSuccess {
-                
-                self.userAccount.yy_modelSet(with: (json as? [String : AnyObject]) ?? [:])
-                
-                print(self.userAccount)
-                
-                self.userAccount.saveAccount()
-            }
+            //设置模型
+            self.userAccount.yy_modelSet(with: (json as? [String : AnyObject]) ?? [:])
             
-            completion(isSuccess)
+            print(self.userAccount)
+            
+            self.loadUserInfo(complection: { (dict) in
+                
+                // 再次//设置模型
+                self.userAccount.yy_modelSet(with: dict)
+                
+                // 保存
+                self.userAccount.saveAccount()
+                
+                completion(isSuccess)
+            })
         }
     
     }
     
     
+    /// 加载用户信息
+    ///
+    /// - Parameter dict: 返回
+    func loadUserInfo(complection: @escaping ([String: Any])->()){
+        
+        guard let uid = userAccount.uid else {
+            return
+        }
+        
+        let urlString = "https://api.weibo.com/2/users/show.json"
+        
+        let params = ["uid" : uid]
+        
+        tokenRequest(URLString: urlString, parameters: params as [String : AnyObject]?) { (json, isSuccess) in
+            complection((json as? [String : Any]) ?? [:])
+        }
+    }
     
     
 }

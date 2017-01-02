@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD6829E11E1A3FE7001C8074 /* DFTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6829E01E1A3FE7001C8074 /* DFTitleButton.swift */; };
 		AD6CFB141E1933560064D06A /* DFUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6CFB131E1933560064D06A /* DFUserAccount.swift */; };
 		AD6CFB2E1E19440C0064D06A /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6CFB171E19440C0064D06A /* NSArray+Log.m */; };
 		AD6CFB2F1E19440C0064D06A /* NSAttributedString+CZAdditon.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6CFB191E19440C0064D06A /* NSAttributedString+CZAdditon.m */; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		4AF718AD705ED045705C27A5 /* Pods-WeiBoTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiBoTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeiBoTest/Pods-WeiBoTest.debug.xcconfig"; sourceTree = "<group>"; };
 		5CA185177CF14B93DFF61D7F /* Pods-WeiBoTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiBoTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeiBoTest/Pods-WeiBoTest.release.xcconfig"; sourceTree = "<group>"; };
+		AD6829E01E1A3FE7001C8074 /* DFTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFTitleButton.swift; sourceTree = "<group>"; };
 		AD6CFB131E1933560064D06A /* DFUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFUserAccount.swift; sourceTree = "<group>"; };
 		AD6CFB151E19440C0064D06A /* CZAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZAdditions.h; sourceTree = "<group>"; };
 		AD6CFB161E19440C0064D06A /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
@@ -118,6 +120,14 @@
 				B4D222A027863A6EFFC0BA20 /* Pods_WeiBoTest.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AD6829DF1E1A3FBB001C8074 /* TitleButton */ = {
+			isa = PBXGroup;
+			children = (
+				AD6829E01E1A3FE7001C8074 /* DFTitleButton.swift */,
+			);
+			path = TitleButton;
 			sourceTree = "<group>";
 		};
 		AD6CFB121E19332C0064D06A /* Model */ = {
@@ -252,6 +262,7 @@
 		AD89B9DD1E0AC82000D20E72 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				AD6829DF1E1A3FBB001C8074 /* TitleButton */,
 				AD89B9F21E0ACB8D00D20E72 /* DFHomeViewController.swift */,
 				AD9B784A1E0CD12E002F6BEA /* DFDemoViewController.swift */,
 				ADA8C3151E0E1E99001CA74E /* DFModalViewController.swift */,
@@ -483,6 +494,7 @@
 				ADA8C3161E0E1E99001CA74E /* DFModalViewController.swift in Sources */,
 				AD9B784F1E0CD7D2002F6BEA /* UIBarButtonItem+Extensions.swift in Sources */,
 				AD89B9C71E0AC29B00D20E72 /* AppDelegate.swift in Sources */,
+				AD6829E11E1A3FE7001C8074 /* DFTitleButton.swift in Sources */,
 				AD89B9E51E0AC9D900D20E72 /* DFMainViewController.swift in Sources */,
 				AD89B9ED1E0ACACF00D20E72 /* DFMessageViewController.swift in Sources */,
 				AD9CFA2A1E136B1F0014F870 /* DFOAuthViewController.swift in Sources */,

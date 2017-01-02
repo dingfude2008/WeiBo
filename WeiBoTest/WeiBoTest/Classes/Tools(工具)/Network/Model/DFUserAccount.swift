@@ -31,6 +31,14 @@ class DFUserAccount: NSObject {
     // 过期时间
     var expiresDate : Date?
     
+    
+    /// 昵称
+    var screen_name : String?
+    
+    /// 头像
+    var avatar_large : String?
+    
+    
     override var description: String {
     
         return yy_modelDescription()

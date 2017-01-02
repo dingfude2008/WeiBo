@@ -92,8 +92,25 @@ extension DFHomeViewController {
         tableView?.register(NSClassFromString("UITableViewCell"), forCellReuseIdentifier: cellID)
         
         
-        
+        setupTitle()
     }
+    
+    fileprivate func setupTitle(){
+        
+        let title = DFNetwokrManager.shared.userAccount.screen_name
+        
+        let button = DFTitleButton(title: title)
+        
+        button.addTarget(self, action: #selector(clickTitleButton), for: .touchUpInside)
+        
+        navItem.titleView = button
+    }
+    
+    @objc fileprivate func clickTitleButton(btn: UIButton) {
+    
+        btn.isSelected = !btn.isSelected
+    }
+    
     
 }
 
