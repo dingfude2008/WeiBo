@@ -23,7 +23,7 @@ class DFTitleButton: UIButton {
             setTitle("首页", for: [])
         }else {
         
-            setTitle(title, for: [])
+            setTitle(title! + " ", for: [])
             
             setImage(UIImage(named:"navigationbar_arrow_down"), for: [])
             setImage(UIImage(named:"navigationbar_arrow_up"), for: .selected)
@@ -41,5 +41,23 @@ class DFTitleButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
 
+    
+    
+    /// 重写
+    override func layoutSubviews() {
+        
+        super.layoutSubviews()
+        
+        // 判断同时存在，如果是首页，就不需要了
+        guard let titleLabel = titleLabel,
+            let imageView = imageView else {
+            return
+        }
+        
+        titleLabel.frame.origin.x = 0
+        
+        imageView.frame.origin.x = titleLabel.frame.size.width
+        
+    }
     
 }
