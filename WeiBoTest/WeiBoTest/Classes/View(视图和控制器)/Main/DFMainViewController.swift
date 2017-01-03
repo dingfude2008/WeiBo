@@ -143,19 +143,6 @@ extension DFMainViewController : UITabBarControllerDelegate {
         return !viewController.isMember(of: UIViewController.self)
     }
     
-    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        
-//        let idx = (childViewControllers as NSArray).index(of: viewController)
-//        
-//        if selectedIndex == 0 && selectedIndex == idx {
-//            print("是第一个")
-//        }
-//    
-//        
-////        selectController
-        
-        
-    }
 }
 
 
