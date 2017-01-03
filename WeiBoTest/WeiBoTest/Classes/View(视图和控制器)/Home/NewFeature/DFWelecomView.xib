@@ -46,6 +46,7 @@
             <connections>
                 <outlet property="bottomCons" destination="Vfg-df-fBu" id="5KL-Dn-Ha3"/>
                 <outlet property="iconView" destination="nd8-Ia-SUu" id="85B-Bh-CHj"/>
+                <outlet property="iconWidthCons" destination="kSM-ii-8VT" id="LdC-rq-ALb"/>
                 <outlet property="tipLabel" destination="vED-jh-6G0" id="3T4-Ra-7C0"/>
             </connections>
             <point key="canvasLocation" x="32.5" y="60.5"/>

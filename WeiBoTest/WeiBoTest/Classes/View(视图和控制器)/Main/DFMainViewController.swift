@@ -201,8 +201,8 @@ extension DFMainViewController {
         _ = try? currentVersion.write(toFile: path, atomically: true, encoding: .utf8)
         
         // TEST
-//        return currentVersion != sandBoxVersion
-        return true
+        return currentVersion != sandBoxVersion
+//        return true
     }
 
 }

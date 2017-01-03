@@ -16,6 +16,8 @@ class DFWelecomView: UIView {
     @IBOutlet weak var iconView: UIImageView!
     @IBOutlet weak var tipLabel: UILabel!
     @IBOutlet weak var bottomCons: NSLayoutConstraint!
+    @IBOutlet weak var iconWidthCons: NSLayoutConstraint!
+    
     
     /// 类方法
     class func welecomView() -> DFWelecomView{
@@ -45,8 +47,8 @@ class DFWelecomView: UIView {
             placeholderImage: UIImage(named: "avatar_default_big"))
         
         /// FIXME
-        
-        iconView.layer.cornerRadius = iconView.bounds.width * 0.5
+        // 因为在 awakeFromNib 中， 布局还没有生效所以没有 iconView.bounds.width * 0.5 不生效
+        iconView.layer.cornerRadius = iconWidthCons.constant * 0.5
         iconView.layer.masksToBounds = true
     }
     
