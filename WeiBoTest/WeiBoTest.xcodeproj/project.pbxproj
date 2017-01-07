@@ -19,7 +19,8 @@
 		AD6A8E5C1E20CF6000804B2A /* UIImageView+WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6A8E5B1E20CF6000804B2A /* UIImageView+WebImage.swift */; };
 		AD6A8E5E1E20D19E00804B2A /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6A8E5D1E20D19E00804B2A /* UIImage+Extensions.swift */; };
 		AD6A8E601E21155000804B2A /* DFStatusToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6A8E5F1E21155000804B2A /* DFStatusToolBar.swift */; };
-		AD6A8E621E211F1B00804B2A /* DFStatusPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6A8E611E211F1B00804B2A /* DFStatusPicture.swift */; };
+		AD6A8E621E211F1B00804B2A /* DFStatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6A8E611E211F1B00804B2A /* DFStatusPictureView.swift */; };
+		AD6A8E641E21265600804B2A /* DFStatusPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6A8E631E21265600804B2A /* DFStatusPicture.swift */; };
 		AD6CFB141E1933560064D06A /* DFUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6CFB131E1933560064D06A /* DFUserAccount.swift */; };
 		AD6CFB2E1E19440C0064D06A /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6CFB171E19440C0064D06A /* NSArray+Log.m */; };
 		AD6CFB2F1E19440C0064D06A /* NSAttributedString+CZAdditon.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6CFB191E19440C0064D06A /* NSAttributedString+CZAdditon.m */; };
@@ -72,7 +73,8 @@
 		AD6A8E5B1E20CF6000804B2A /* UIImageView+WebImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+WebImage.swift"; sourceTree = "<group>"; };
 		AD6A8E5D1E20D19E00804B2A /* UIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		AD6A8E5F1E21155000804B2A /* DFStatusToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFStatusToolBar.swift; sourceTree = "<group>"; };
-		AD6A8E611E211F1B00804B2A /* DFStatusPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFStatusPicture.swift; sourceTree = "<group>"; };
+		AD6A8E611E211F1B00804B2A /* DFStatusPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFStatusPictureView.swift; sourceTree = "<group>"; };
+		AD6A8E631E21265600804B2A /* DFStatusPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFStatusPicture.swift; sourceTree = "<group>"; };
 		AD6CFB131E1933560064D06A /* DFUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFUserAccount.swift; sourceTree = "<group>"; };
 		AD6CFB151E19440C0064D06A /* CZAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZAdditions.h; sourceTree = "<group>"; };
 		AD6CFB161E19440C0064D06A /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
@@ -170,7 +172,7 @@
 			children = (
 				AD6A8E551E2097F700804B2A /* DFStatusCell.swift */,
 				AD6A8E5F1E21155000804B2A /* DFStatusToolBar.swift */,
-				AD6A8E611E211F1B00804B2A /* DFStatusPicture.swift */,
+				AD6A8E611E211F1B00804B2A /* DFStatusPictureView.swift */,
 				AD6A8E531E208C1100804B2A /* DFStatusNormalCell.xib */,
 			);
 			path = StatusCell;
@@ -273,6 +275,7 @@
 			children = (
 				ADAB54D31E1234C200E0CCC5 /* DFStatue.swift */,
 				AD6A8E571E209D0700804B2A /* DFUser.swift */,
+				AD6A8E631E21265600804B2A /* DFStatusPicture.swift */,
 			);
 			path = "Model(模型)";
 			sourceTree = "<group>";
@@ -544,6 +547,7 @@
 				AD6CFB301E19440C0064D06A /* NSObject+CZRuntime.m in Sources */,
 				AD89B9E91E0ACA6700D20E72 /* DFBaseViewController.swift in Sources */,
 				AD6CFB321E19440C0064D06A /* NSString+CZHash.m in Sources */,
+				AD6A8E641E21265600804B2A /* DFStatusPicture.swift in Sources */,
 				AD6CFB391E19440C0064D06A /* UIViewController+CZAddition.m in Sources */,
 				ADAB54D41E1234C200E0CCC5 /* DFStatue.swift in Sources */,
 				AD6CFB371E19440C0064D06A /* UIScreen+CZAddition.m in Sources */,
@@ -567,7 +571,7 @@
 				AD6CFB341E19440C0064D06A /* UIButton+CZAddition.m in Sources */,
 				AD6829E51E1A4C36001C8074 /* DFNewFeatureView.swift in Sources */,
 				AD6CFB361E19440C0064D06A /* UILabel+CZAddition.m in Sources */,
-				AD6A8E621E211F1B00804B2A /* DFStatusPicture.swift in Sources */,
+				AD6A8E621E211F1B00804B2A /* DFStatusPictureView.swift in Sources */,
 				AD6A8E561E2097F700804B2A /* DFStatusCell.swift in Sources */,
 				AD6CFB2F1E19440C0064D06A /* NSAttributedString+CZAdditon.m in Sources */,
 				AD8CB78C1E0FA55E00BA3CC3 /* DFVisitorView.swift in Sources */,

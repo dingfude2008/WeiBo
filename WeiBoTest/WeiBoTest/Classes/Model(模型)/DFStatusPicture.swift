@@ -8,9 +8,10 @@
 
 import Foundation
 
-class DFStatusPicture: UIView {
+class DFStatusPicture: NSObject {
     
     
-    /// 配图视图的高度
-    @IBOutlet weak var heigthCons: NSLayoutConstraint!
+    ///
+    var thumbnail_pic : String?
+    
 }

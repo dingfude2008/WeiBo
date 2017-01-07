@@ -47,7 +47,7 @@ class DFStatusCell: UITableViewCell {
     @IBOutlet weak var toolBar: WBStatusToolBar!
     
     /// 配图视图
-    @IBOutlet weak var pictureView: DFStatusPicture!
+    @IBOutlet weak var pictureView: DFStatusPictureView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

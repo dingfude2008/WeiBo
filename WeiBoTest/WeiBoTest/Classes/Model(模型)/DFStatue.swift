@@ -27,10 +27,23 @@ class DFStatue: NSObject {
     /// 微博的用户 - 注意和服务器返回的 KEY 要一致 因为 返回的这个微博JSon中含有一个 user的对象
     var user: DFUser?
     
+    /// 微博配图模型数组
+    var pic_urls:[DFStatusPicture]?
+    
     
     /// 重写计算性属性
     override var description: String{
         return yy_modelDescription()
+    }
+    
+    
+    /// 返回 数组中的模型是什么类的
+    /// NSAarray 中通常存的是 'id'类型
+    /// OC 中的泛型是为了兼容 Swift 才添加的，
+    /// 从运行时的角度，仍然不知道数组中存放的是什么对象
+    /// - Returns: 映射字典
+    class func modelContainerPropertyGenericClass() -> [String : AnyClass]{
+        return ["pic_urls": DFStatusPicture.self]
     }
     
 }
