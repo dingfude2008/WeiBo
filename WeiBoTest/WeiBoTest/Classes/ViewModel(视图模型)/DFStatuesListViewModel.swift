@@ -49,7 +49,7 @@ class DFStatuesListViewModel {
                 return
             }
             
-            print("刷新了\(array.count)条数据")
+            print("刷新了\(array.count)条数据 \(array)")
             
             if pullup {
                 
