@@ -69,8 +69,15 @@ extension DFHomeViewController{
         // 取cell
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! DFStatusCell
         
+        
+        let statesViewModel : DFStatesViewModel = listViewModel.statuesList[indexPath.row]
         // 设置cell
-        cell.statusLabel.text = listViewModel.statuesList[indexPath.row].text
+        
+        cell.statusViewModel = statesViewModel
+//        
+//        cell.statusLabel.text = statesViewModel.status.text
+//        
+//        cell.nameLabel.text = statesViewModel.status.user?.screen_name
         
         // 返回cell
         return cell

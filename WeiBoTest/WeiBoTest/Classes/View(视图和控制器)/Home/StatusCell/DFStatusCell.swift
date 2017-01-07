@@ -10,6 +10,15 @@ import UIKit
 
 class DFStatusCell: UITableViewCell {
 
+    var statusViewModel : DFStatesViewModel? {
+        didSet{
+            statusLabel.text = statusViewModel?.status.text
+            nameLabel.text = statusViewModel?.status.user?.screen_name
+            memberIconView.image = statusViewModel?.memberIcon
+            vipIconView.image = statusViewModel?.vipIcon
+        }
+    }
+    
     /// 头像
     @IBOutlet weak var iconView: UIImageView!
     /// 姓名
