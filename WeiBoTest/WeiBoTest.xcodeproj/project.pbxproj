@@ -14,6 +14,7 @@
 		AD6829E91E1A59B7001C8074 /* DFWelecomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD6829E81E1A59B7001C8074 /* DFWelecomView.xib */; };
 		AD6A8E541E208C1100804B2A /* DFStatusNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD6A8E531E208C1100804B2A /* DFStatusNormalCell.xib */; };
 		AD6A8E561E2097F700804B2A /* DFStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6A8E551E2097F700804B2A /* DFStatusCell.swift */; };
+		AD6A8E581E209D0700804B2A /* DFUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6A8E571E209D0700804B2A /* DFUser.swift */; };
 		AD6CFB141E1933560064D06A /* DFUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6CFB131E1933560064D06A /* DFUserAccount.swift */; };
 		AD6CFB2E1E19440C0064D06A /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6CFB171E19440C0064D06A /* NSArray+Log.m */; };
 		AD6CFB2F1E19440C0064D06A /* NSAttributedString+CZAdditon.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6CFB191E19440C0064D06A /* NSAttributedString+CZAdditon.m */; };
@@ -61,6 +62,7 @@
 		AD6829E81E1A59B7001C8074 /* DFWelecomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DFWelecomView.xib; sourceTree = "<group>"; };
 		AD6A8E531E208C1100804B2A /* DFStatusNormalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DFStatusNormalCell.xib; sourceTree = "<group>"; };
 		AD6A8E551E2097F700804B2A /* DFStatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFStatusCell.swift; sourceTree = "<group>"; };
+		AD6A8E571E209D0700804B2A /* DFUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFUser.swift; sourceTree = "<group>"; };
 		AD6CFB131E1933560064D06A /* DFUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFUserAccount.swift; sourceTree = "<group>"; };
 		AD6CFB151E19440C0064D06A /* CZAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZAdditions.h; sourceTree = "<group>"; };
 		AD6CFB161E19440C0064D06A /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				ADAB54D31E1234C200E0CCC5 /* DFStatue.swift */,
+				AD6A8E571E209D0700804B2A /* DFUser.swift */,
 			);
 			path = "Model(模型)";
 			sourceTree = "<group>";
@@ -519,6 +522,7 @@
 				AD89B9E71E0ACA2100D20E72 /* DFNavigationViewController.swift in Sources */,
 				AD6CFB311E19440C0064D06A /* NSString+CZBase64.m in Sources */,
 				AD9B784B1E0CD12E002F6BEA /* DFDemoViewController.swift in Sources */,
+				AD6A8E581E209D0700804B2A /* DFUser.swift in Sources */,
 				AD6829E71E1A4C4A001C8074 /* DFWelecomView.swift in Sources */,
 				AD6CFB301E19440C0064D06A /* NSObject+CZRuntime.m in Sources */,
 				AD89B9E91E0ACA6700D20E72 /* DFBaseViewController.swift in Sources */,
