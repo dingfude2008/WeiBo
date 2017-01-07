@@ -12,6 +12,8 @@
 		AD6829E51E1A4C36001C8074 /* DFNewFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6829E41E1A4C36001C8074 /* DFNewFeatureView.swift */; };
 		AD6829E71E1A4C4A001C8074 /* DFWelecomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6829E61E1A4C4A001C8074 /* DFWelecomView.swift */; };
 		AD6829E91E1A59B7001C8074 /* DFWelecomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD6829E81E1A59B7001C8074 /* DFWelecomView.xib */; };
+		AD6A8E541E208C1100804B2A /* DFStatusNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD6A8E531E208C1100804B2A /* DFStatusNormalCell.xib */; };
+		AD6A8E561E2097F700804B2A /* DFStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6A8E551E2097F700804B2A /* DFStatusCell.swift */; };
 		AD6CFB141E1933560064D06A /* DFUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6CFB131E1933560064D06A /* DFUserAccount.swift */; };
 		AD6CFB2E1E19440C0064D06A /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6CFB171E19440C0064D06A /* NSArray+Log.m */; };
 		AD6CFB2F1E19440C0064D06A /* NSAttributedString+CZAdditon.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6CFB191E19440C0064D06A /* NSAttributedString+CZAdditon.m */; };
@@ -57,6 +59,8 @@
 		AD6829E41E1A4C36001C8074 /* DFNewFeatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFNewFeatureView.swift; sourceTree = "<group>"; };
 		AD6829E61E1A4C4A001C8074 /* DFWelecomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFWelecomView.swift; sourceTree = "<group>"; };
 		AD6829E81E1A59B7001C8074 /* DFWelecomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DFWelecomView.xib; sourceTree = "<group>"; };
+		AD6A8E531E208C1100804B2A /* DFStatusNormalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DFStatusNormalCell.xib; sourceTree = "<group>"; };
+		AD6A8E551E2097F700804B2A /* DFStatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFStatusCell.swift; sourceTree = "<group>"; };
 		AD6CFB131E1933560064D06A /* DFUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFUserAccount.swift; sourceTree = "<group>"; };
 		AD6CFB151E19440C0064D06A /* CZAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZAdditions.h; sourceTree = "<group>"; };
 		AD6CFB161E19440C0064D06A /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
@@ -147,6 +151,15 @@
 				AD6829E81E1A59B7001C8074 /* DFWelecomView.xib */,
 			);
 			path = NewFeature;
+			sourceTree = "<group>";
+		};
+		AD6A8E4F1E208BCD00804B2A /* StatusCell */ = {
+			isa = PBXGroup;
+			children = (
+				AD6A8E551E2097F700804B2A /* DFStatusCell.swift */,
+				AD6A8E531E208C1100804B2A /* DFStatusNormalCell.xib */,
+			);
+			path = StatusCell;
 			sourceTree = "<group>";
 		};
 		AD6CFB121E19332C0064D06A /* Model */ = {
@@ -261,7 +274,7 @@
 		AD89B9DB1E0AC82000D20E72 /* View(视图和控制器) */ = {
 			isa = PBXGroup;
 			children = (
-				AD89B9DE1E0AC82000D20E72 /* Main */,
+				AD89B9DE1E0AC82000D20E72 /* Main(主要的) */,
 				AD89B9DD1E0AC82000D20E72 /* Home */,
 				AD89B9E11E0AC84C00D20E72 /* Message */,
 				AD89B9DC1E0AC82000D20E72 /* Discover */,
@@ -281,6 +294,7 @@
 		AD89B9DD1E0AC82000D20E72 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				AD6A8E4F1E208BCD00804B2A /* StatusCell */,
 				AD6829E31E1A4936001C8074 /* NewFeature */,
 				AD6829DF1E1A3FBB001C8074 /* TitleButton */,
 				AD89B9F21E0ACB8D00D20E72 /* DFHomeViewController.swift */,
@@ -290,13 +304,14 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		AD89B9DE1E0AC82000D20E72 /* Main */ = {
+		AD89B9DE1E0AC82000D20E72 /* Main(主要的) */ = {
 			isa = PBXGroup;
 			children = (
-				AD9CFA281E136AFD0014F870 /* OAuth */,
+				AD9CFA281E136AFD0014F870 /* OAuth(授权) */,
 				AD8CB7891E0FA51400BA3CC3 /* 主控制器 */,
-				AD8CB78A1E0FA54100BA3CC3 /* VisitorView */,
+				AD8CB78A1E0FA54100BA3CC3 /* VisitorView(访客视图) */,
 			);
+			name = "Main(主要的)";
 			path = Main;
 			sourceTree = "<group>";
 		};
@@ -335,12 +350,12 @@
 			name = "主控制器";
 			sourceTree = "<group>";
 		};
-		AD8CB78A1E0FA54100BA3CC3 /* VisitorView */ = {
+		AD8CB78A1E0FA54100BA3CC3 /* VisitorView(访客视图) */ = {
 			isa = PBXGroup;
 			children = (
 				AD8CB78B1E0FA55E00BA3CC3 /* DFVisitorView.swift */,
 			);
-			name = VisitorView;
+			name = "VisitorView(访客视图)";
 			sourceTree = "<group>";
 		};
 		AD9A27F41E10FCCD00B1B4E3 /* Network */ = {
@@ -353,11 +368,12 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		AD9CFA281E136AFD0014F870 /* OAuth */ = {
+		AD9CFA281E136AFD0014F870 /* OAuth(授权) */ = {
 			isa = PBXGroup;
 			children = (
 				AD9CFA291E136B1F0014F870 /* DFOAuthViewController.swift */,
 			);
+			name = "OAuth(授权)";
 			path = OAuth;
 			sourceTree = "<group>";
 		};
@@ -437,6 +453,7 @@
 				AD44B5E21E1A91310003E14B /* DFNewFeatureView.xib in Resources */,
 				AD877D9B1E0B825100299081 /* main.json in Resources */,
 				AD6829E91E1A59B7001C8074 /* DFWelecomView.xib in Resources */,
+				AD6A8E541E208C1100804B2A /* DFStatusNormalCell.xib in Resources */,
 				AD89B9CE1E0AC29B00D20E72 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -527,6 +544,7 @@
 				AD6CFB341E19440C0064D06A /* UIButton+CZAddition.m in Sources */,
 				AD6829E51E1A4C36001C8074 /* DFNewFeatureView.swift in Sources */,
 				AD6CFB361E19440C0064D06A /* UILabel+CZAddition.m in Sources */,
+				AD6A8E561E2097F700804B2A /* DFStatusCell.swift in Sources */,
 				AD6CFB2F1E19440C0064D06A /* NSAttributedString+CZAdditon.m in Sources */,
 				AD8CB78C1E0FA55E00BA3CC3 /* DFVisitorView.swift in Sources */,
 				AD89B9F31E0ACB8D00D20E72 /* DFHomeViewController.swift in Sources */,

@@ -135,11 +135,6 @@ extension DFMainViewController : UITabBarControllerDelegate {
         }
         
         
-        
-        
-        
-        
-        
         return !viewController.isMember(of: UIViewController.self)
     }
     

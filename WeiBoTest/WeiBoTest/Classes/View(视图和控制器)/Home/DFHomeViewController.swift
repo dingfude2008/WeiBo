@@ -67,10 +67,10 @@ extension DFHomeViewController{
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // 取cell
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! DFStatusCell
         
         // 设置cell
-        cell.textLabel?.text = listViewModel.statuesList[indexPath.row].text
+        cell.statusLabel.text = listViewModel.statuesList[indexPath.row].text
         
         // 返回cell
         return cell
@@ -89,8 +89,13 @@ extension DFHomeViewController {
         
         navItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showFriends))
         
-        tableView?.register(NSClassFromString("UITableViewCell"), forCellReuseIdentifier: cellID)
+        tableView?.register(UINib(nibName: "DFStatusNormalCell", bundle: nil), forCellReuseIdentifier: cellID)
         
+        tableView?.rowHeight = UITableViewAutomaticDimension    // 自动行高
+        
+        tableView?.estimatedRowHeight = 300 // 预估行高
+        
+        tableView?.separatorStyle = .none
         
         setupTitle()
     }
