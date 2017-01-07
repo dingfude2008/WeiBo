@@ -74,7 +74,7 @@ class DFStatesViewModel : CustomStringConvertible {
         }
         
         // 测试
-        model.reposts_count = Int(arc4random_uniform(100000))
+        // model.reposts_count = Int(arc4random_uniform(100000))
         
         retweetedStr = countString(count: model.reposts_count, defaultStr: "转发")
         commentStr = countString(count: model.comments_count, defaultStr: "评论")
@@ -119,7 +119,31 @@ class DFStatesViewModel : CustomStringConvertible {
     /// - Parameter count: 数量
     /// - Returns: 大小
     fileprivate func calcPictureViewSize(count : Int?) -> CGSize{
-        return CGSize(width: 100, height: 300)
+        
+        if count == nil || count == 0 {
+            return CGSize()
+        }
+        
+        
+        let row = (count! - 1) / 3 + 1
+        
+        
+        // 计算行高
+        var height = DFStatusPictureViewOutterMargin
+        height += CGFloat(row) * DFStatusPictureItemWidth
+        height += CGFloat(row - 1) * DFStatusPictureViewInnerMargin
+        
+        return CGSize(width: DFStatusPictureItemWidth, height: height)
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 }

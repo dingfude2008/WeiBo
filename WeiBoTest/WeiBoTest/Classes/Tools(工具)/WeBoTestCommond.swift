@@ -30,3 +30,14 @@ let WeiBoTestUserShouldLoginNotification = "WeiBoTestUserShouldLoginNotification
 
 let WeiBoTestUserLoginSuccessNotification = "WeiBoTestUserShouldLoginNotification"      // 登陆成功通知
 
+
+
+// MARK: - 微博配图视图常量
+// 配图视图外侧的间距
+let DFStatusPictureViewOutterMargin = CGFloat(12)
+// 配图视图内部图像视图的间距
+let DFStatusPictureViewInnerMargin = CGFloat(3)
+// 视图的宽度的宽度
+let DFStatusPictureViewWidth = UIScreen.cz_screenWidth() - 2 * DFStatusPictureViewOutterMargin
+// 每个 Item 默认的宽度
+let DFStatusPictureItemWidth = (DFStatusPictureViewWidth - 2 * DFStatusPictureViewInnerMargin) / 3
