@@ -81,6 +81,8 @@ class DFStatesViewModel : CustomStringConvertible {
         likeStr = countString(count: model.reposts_count, defaultStr: "赞")
         
         pictureViewSize = calcPictureViewSize(count: model.pic_urls?.count)
+        
+        
     }
     
     var description : String {
