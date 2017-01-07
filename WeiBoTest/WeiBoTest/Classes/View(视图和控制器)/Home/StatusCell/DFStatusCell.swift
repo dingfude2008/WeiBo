@@ -21,10 +21,12 @@ class DFStatusCell: UITableViewCell {
             memberIconView.image = statusViewModel?.memberIcon
             /// 设置VIP图标
             vipIconView.image = statusViewModel?.vipIcon
+            // 设置头像
             iconView.cz_setImage(urlString: statusViewModel?.status.user?.profile_image_url, placeholderImage: UIImage(named: "avatar_default_big"), isAvatar: true)
+            /// 设置工具条
             toolBar.viewModel = statusViewModel
-            
-            pictureView.heigthCons.constant = 100
+            /// 设置配图视图的高度
+            pictureView.heigthCons.constant = statusViewModel?.pictureViewSize.height ?? 0;
         }
     }
     

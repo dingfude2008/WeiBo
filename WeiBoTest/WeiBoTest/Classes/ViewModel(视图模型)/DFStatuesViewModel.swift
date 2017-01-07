@@ -45,6 +45,9 @@ class DFStatesViewModel : CustomStringConvertible {
     /// 点赞文字
     var likeStr: String?
     
+    /// 配图视图大小
+    var pictureViewSize = CGSize()
+    
     /// 构造函数
     ///
     /// - Parameter model: 视图模型
@@ -76,6 +79,8 @@ class DFStatesViewModel : CustomStringConvertible {
         retweetedStr = countString(count: model.reposts_count, defaultStr: "转发")
         commentStr = countString(count: model.comments_count, defaultStr: "评论")
         likeStr = countString(count: model.reposts_count, defaultStr: "赞")
+        
+        pictureViewSize = calcPictureViewSize(count: model.pic_urls?.count)
     }
     
     var description : String {
@@ -106,6 +111,15 @@ class DFStatesViewModel : CustomStringConvertible {
         }
         
         return String(format: "%.02f 万", Double(count) / 10000)
+    }
+    
+    
+    /// 根据视图配图的数量计算配置视图的大小
+    ///
+    /// - Parameter count: 数量
+    /// - Returns: 大小
+    fileprivate func calcPictureViewSize(count : Int?) -> CGSize{
+        return CGSize(width: 100, height: 300)
     }
     
 }
