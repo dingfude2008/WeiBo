@@ -12,10 +12,19 @@ class DFStatusCell: UITableViewCell {
 
     var statusViewModel : DFStatesViewModel? {
         didSet{
+            
+            /// 设置正文
             statusLabel.text = statusViewModel?.status.text
+            /// 设置昵称
             nameLabel.text = statusViewModel?.status.user?.screen_name
+            /// 设置会员图标
             memberIconView.image = statusViewModel?.memberIcon
+            /// 设置VIP图标
             vipIconView.image = statusViewModel?.vipIcon
+            iconView.cz_setImage(urlString: statusViewModel?.status.user?.profile_image_url, placeholderImage: UIImage(named: "avatar_default_big"), isAvatar: true)
+            toolBar.viewModel = statusViewModel
+            
+            pictureView.heigthCons.constant = 100
         }
     }
     
@@ -34,6 +43,11 @@ class DFStatusCell: UITableViewCell {
     /// 微博正文
     @IBOutlet weak var statusLabel: UILabel!
     
+    /// 底部视图
+    @IBOutlet weak var toolBar: WBStatusToolBar!
+    
+    /// 配图视图
+    @IBOutlet weak var pictureView: DFStatusPicture!
     
     override func awakeFromNib() {
         super.awakeFromNib()
