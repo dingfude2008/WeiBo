@@ -8,8 +8,10 @@
 
 import UIKit
 
-// 定义全局常量
-fileprivate let cellID = "cellID"
+/// 原创微博可重用 cell id
+fileprivate let originalCellId = "originalCellId"
+/// 被转发微博的可重用 cell id
+fileprivate let retweetedCellId = "retweetedCellId"
 
 
 class DFHomeViewController: DFBaseViewController {
@@ -67,17 +69,13 @@ extension DFHomeViewController{
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // 取cell
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! DFStatusCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: retweetedCellId, for: indexPath) as! DFStatusCell
         
         
         let statesViewModel : DFStatesViewModel = listViewModel.statuesList[indexPath.row]
         // 设置cell
         
         cell.statusViewModel = statesViewModel
-//        
-//        cell.statusLabel.text = statesViewModel.status.text
-//        
-//        cell.nameLabel.text = statesViewModel.status.user?.screen_name
         
         // 返回cell
         return cell
@@ -96,7 +94,8 @@ extension DFHomeViewController {
         
         navItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showFriends))
         
-        tableView?.register(UINib(nibName: "DFStatusNormalCell", bundle: nil), forCellReuseIdentifier: cellID)
+        tableView?.register(UINib(nibName: "DFStatusNormalCell", bundle: nil), forCellReuseIdentifier: originalCellId)
+        tableView?.register(UINib(nibName: "DFStatusRetweetedCell", bundle: nil), forCellReuseIdentifier: retweetedCellId)
         
         tableView?.rowHeight = UITableViewAutomaticDimension    // 自动行高
         

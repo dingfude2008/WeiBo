@@ -27,6 +27,12 @@ class DFStatusPictureView: UIView {
                 
                 iv.contentMode = .scaleAspectFill
                 
+                // 4 张图的处理， 跳过 第三张图
+                if index == 1 && urls?.count == 4 {
+                    index += 1
+                }
+                
+                
                 iv.cz_setImage(urlString: statusPicModel.thumbnail_pic, placeholderImage: nil)
                 
                 iv.isHidden = false
@@ -59,6 +65,8 @@ extension DFStatusPictureView {
      */
     ///
     fileprivate func setupUI(){
+        
+        backgroundColor = superview?.backgroundColor
         
         // 裁切掉多余的
         clipsToBounds = true

@@ -55,6 +55,7 @@
 		ADA8C3161E0E1E99001CA74E /* DFModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8C3151E0E1E99001CA74E /* DFModalViewController.swift */; };
 		ADAB54D41E1234C200E0CCC5 /* DFStatue.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB54D31E1234C200E0CCC5 /* DFStatue.swift */; };
 		ADAB54D61E1234EB00E0CCC5 /* DFStatuesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB54D51E1234EB00E0CCC5 /* DFStatuesListViewModel.swift */; };
+		ADAE90EA1E222A880046CCC0 /* DFStatusRetweetedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADAE90E91E222A880046CCC0 /* DFStatusRetweetedCell.xib */; };
 		C9E32DCED09678901ACA536F /* Pods_WeiBoTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4D222A027863A6EFFC0BA20 /* Pods_WeiBoTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -125,6 +126,7 @@
 		ADA8C3151E0E1E99001CA74E /* DFModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFModalViewController.swift; sourceTree = "<group>"; };
 		ADAB54D31E1234C200E0CCC5 /* DFStatue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFStatue.swift; sourceTree = "<group>"; };
 		ADAB54D51E1234EB00E0CCC5 /* DFStatuesListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFStatuesListViewModel.swift; sourceTree = "<group>"; };
+		ADAE90E91E222A880046CCC0 /* DFStatusRetweetedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DFStatusRetweetedCell.xib; sourceTree = "<group>"; };
 		B4D222A027863A6EFFC0BA20 /* Pods_WeiBoTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeiBoTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -174,6 +176,7 @@
 				AD6A8E5F1E21155000804B2A /* DFStatusToolBar.swift */,
 				AD6A8E611E211F1B00804B2A /* DFStatusPictureView.swift */,
 				AD6A8E531E208C1100804B2A /* DFStatusNormalCell.xib */,
+				ADAE90E91E222A880046CCC0 /* DFStatusRetweetedCell.xib */,
 			);
 			path = StatusCell;
 			sourceTree = "<group>";
@@ -476,6 +479,7 @@
 				AD6829E91E1A59B7001C8074 /* DFWelecomView.xib in Resources */,
 				AD6A8E541E208C1100804B2A /* DFStatusNormalCell.xib in Resources */,
 				AD89B9CE1E0AC29B00D20E72 /* Assets.xcassets in Resources */,
+				ADAE90EA1E222A880046CCC0 /* DFStatusRetweetedCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
