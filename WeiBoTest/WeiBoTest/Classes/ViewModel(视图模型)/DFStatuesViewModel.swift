@@ -48,6 +48,13 @@ class DFStatesViewModel : CustomStringConvertible {
     /// 配图视图大小
     var pictureViewSize = CGSize()
     
+    /// 微博的最终配图。 如果是原创微博，就显示原创微博的图片。如果是转发的微博就显示被转发的图片
+    /// 也可能是空
+    var picURLs : [DFStatusPicture]? {
+        // 计算性属性
+        return status.retweeted_status?.pic_urls ?? status.pic_urls
+    }
+    
     /// 构造函数
     ///
     /// - Parameter model: 视图模型
@@ -80,8 +87,10 @@ class DFStatesViewModel : CustomStringConvertible {
         commentStr = countString(count: model.comments_count, defaultStr: "评论")
         likeStr = countString(count: model.reposts_count, defaultStr: "赞")
         
-        pictureViewSize = calcPictureViewSize(count: model.pic_urls?.count)
         
+//        pictureViewSize = calcPictureViewSize(count: model.pic_urls?.count)
+        // 使用最终的结果
+        pictureViewSize = calcPictureViewSize(count: picURLs?.count)
         
     }
     

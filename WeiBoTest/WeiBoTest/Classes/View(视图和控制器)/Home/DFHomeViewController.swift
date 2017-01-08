@@ -68,11 +68,15 @@ extension DFHomeViewController{
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        // 取cell
-        let cell = tableView.dequeueReusableCell(withIdentifier: retweetedCellId, for: indexPath) as! DFStatusCell
-        
         
         let statesViewModel : DFStatesViewModel = listViewModel.statuesList[indexPath.row]
+        
+//        let cellId = (statesViewModel.status.retweeted_status == nil) ? originalCellId : retweetedCellId
+        let cellId = (statesViewModel.status.retweeted_status != nil) ? retweetedCellId : originalCellId
+        
+        // 取cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! DFStatusCell
+        
         // 设置cell
         
         cell.statusViewModel = statesViewModel

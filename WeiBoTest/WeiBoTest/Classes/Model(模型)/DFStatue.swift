@@ -27,6 +27,9 @@ class DFStatue: NSObject {
     /// 微博的用户 - 注意和服务器返回的 KEY 要一致 因为 返回的这个微博JSon中含有一个 user的对象
     var user: DFUser?
     
+    /// 被转发的原创微博
+    var retweeted_status: DFStatue?
+    
     /// 微博配图模型数组
     var pic_urls:[DFStatusPicture]?
     

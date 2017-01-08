@@ -28,11 +28,9 @@ class DFStatusCell: UITableViewCell {
             /// 设置配图视图的高度
             pictureView.heigthCons.constant = statusViewModel?.pictureViewSize.height ?? 0;
             
-
-            
-            pictureView.urls = statusViewModel?.status.pic_urls
-            
-            
+            //pictureView.urls = statusViewModel?.status.pic_urls
+            // 使用最终的图片，不管是原创的，还是被转发的
+            pictureView.urls = statusViewModel?.picURLs
         }
     }
     
