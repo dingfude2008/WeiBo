@@ -31,6 +31,8 @@ class DFStatusCell: UITableViewCell {
             //pictureView.urls = statusViewModel?.status.pic_urls
             // 使用最终的图片，不管是原创的，还是被转发的
             pictureView.urls = statusViewModel?.picURLs
+            
+            retweetedLabel?.text = statusViewModel?.status.retweeted_status?.text
         }
     }
     
@@ -48,6 +50,10 @@ class DFStatusCell: UITableViewCell {
     @IBOutlet weak var vipIconView: UIImageView!
     /// 微博正文
     @IBOutlet weak var statusLabel: UILabel!
+    
+    /// 被转发微博的正文 --- 注意：这里是可选的，因为有一个xib中这个控件
+    @IBOutlet weak var retweetedLabel: UILabel?
+    
     
     /// 底部视图
     @IBOutlet weak var toolBar: WBStatusToolBar!

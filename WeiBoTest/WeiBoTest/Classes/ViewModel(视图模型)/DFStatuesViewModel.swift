@@ -45,6 +45,9 @@ class DFStatesViewModel : CustomStringConvertible {
     /// 点赞文字
     var likeStr: String?
     
+    /// 被转发的文字
+    var retweetedAttrText: String?
+    
     /// 配图视图大小
     var pictureViewSize = CGSize()
     
@@ -91,6 +94,11 @@ class DFStatesViewModel : CustomStringConvertible {
 //        pictureViewSize = calcPictureViewSize(count: model.pic_urls?.count)
         // 使用最终的结果
         pictureViewSize = calcPictureViewSize(count: picURLs?.count)
+        
+        retweetedAttrText = "@"
+            + (status.retweeted_status?.user?.screen_name ?? "")
+            + ":"
+            + (status.retweeted_status?.text ?? "")
         
     }
     

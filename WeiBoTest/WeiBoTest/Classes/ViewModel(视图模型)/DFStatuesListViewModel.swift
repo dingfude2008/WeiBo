@@ -8,6 +8,7 @@
 
 import Foundation
 import YYModel
+import SDWebImage
 
 
 // 上拉刷新的最大尝试次数
@@ -60,14 +61,6 @@ class DFStatuesListViewModel {
                 array.append(DFStatesViewModel(model: model))
             }
             
-            
-//            guard let array = NSArray.yy_modelArray(with: DFStatue.self, json: (list ?? [])) as? [DFStatue]  else {
-//                // 到这里说明转换失败了，isSuccess 是 false
-//                complection(isSuccess, false)
-//                
-//                return
-//            }
-            
             print("刷新了\(array.count)条数据 \(array)")
             
             if pullup {
@@ -87,12 +80,65 @@ class DFStatuesListViewModel {
                 complection(isSuccess, false)
             }
             else {
+                
+                self.cacheSingleImage(list: array, finished: { (isSuccess, shouldRefresh) in
+                    
+                })
+                
                 complection(isSuccess, true)
             }
-            
-            
         }
     
+    
+    }
+    
+    
+    /// 缓存本次下载微博数据中的单张图像   -----> 因为要对单张的图片进行等比例显示，需要缓存后才能获取尺寸
+    ///
+    /// - Parameters:
+    ///   - list: 本次下载的视图模型数组
+    ///   - finished: 完成的回调
+    fileprivate func cacheSingleImage(list: [DFStatesViewModel], finished: (_ isSuccess: Bool,  _ shouldRefresh: Bool)->()) {
+        
+        // 调度组
+        let group = DispatchGroup()
+        
+        // 记录数据长度
+        var length = 0
+        
+        // 数组中存放的是视图模型
+        for vm in list {
+            
+            let picCount = vm.picURLs?.count
+            
+            if picCount != 1 || picCount == nil{
+            
+                continue
+            }
+            
+            guard let pic = vm.picURLs?[0].thumbnail_pic,
+                let url = URL(string: pic) else{
+                
+                continue
+            }
+            
+            print("要缓存的图片 :\(url)")
+            
+            
+            SDWebImageManager.shared().downloadImage(with: url, options: [], progress: nil, completed: { (image, _, _, _, _) in
+                
+                if let image = image,
+                    let data = UIImagePNGRepresentation(image){
+                
+                    length += data.count
+                }
+                
+                print("缓存图片\(image)的长度为: \(length)")
+                
+            })
+            
+        }
+        
     }
     
     
