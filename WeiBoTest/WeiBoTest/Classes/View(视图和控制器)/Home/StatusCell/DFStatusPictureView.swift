@@ -10,6 +10,19 @@ import Foundation
 
 class DFStatusPictureView: UIView {
     
+    var viewModel : DFStatesViewModel? {
+        didSet {
+            calcViewSize()
+        }
+    }
+    
+    /// 根据视图模型的配图视图大小，调整显示内容
+    fileprivate func calcViewSize() {
+        
+        // 修改高度约束
+        heigthCons.constant = viewModel?.pictureViewSize.height ?? 0
+        
+    }
     
     var urls:[DFStatusPicture]? {
         didSet{

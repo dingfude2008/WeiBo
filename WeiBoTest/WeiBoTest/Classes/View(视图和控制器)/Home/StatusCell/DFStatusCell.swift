@@ -25,8 +25,12 @@ class DFStatusCell: UITableViewCell {
             iconView.cz_setImage(urlString: statusViewModel?.status.user?.profile_image_url, placeholderImage: UIImage(named: "avatar_default_big"), isAvatar: true)
             /// 设置工具条
             toolBar.viewModel = statusViewModel
-            /// 设置配图视图的高度
-            pictureView.heigthCons.constant = statusViewModel?.pictureViewSize.height ?? 0;
+            
+            
+            /// 设置配图视图的视图模型
+            pictureView.viewModel = statusViewModel
+            
+            
             
             //pictureView.urls = statusViewModel?.status.pic_urls
             // 使用最终的图片，不管是原创的，还是被转发的
