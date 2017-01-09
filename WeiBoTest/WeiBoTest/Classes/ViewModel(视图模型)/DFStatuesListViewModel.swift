@@ -144,6 +144,9 @@ class DFStatuesListViewModel {
                     let data = UIImagePNGRepresentation(image){
                 
                     length += data.count
+                    
+                    // 图像缓存成功，更新配图视图的大小
+                    vm.updateSingleImageSize(image: image)
                 }
                 
                 print("缓存图片\(image)的长度为: \(length)")

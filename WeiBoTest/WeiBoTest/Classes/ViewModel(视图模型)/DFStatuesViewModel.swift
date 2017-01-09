@@ -102,6 +102,22 @@ class DFStatesViewModel : CustomStringConvertible {
         
     }
     
+    
+    /// 使用单个图像，更新配图视图的大小
+    ///
+    /// 新浪针对单张图片，都是缩略图，但是偶尔会有一张特别大的图 7000 * 9000 多
+    /// 新浪微博，为了鼓励原创，支持`长微博`，但是有的时候，有特别长的微博，长到宽度只有1个点
+    ///
+    /// - parameter image: 网路缓存的单张图像
+    func updateSingleImageSize(image: UIImage){
+        
+        var size = image.size
+        
+        size.height += DFStatusPictureViewOutterMargin
+        
+        pictureViewSize = size
+    }
+    
     var description : String {
         
         return status.description
