@@ -19,9 +19,30 @@ class DFStatusPictureView: UIView {
     /// 根据视图模型的配图视图大小，调整显示内容
     fileprivate func calcViewSize() {
         
+        // 处理宽度
+        // 1> 单图，根据配图视图的大小，修改 subviews[0] 的宽高
+        if viewModel?.picURLs?.count == 1 {
+            let viewSize = viewModel?.pictureViewSize ?? CGSize()
+            
+            // a) 获取第0个图像视图
+            let v = subviews[0]
+            v.frame = CGRect(x: 0,
+                             y: DFStatusPictureViewOutterMargin,
+                             width: viewSize.width,
+                             height: viewSize.height - DFStatusPictureViewOutterMargin)
+            // 这里 - WBStatusPictureViewOutterMargin 是因为缓存之前 pictureViewSize加过的，现在减去
+        } else {
+            // 2> 多图(无图)，回复 subview[0] 的宽高，保证九宫格布局的完整
+            
+            let v = subviews[0]
+            v.frame = CGRect(x: 0,
+                             y: DFStatusPictureViewOutterMargin,
+                             width: DFStatusPictureItemWidth,
+                             height: DFStatusPictureItemWidth)
+        }
+        
         // 修改高度约束
         heigthCons.constant = viewModel?.pictureViewSize.height ?? 0
-        
     }
     
     var urls:[DFStatusPicture]? {
