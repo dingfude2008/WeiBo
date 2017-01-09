@@ -152,7 +152,7 @@ extension DFMainViewController {
         }
         
         // 1. 添加新特性
-        let frame = view.bounds
+        // let frame = view.bounds
         let v = isNewVersion ? DFNewFeatureView.newFeatureView() : DFWelecomView.welecomView()
         
         view.addSubview(v)
@@ -177,7 +177,7 @@ extension DFMainViewController {
         
         let sandBoxVersion : String = (try? String(contentsOfFile: path)) ?? ""
         
-        print("沙盒版本:\(sandBoxVersion)")
+        print("沙盒版本:\(sandBoxVersion), 地址：path：\(path)")
         
         // 写入沙盒
         _ = try? currentVersion.write(toFile: path, atomically: true, encoding: .utf8)

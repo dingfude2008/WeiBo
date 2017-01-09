@@ -98,7 +98,7 @@ class DFStatuesListViewModel {
     /// - Parameters:
     ///   - list: 本次下载的视图模型数组
     ///   - finished: 完成的回调
-    fileprivate func cacheSingleImage(list: [DFStatesViewModel], finished: (_ isSuccess: Bool,  _ shouldRefresh: Bool)->()) {
+    fileprivate func cacheSingleImage(list: [DFStatesViewModel], finished: @escaping (_ isSuccess: Bool,  _ shouldRefresh: Bool)->()) {
         
         // 调度组
         let group = DispatchGroup()
@@ -125,6 +125,19 @@ class DFStatuesListViewModel {
             print("要缓存的图片 :\(url)")
             
             
+            // 3> 下载图像
+            // 1) downloadImage 是 SDWebImage 的核心方法
+            // 2) 图像下载完成之后，会自动保存在沙盒中，文件路径是 URL 的 md5
+            // 3) 如果沙盒中已经存在缓存的图像，后续使用 SD 通过 URL 加载图像，都会加载本地沙盒地图像
+            // 4) 不会发起网路请求，同时，回调方法，同样会调用！
+            // 5) 方法还是同样的方法，调用还是同样的调用，不过内部不会再次发起网路请求！
+            // *** 注意点：如果要缓存的图像累计很大，要找后台要接口！
+            
+            
+            // 入组
+            group.enter()
+            
+            
             SDWebImageManager.shared().downloadImage(with: url, options: [], progress: nil, completed: { (image, _, _, _, _) in
                 
                 if let image = image,
@@ -135,10 +148,19 @@ class DFStatuesListViewModel {
                 
                 print("缓存图片\(image)的长度为: \(length)")
                 
+                // 出组。  一定要放在bolck中的最后一句，保证出组
+                group.leave()
             })
             
         }
         
+        
+        group.notify(queue: DispatchQueue.main, execute: {
+            
+            print("图片缓存完成 大小:\(length / 1024) K")
+            
+            finished(true, true)
+        })
     }
     
     
