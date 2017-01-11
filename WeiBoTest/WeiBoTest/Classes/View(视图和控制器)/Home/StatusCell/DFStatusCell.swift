@@ -62,13 +62,17 @@ class DFStatusCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        // 离屛渲染，异步绘制
+        self.layer.drawsAsynchronously = true
+        
+        // 栅格化，异步绘制之后，会生成一张独立的图像，cell在屏幕滚动的时候，本质上是滚动的这张图片，
+        // cell 优化就是要尽可能的较少图层的数量，栅格化成图片就相当于只有一层
+        // 停止滚动后，可以接受监听
+        self.layer.shouldRasterize = true
+        
+        // 使用栅格化必须指定分辨率
+        self.layer.rasterizationScale = UIScreen.main.scale
+        
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

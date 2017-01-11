@@ -149,7 +149,7 @@ class DFStatuesListViewModel {
                     vm.updateSingleImageSize(image: image)
                 }
                 
-                print("缓存图片\(image)的长度为: \(length)")
+                //print("缓存图片\(image)的长度为: \(length)")
                 
                 // 出组。  一定要放在bolck中的最后一句，保证出组
                 group.leave()
@@ -160,7 +160,7 @@ class DFStatuesListViewModel {
         
         group.notify(queue: DispatchQueue.main, execute: {
             
-            print("图片缓存完成 大小:\(length / 1024) K")
+            //print("图片缓存完成 大小:\(length / 1024) K")
             
             finished(true, true)
         })

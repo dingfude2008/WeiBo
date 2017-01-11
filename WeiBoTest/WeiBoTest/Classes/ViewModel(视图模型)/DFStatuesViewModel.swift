@@ -119,6 +119,44 @@ class DFStatesViewModel : CustomStringConvertible {
         
         var size = image.size
         
+        // 这个是为了防止 7000 * 9000 这样的大图
+        let maxWidth:CGFloat = 200
+        
+        let minWidth:CGFloat = 40
+        
+        if size.width > maxWidth {
+            
+            // 设置最大宽度
+            size.width = maxWidth
+            // 设置等比例高度
+            size.height = size.width * image.size.height / image.size.width
+        }
+        
+        
+        if size.width < minWidth {
+            
+            size.width = minWidth
+            
+            // 设置等比例高度
+            // 要特殊处理，否则会照成高度太高，恶意霸屏
+            //  除以4， 图片就会居中显示了
+            
+            size.height = size.width * image.size.height / image.size.width / 4
+            
+        }
+        
+        // 过高图片处理，图片填充模式就是 scaleToFill，高度减小，会自动裁切
+        
+        
+        // 特例：有些图像，本身就是很窄，很长！-> 定义一个 minHeight，思路同上！
+        // 在工作中，如果看到代码中有些疑惑的分支处理！千万不要动！
+        
+        if size.height > 200 {
+            size.height = 200
+        }
+        
+        
+        // 注意，尺寸需要增加顶部的 12 个点，便于布局
         size.height += DFStatusPictureViewOutterMargin
         
         pictureViewSize = size
