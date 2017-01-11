@@ -259,7 +259,6 @@ extension DFMainViewController {
             data = NSData(contentsOfFile: path!)  as? Data
         }
         
-        
         guard let dataA = data,
             let arrayA = try? JSONSerialization.jsonObject(with: dataA,  options: []) as? [[String : AnyObject]],
             let array = arrayA else {

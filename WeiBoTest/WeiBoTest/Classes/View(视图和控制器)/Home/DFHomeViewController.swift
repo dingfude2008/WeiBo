@@ -71,7 +71,6 @@ extension DFHomeViewController{
         
         let statesViewModel : DFStatesViewModel = listViewModel.statuesList[indexPath.row]
         
-//        let cellId = (statesViewModel.status.retweeted_status == nil) ? originalCellId : retweetedCellId
         let cellId = (statesViewModel.status.retweeted_status != nil) ? retweetedCellId : originalCellId
         
         // 取cell
@@ -83,6 +82,35 @@ extension DFHomeViewController{
         
         // 返回cell
         return cell
+    }
+    
+    
+    /*
+     
+     缓存行高步骤
+     1，打开xib/纯代码， 按照从上到下的顺序，以此计算出控件的高度公式，多行的文本标记上显示宽度和字号
+     2，计算行高方法  1>在视图模型中，根据公式，定义需要的常量 --->间距，图标，标签视图计算大小，标签的字体
+                    2> 定义变量 height
+                    3> 从上到下，一次计算， 不要跳跃，不要省略
+     3,在构造函数的最后，计算行高
+     4,在更新单图尺寸后，再次计算。 凡是cell外部代码导致的cell内部高度变化，都需要重新集计算
+     5,调整控制器，1>在base控制器中 实现tableview height 的代理方法，随便返回一个数值。
+                    目的，保证子类可以重写方法，否则子类的行高方法不会被执行
+                2>在子类中重写行高方法，返回视图模型中计算的行高
+                3>取消自动行高
+     
+     
+     */
+    
+    
+    // 注意这里没有使用 override 说明父类没有提高这个方法
+    // 3.0中 父类必须实现代理方法，子类才可以重写， 2.0中不需要
+    // 这里如果想要使用缓存行高，也就是进这个方法，必须让他的父类实现这个方法，然后再重写
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        let vm = listViewModel.statuesList[indexPath.row]
+        
+        return vm.rowHeight
     }
     
     
@@ -101,6 +129,8 @@ extension DFHomeViewController {
         tableView?.register(UINib(nibName: "DFStatusNormalCell", bundle: nil), forCellReuseIdentifier: originalCellId)
         tableView?.register(UINib(nibName: "DFStatusRetweetedCell", bundle: nil), forCellReuseIdentifier: retweetedCellId)
         
+        
+        // 有了缓存行高后，就不要使用自动行高了
         tableView?.rowHeight = UITableViewAutomaticDimension    // 自动行高
         
         tableView?.estimatedRowHeight = 300 // 预估行高

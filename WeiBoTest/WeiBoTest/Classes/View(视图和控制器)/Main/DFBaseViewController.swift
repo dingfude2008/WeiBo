@@ -265,10 +265,12 @@ extension DFBaseViewController {
             
             loadData()
         }
-        
-        
     }
     
+    // 这里随便写一个数值，具体的让子类实现，并且可以让子类 override,从而实现缓存行高
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 10
+    }
     
 }
 

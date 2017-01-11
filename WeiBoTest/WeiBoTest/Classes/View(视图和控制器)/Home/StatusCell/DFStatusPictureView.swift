@@ -13,6 +13,8 @@ class DFStatusPictureView: UIView {
     var viewModel : DFStatesViewModel? {
         didSet {
             calcViewSize()
+            
+            urls = viewModel?.picURLs
         }
     }
     
@@ -45,7 +47,7 @@ class DFStatusPictureView: UIView {
         heigthCons.constant = viewModel?.pictureViewSize.height ?? 0
     }
     
-    var urls:[DFStatusPicture]? {
+    fileprivate var urls:[DFStatusPicture]? {
         didSet{
             
             // 这里因为重用的关系，即使设置为nil 也会显示另一个图像的图片，所以必须全部隐藏
