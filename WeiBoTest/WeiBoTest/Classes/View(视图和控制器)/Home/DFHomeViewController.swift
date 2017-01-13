@@ -39,21 +39,31 @@ class DFHomeViewController: DFBaseViewController {
     override func loadData() {
 
         print(#function)
+
+        // Xcode 8.0 的刷新控件，beginRefreshing 方法，什么都不显示！
+        refreshControl?.beginRefreshing()
         
-        listViewModel.loadStatus(pullup: self.isPullup) { (isSuccess, shouldRefresh) in
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) { 
             
-            print(self.isPullup ?"上拉数据加载完成" : "下拉数据加载完成")
-
-            self.refreshControl?.endRefreshing()
-
-            self.isPullup = false
-
-            if shouldRefresh {
+            self.listViewModel.loadStatus(pullup: self.isPullup) { (isSuccess, shouldRefresh) in
                 
-                print("刷新表格")
-                self.tableView?.reloadData()
+                print(self.isPullup ?"上拉数据加载完成" : "下拉数据加载完成")
+                
+                self.refreshControl?.endRefreshing()
+                
+                self.isPullup = false
+                
+                if shouldRefresh {
+                    
+                    print("刷新表格")
+                    self.tableView?.reloadData()
+                }
             }
+            
         }
+        
+        
+        
     }
 }
 

@@ -27,7 +27,7 @@ class CZRefreshControl: UIControl {
     /// MARK: 属性
     /// 父视图，弱应用。  因为父视图会对子视图强引用。
     /// 下拉刷新框架，使用过于  UIScrollView,  UIColloctionView
-    fileprivate weak var sv : UIScrollView?
+    fileprivate weak var scrollView : UIScrollView?
     
     init() {
         super.init(frame: CGRect())
@@ -42,6 +42,8 @@ class CZRefreshControl: UIControl {
     }
     
     
+    
+    
     /// 这个方法触发的两个点  1，被添加到父视图中， newSuperview 是父视图
     ///                   2，父视图被销毁的时候， newSuperview 是 nil
     /// - Parameter newSuperview:
@@ -52,11 +54,30 @@ class CZRefreshControl: UIControl {
             return
         }
         
-        sv = svv
+        scrollView = svv
         
-        sv?.addObserver(self, forKeyPath: "contentOffset", options: [], context: nil)
+        scrollView?.addObserver(self, forKeyPath: "contentOffset", options: [], context: nil)
         
     }
+    
+    /// 本视图从父视图中移除的方法
+    /// 所有下拉框架都是监听父类的 contentOffset 实现的
+    /// 移除的时候都是用的这个方法移除的
+    override func removeFromSuperview() {
+        
+        // 这里的时候，superview 还有值， scrollView 应为是 weak 类型，现在已经释放了
+        print("\(superview)  \(scrollView)")
+        
+        superview?.removeObserver(self, forKeyPath: "contentOffset")
+        
+        super.removeFromSuperview()
+        
+        // 到这里的时候， superview 也已经等于 nil 了
+        
+        print("\(superview)  \(scrollView)")
+    }
+    
+    
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         
@@ -64,13 +85,13 @@ class CZRefreshControl: UIControl {
         //  contenOffest 的 y 值 与  contentInset 的 y 只有关
         
         // 初始值为 0
-        let  height = -(sv!.contentInset.top + sv!.contentOffset.y)
+        let  height = -(scrollView!.contentInset.top + scrollView!.contentOffset.y)
         
         print(height)
         
         self.frame = CGRect(x: 0,
                             y: -height,
-                            width: sv!.bounds.width,
+                            width: scrollView!.bounds.width,
                             height: height)
         
     }
