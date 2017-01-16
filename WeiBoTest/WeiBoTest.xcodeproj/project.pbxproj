@@ -58,7 +58,10 @@
 		ADA8C3161E0E1E99001CA74E /* DFModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8C3151E0E1E99001CA74E /* DFModalViewController.swift */; };
 		ADAB54D41E1234C200E0CCC5 /* DFStatue.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB54D31E1234C200E0CCC5 /* DFStatue.swift */; };
 		ADAB54D61E1234EB00E0CCC5 /* DFStatuesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB54D51E1234EB00E0CCC5 /* DFStatuesListViewModel.swift */; };
+		ADAC9E6A1E2C87B8001A8303 /* CZHumanRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADAC9E691E2C87B8001A8303 /* CZHumanRefreshView.xib */; };
 		ADAE90EA1E222A880046CCC0 /* DFStatusRetweetedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADAE90E91E222A880046CCC0 /* DFStatusRetweetedCell.xib */; };
+		ADBF16291E2D1B8A0019AD2E /* CZMeituanRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBF16271E2D1B8A0019AD2E /* CZMeituanRefreshView.swift */; };
+		ADBF162A1E2D1B8A0019AD2E /* CZMeituanRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADBF16281E2D1B8A0019AD2E /* CZMeituanRefreshView.xib */; };
 		C9E32DCED09678901ACA536F /* Pods_WeiBoTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4D222A027863A6EFFC0BA20 /* Pods_WeiBoTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -132,7 +135,10 @@
 		ADA8C3151E0E1E99001CA74E /* DFModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFModalViewController.swift; sourceTree = "<group>"; };
 		ADAB54D31E1234C200E0CCC5 /* DFStatue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFStatue.swift; sourceTree = "<group>"; };
 		ADAB54D51E1234EB00E0CCC5 /* DFStatuesListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFStatuesListViewModel.swift; sourceTree = "<group>"; };
+		ADAC9E691E2C87B8001A8303 /* CZHumanRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CZHumanRefreshView.xib; sourceTree = "<group>"; };
 		ADAE90E91E222A880046CCC0 /* DFStatusRetweetedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DFStatusRetweetedCell.xib; sourceTree = "<group>"; };
+		ADBF16271E2D1B8A0019AD2E /* CZMeituanRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZMeituanRefreshView.swift; sourceTree = "<group>"; };
+		ADBF16281E2D1B8A0019AD2E /* CZMeituanRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CZMeituanRefreshView.xib; sourceTree = "<group>"; };
 		B4D222A027863A6EFFC0BA20 /* Pods_WeiBoTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeiBoTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -400,6 +406,9 @@
 		AD99A68A1E27874F002512E1 /* CZRefreshControl */ = {
 			isa = PBXGroup;
 			children = (
+				ADBF16271E2D1B8A0019AD2E /* CZMeituanRefreshView.swift */,
+				ADBF16281E2D1B8A0019AD2E /* CZMeituanRefreshView.xib */,
+				ADAC9E691E2C87B8001A8303 /* CZHumanRefreshView.xib */,
 				AD4B7B7A1E2A3E3B003CEB47 /* CZRefreshView.swift */,
 				AD4B7B7B1E2A3E3B003CEB47 /* CZRefreshView.xib */,
 				AD99A68B1E27876B002512E1 /* CZRefreshControl.swift */,
@@ -502,10 +511,12 @@
 				AD44B5E21E1A91310003E14B /* DFNewFeatureView.xib in Resources */,
 				AD4B7B7D1E2A3E3B003CEB47 /* CZRefreshView.xib in Resources */,
 				AD877D9B1E0B825100299081 /* main.json in Resources */,
+				ADBF162A1E2D1B8A0019AD2E /* CZMeituanRefreshView.xib in Resources */,
 				AD6829E91E1A59B7001C8074 /* DFWelecomView.xib in Resources */,
 				AD6A8E541E208C1100804B2A /* DFStatusNormalCell.xib in Resources */,
 				AD89B9CE1E0AC29B00D20E72 /* Assets.xcassets in Resources */,
 				ADAE90EA1E222A880046CCC0 /* DFStatusRetweetedCell.xib in Resources */,
+				ADAC9E6A1E2C87B8001A8303 /* CZHumanRefreshView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,6 +590,7 @@
 				AD6CFB321E19440C0064D06A /* NSString+CZHash.m in Sources */,
 				AD6A8E641E21265600804B2A /* DFStatusPicture.swift in Sources */,
 				AD6CFB391E19440C0064D06A /* UIViewController+CZAddition.m in Sources */,
+				ADBF16291E2D1B8A0019AD2E /* CZMeituanRefreshView.swift in Sources */,
 				ADAB54D41E1234C200E0CCC5 /* DFStatue.swift in Sources */,
 				AD6CFB371E19440C0064D06A /* UIScreen+CZAddition.m in Sources */,
 				AD6CFB141E1933560064D06A /* DFUserAccount.swift in Sources */,

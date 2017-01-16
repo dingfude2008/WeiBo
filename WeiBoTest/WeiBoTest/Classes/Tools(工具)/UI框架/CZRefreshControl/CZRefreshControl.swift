@@ -10,7 +10,8 @@ import UIKit
 
 
 
-private let CZRefreshOffset : CGFloat = 60
+// 这个高度是应该刷新视图的高度
+private let CZRefreshOffset : CGFloat = 126
 
 /// 刷新状态
 ///
@@ -41,7 +42,6 @@ class CZRefreshControl: UIControl {
             return
         }
         
-        
         refreshView.refreshState = .WillRefresh
         
         // 通过调整 父控制器的contentInset的大小，来让刷新视图显示
@@ -50,6 +50,10 @@ class CZRefreshControl: UIControl {
         inset.top += CZRefreshOffset
         
         sv.contentInset = inset
+        
+        // 设置刷新视图的父视图高度 让其从一开始就有高度，根据这个高度可以计算出袋鼠的高度
+        refreshView.parentViewHeight = CZRefreshOffset
+        
     }
     
     
@@ -156,6 +160,16 @@ class CZRefreshControl: UIControl {
         
         
         //print(height)
+        
+        // 给刷新视图传递高度，让其根据高度更新UI
+        
+        
+        // --- 传递父视图高度，如果正在刷新中，不传递
+        // --- 把代码放在`最合适`的位置！
+        if refreshView.refreshState != .WillRefresh {
+            refreshView.parentViewHeight = height
+        }
+//        refreshView.parentViewHeight = height
         
         
         self.frame = CGRect(x: 0,

@@ -12,7 +12,6 @@ import UIKit
 class CZRefreshView: UIView {
 
     
-    
     /*
      iOS 系统中 UIView 封装的东湖
      - 默认是顺时针旋转
@@ -20,26 +19,24 @@ class CZRefreshView: UIView {
      - 要实现同方向旋转（比如顺时针转180， 然后再按照原路返回）， 旋转的角度需要减去一个很小的数值，这样就近原则就原路返回了
      - 如果像旋转360度，需要使用 CABaseAnimation 核心动画
      */
-    
-    
     /// 当前状态
     var refreshState : CZRefreshState = .Normal {
         didSet{
             switch refreshState {
             case .Normal:
                 
-                tipIcon.isHidden = false
+                tipIcon?.isHidden = false
                 
-                indicator.stopAnimating()
+                indicator?.stopAnimating()
                 
-                tipLabel.text = "继续使劲拉"
+                tipLabel?.text = "继续使劲拉"
                 UIView.animate(withDuration: 0.25, animations: {
-                    self.tipIcon.transform = CGAffineTransform.identity
+                    self.tipIcon?.transform = CGAffineTransform.identity
                 })
             case .Pulling:
-                tipLabel.text = "放手就刷新"
+                tipLabel?.text = "放手就刷新"
                 UIView.animate(withDuration: 0.25, animations: {
-                    self.tipIcon.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI - 0.0001))
+                    self.tipIcon?.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI - 0.0001))
                 })
                 
 //                let animation = CABasicAnimation(keyPath: "transform.rotation.z")
@@ -53,11 +50,11 @@ class CZRefreshView: UIView {
 //                
                 
             case .WillRefresh:
-                tipLabel.text = "正在刷新中..."
+                tipLabel?.text = "正在刷新中..."
                 
-                tipIcon.isHidden = true
+                tipIcon?.isHidden = true
                 
-                indicator.startAnimating()
+                indicator?.startAnimating()
                 
                 
                 
@@ -66,18 +63,25 @@ class CZRefreshView: UIView {
     
     }
     
+    
+    /// 父视图的高度 - 为了让刷新控件不需要关心当前具体的刷新视图是谁！
+    var parentViewHeight: CGFloat = 0
+    
     /// 提示图片
-    @IBOutlet weak var tipIcon: UIImageView!
+    @IBOutlet weak var tipIcon: UIImageView?
 
     /// 提示标签
-    @IBOutlet weak var tipLabel: UILabel!
+    @IBOutlet weak var tipLabel: UILabel?
     
     /// 指示器
-    @IBOutlet weak var indicator: UIActivityIndicatorView!
+    @IBOutlet weak var indicator: UIActivityIndicatorView?
     
     class func refreshView() -> CZRefreshView{
         
-        let nib = UINib(nibName: "CZRefreshView", bundle: nil)
+        //let nib = UINib(nibName: "CZRefreshView", bundle: nil)
+        //let nib = UINib(nibName: "CZHumanRefreshView", bundle: nil)
+        let nib = UINib(nibName: "CZMeituanRefreshView", bundle: nil)
+        
         
         return nib.instantiate(withOwner: nil, options: nil)[0] as! CZRefreshView
     
