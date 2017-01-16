@@ -22,7 +22,7 @@ class DFBaseViewController: UIViewController, UITableViewDataSource, UITableView
     
     var tableView : UITableView?
     
-    var refreshControl : UIRefreshControl?
+    var refreshControl : CZRefreshControl?
     
     // 上拉刷新标记
     var isPullup = false
@@ -34,7 +34,6 @@ class DFBaseViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
         setupUI()
      
@@ -196,7 +195,7 @@ extension DFBaseViewController {
         // 这里的强行解包是因为上面刚赋值，一定有
         tableView?.scrollIndicatorInsets = tableView!.contentInset
         
-        refreshControl = UIRefreshControl()
+        refreshControl = CZRefreshControl()
         
         tableView?.addSubview(refreshControl!)
         

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AD44B5E21E1A91310003E14B /* DFNewFeatureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD44B5E11E1A91310003E14B /* DFNewFeatureView.xib */; };
+		AD4B7B7C1E2A3E3B003CEB47 /* CZRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4B7B7A1E2A3E3B003CEB47 /* CZRefreshView.swift */; };
+		AD4B7B7D1E2A3E3B003CEB47 /* CZRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD4B7B7B1E2A3E3B003CEB47 /* CZRefreshView.xib */; };
 		AD6829E11E1A3FE7001C8074 /* DFTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6829E01E1A3FE7001C8074 /* DFTitleButton.swift */; };
 		AD6829E51E1A4C36001C8074 /* DFNewFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6829E41E1A4C36001C8074 /* DFNewFeatureView.swift */; };
 		AD6829E71E1A4C4A001C8074 /* DFWelecomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6829E61E1A4C4A001C8074 /* DFWelecomView.swift */; };
@@ -64,6 +66,8 @@
 		4AF718AD705ED045705C27A5 /* Pods-WeiBoTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiBoTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeiBoTest/Pods-WeiBoTest.debug.xcconfig"; sourceTree = "<group>"; };
 		5CA185177CF14B93DFF61D7F /* Pods-WeiBoTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiBoTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeiBoTest/Pods-WeiBoTest.release.xcconfig"; sourceTree = "<group>"; };
 		AD44B5E11E1A91310003E14B /* DFNewFeatureView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DFNewFeatureView.xib; sourceTree = "<group>"; };
+		AD4B7B7A1E2A3E3B003CEB47 /* CZRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZRefreshView.swift; sourceTree = "<group>"; };
+		AD4B7B7B1E2A3E3B003CEB47 /* CZRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CZRefreshView.xib; sourceTree = "<group>"; };
 		AD6829E01E1A3FE7001C8074 /* DFTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFTitleButton.swift; sourceTree = "<group>"; };
 		AD6829E41E1A4C36001C8074 /* DFNewFeatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFNewFeatureView.swift; sourceTree = "<group>"; };
 		AD6829E61E1A4C4A001C8074 /* DFWelecomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFWelecomView.swift; sourceTree = "<group>"; };
@@ -396,6 +400,8 @@
 		AD99A68A1E27874F002512E1 /* CZRefreshControl */ = {
 			isa = PBXGroup;
 			children = (
+				AD4B7B7A1E2A3E3B003CEB47 /* CZRefreshView.swift */,
+				AD4B7B7B1E2A3E3B003CEB47 /* CZRefreshView.xib */,
 				AD99A68B1E27876B002512E1 /* CZRefreshControl.swift */,
 			);
 			path = CZRefreshControl;
@@ -494,6 +500,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD44B5E21E1A91310003E14B /* DFNewFeatureView.xib in Resources */,
+				AD4B7B7D1E2A3E3B003CEB47 /* CZRefreshView.xib in Resources */,
 				AD877D9B1E0B825100299081 /* main.json in Resources */,
 				AD6829E91E1A59B7001C8074 /* DFWelecomView.xib in Resources */,
 				AD6A8E541E208C1100804B2A /* DFStatusNormalCell.xib in Resources */,
@@ -595,6 +602,7 @@
 				AD6829E51E1A4C36001C8074 /* DFNewFeatureView.swift in Sources */,
 				AD6CFB361E19440C0064D06A /* UILabel+CZAddition.m in Sources */,
 				AD6A8E621E211F1B00804B2A /* DFStatusPictureView.swift in Sources */,
+				AD4B7B7C1E2A3E3B003CEB47 /* CZRefreshView.swift in Sources */,
 				AD99A68C1E27876B002512E1 /* CZRefreshControl.swift in Sources */,
 				AD6A8E561E2097F700804B2A /* DFStatusCell.swift in Sources */,
 				AD6CFB2F1E19440C0064D06A /* NSAttributedString+CZAdditon.m in Sources */,
