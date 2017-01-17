@@ -85,6 +85,12 @@ class DFMainViewController: UITabBarController {
         
         print("撰写微博")
         
+        
+        let view = DFComposeTypeView.composeTypeView()
+        
+        view.show()
+        
+        
 //        let v = DFOAuthViewController()
 //        
 ////        v.view.backgroundColor = UIColor.white

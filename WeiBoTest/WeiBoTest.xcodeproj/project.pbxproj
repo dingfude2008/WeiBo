@@ -56,12 +56,16 @@
 		AD9CFA271E13681A0014F870 /* WeBoTestCommond.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9CFA261E13681A0014F870 /* WeBoTestCommond.swift */; };
 		AD9CFA2A1E136B1F0014F870 /* DFOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9CFA291E136B1F0014F870 /* DFOAuthViewController.swift */; };
 		ADA8C3161E0E1E99001CA74E /* DFModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8C3151E0E1E99001CA74E /* DFModalViewController.swift */; };
+		ADAAEB0E1E2E03CF00B6F189 /* DFComposeTypeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADAAEB0D1E2E03CF00B6F189 /* DFComposeTypeView.xib */; };
+		ADAAEB101E2E10DE00B6F189 /* DFComposeTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAAEB0F1E2E10DE00B6F189 /* DFComposeTypeButton.swift */; };
+		ADAAEB121E2E10F800B6F189 /* DFComposeTypeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADAAEB111E2E10F800B6F189 /* DFComposeTypeButton.xib */; };
 		ADAB54D41E1234C200E0CCC5 /* DFStatue.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB54D31E1234C200E0CCC5 /* DFStatue.swift */; };
 		ADAB54D61E1234EB00E0CCC5 /* DFStatuesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB54D51E1234EB00E0CCC5 /* DFStatuesListViewModel.swift */; };
 		ADAC9E6A1E2C87B8001A8303 /* CZHumanRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADAC9E691E2C87B8001A8303 /* CZHumanRefreshView.xib */; };
 		ADAE90EA1E222A880046CCC0 /* DFStatusRetweetedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADAE90E91E222A880046CCC0 /* DFStatusRetweetedCell.xib */; };
 		ADBF16291E2D1B8A0019AD2E /* CZMeituanRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBF16271E2D1B8A0019AD2E /* CZMeituanRefreshView.swift */; };
 		ADBF162A1E2D1B8A0019AD2E /* CZMeituanRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADBF16281E2D1B8A0019AD2E /* CZMeituanRefreshView.xib */; };
+		ADBF162E1E2D1F540019AD2E /* DFComposeTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBF162D1E2D1F540019AD2E /* DFComposeTypeView.swift */; };
 		C9E32DCED09678901ACA536F /* Pods_WeiBoTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4D222A027863A6EFFC0BA20 /* Pods_WeiBoTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -133,12 +137,16 @@
 		AD9CFA261E13681A0014F870 /* WeBoTestCommond.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeBoTestCommond.swift; sourceTree = "<group>"; };
 		AD9CFA291E136B1F0014F870 /* DFOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFOAuthViewController.swift; sourceTree = "<group>"; };
 		ADA8C3151E0E1E99001CA74E /* DFModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFModalViewController.swift; sourceTree = "<group>"; };
+		ADAAEB0D1E2E03CF00B6F189 /* DFComposeTypeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DFComposeTypeView.xib; sourceTree = "<group>"; };
+		ADAAEB0F1E2E10DE00B6F189 /* DFComposeTypeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFComposeTypeButton.swift; sourceTree = "<group>"; };
+		ADAAEB111E2E10F800B6F189 /* DFComposeTypeButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DFComposeTypeButton.xib; sourceTree = "<group>"; };
 		ADAB54D31E1234C200E0CCC5 /* DFStatue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFStatue.swift; sourceTree = "<group>"; };
 		ADAB54D51E1234EB00E0CCC5 /* DFStatuesListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFStatuesListViewModel.swift; sourceTree = "<group>"; };
 		ADAC9E691E2C87B8001A8303 /* CZHumanRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CZHumanRefreshView.xib; sourceTree = "<group>"; };
 		ADAE90E91E222A880046CCC0 /* DFStatusRetweetedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DFStatusRetweetedCell.xib; sourceTree = "<group>"; };
 		ADBF16271E2D1B8A0019AD2E /* CZMeituanRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZMeituanRefreshView.swift; sourceTree = "<group>"; };
 		ADBF16281E2D1B8A0019AD2E /* CZMeituanRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CZMeituanRefreshView.xib; sourceTree = "<group>"; };
+		ADBF162D1E2D1F540019AD2E /* DFComposeTypeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFComposeTypeView.swift; sourceTree = "<group>"; };
 		B4D222A027863A6EFFC0BA20 /* Pods_WeiBoTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeiBoTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -310,6 +318,7 @@
 		AD89B9DB1E0AC82000D20E72 /* View(视图和控制器) */ = {
 			isa = PBXGroup;
 			children = (
+				ADBF162B1E2D1F0E0019AD2E /* Compose(撰写微博) */,
 				AD89B9DE1E0AC82000D20E72 /* Main(主要的) */,
 				AD89B9DD1E0AC82000D20E72 /* Home */,
 				AD89B9E11E0AC84C00D20E72 /* Message */,
@@ -343,9 +352,9 @@
 		AD89B9DE1E0AC82000D20E72 /* Main(主要的) */ = {
 			isa = PBXGroup;
 			children = (
-				AD9CFA281E136AFD0014F870 /* OAuth(授权) */,
 				AD8CB7891E0FA51400BA3CC3 /* 主控制器 */,
 				AD8CB78A1E0FA54100BA3CC3 /* VisitorView(访客视图) */,
+				AD9CFA281E136AFD0014F870 /* OAuth(授权) */,
 			);
 			name = "Main(主要的)";
 			path = Main;
@@ -435,6 +444,26 @@
 			path = OAuth;
 			sourceTree = "<group>";
 		};
+		ADBF162B1E2D1F0E0019AD2E /* Compose(撰写微博) */ = {
+			isa = PBXGroup;
+			children = (
+				ADBF162C1E2D1F0E0019AD2E /* ComposeType */,
+			);
+			name = "Compose(撰写微博)";
+			path = Compose;
+			sourceTree = "<group>";
+		};
+		ADBF162C1E2D1F0E0019AD2E /* ComposeType */ = {
+			isa = PBXGroup;
+			children = (
+				ADBF162D1E2D1F540019AD2E /* DFComposeTypeView.swift */,
+				ADAAEB0D1E2E03CF00B6F189 /* DFComposeTypeView.xib */,
+				ADAAEB0F1E2E10DE00B6F189 /* DFComposeTypeButton.swift */,
+				ADAAEB111E2E10F800B6F189 /* DFComposeTypeButton.xib */,
+			);
+			path = ComposeType;
+			sourceTree = "<group>";
+		};
 		FC6DFACCAA95AA20606015C8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -511,7 +540,9 @@
 				AD44B5E21E1A91310003E14B /* DFNewFeatureView.xib in Resources */,
 				AD4B7B7D1E2A3E3B003CEB47 /* CZRefreshView.xib in Resources */,
 				AD877D9B1E0B825100299081 /* main.json in Resources */,
+				ADAAEB0E1E2E03CF00B6F189 /* DFComposeTypeView.xib in Resources */,
 				ADBF162A1E2D1B8A0019AD2E /* CZMeituanRefreshView.xib in Resources */,
+				ADAAEB121E2E10F800B6F189 /* DFComposeTypeButton.xib in Resources */,
 				AD6829E91E1A59B7001C8074 /* DFWelecomView.xib in Resources */,
 				AD6A8E541E208C1100804B2A /* DFStatusNormalCell.xib in Resources */,
 				AD89B9CE1E0AC29B00D20E72 /* Assets.xcassets in Resources */,
@@ -593,11 +624,13 @@
 				ADBF16291E2D1B8A0019AD2E /* CZMeituanRefreshView.swift in Sources */,
 				ADAB54D41E1234C200E0CCC5 /* DFStatue.swift in Sources */,
 				AD6CFB371E19440C0064D06A /* UIScreen+CZAddition.m in Sources */,
+				ADAAEB101E2E10DE00B6F189 /* DFComposeTypeButton.swift in Sources */,
 				AD6CFB141E1933560064D06A /* DFUserAccount.swift in Sources */,
 				AD89B9F11E0ACAE200D20E72 /* DFProfileViewController.swift in Sources */,
 				AD6CFB331E19440C0064D06A /* NSString+CZPath.m in Sources */,
 				AD6CFB381E19440C0064D06A /* UIView+CZAddition.m in Sources */,
 				ADAB54D61E1234EB00E0CCC5 /* DFStatuesListViewModel.swift in Sources */,
+				ADBF162E1E2D1F540019AD2E /* DFComposeTypeView.swift in Sources */,
 				ADA8C3161E0E1E99001CA74E /* DFModalViewController.swift in Sources */,
 				AD9B784F1E0CD7D2002F6BEA /* UIBarButtonItem+Extensions.swift in Sources */,
 				AD89B9C71E0AC29B00D20E72 /* AppDelegate.swift in Sources */,
