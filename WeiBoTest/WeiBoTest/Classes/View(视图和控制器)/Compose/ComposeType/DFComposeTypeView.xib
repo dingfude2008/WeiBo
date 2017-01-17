@@ -24,17 +24,26 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7B7-uy-Lz1">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36l-VC-ZUS">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36l-VC-ZUS" userLabel="关闭按钮">
                                         <rect key="frame" x="175" y="10" width="25" height="25"/>
                                         <state key="normal" image="tabbar_compose_background_icon_close"/>
                                         <connections>
                                             <action selector="close" destination="0Vj-LZ-btx" eventType="touchUpInside" id="N7h-fG-fMQ"/>
                                         </connections>
                                     </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0o-gk-lnz" userLabel="返回上一页">
+                                        <rect key="frame" x="175" y="9.5" width="25" height="25"/>
+                                        <state key="normal" image="tabbar_compose_background_icon_return"/>
+                                        <connections>
+                                            <action selector="clickReturn" destination="0Vj-LZ-btx" eventType="touchUpInside" id="MJs-is-gGK"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="i0o-gk-lnz" firstAttribute="centerX" secondItem="7B7-uy-Lz1" secondAttribute="centerX" id="4CR-L2-P7l"/>
                                     <constraint firstItem="36l-VC-ZUS" firstAttribute="centerX" secondItem="7B7-uy-Lz1" secondAttribute="centerX" id="FE6-I6-18l"/>
+                                    <constraint firstItem="i0o-gk-lnz" firstAttribute="centerY" secondItem="7B7-uy-Lz1" secondAttribute="centerY" id="GPy-lL-3By"/>
                                     <constraint firstItem="36l-VC-ZUS" firstAttribute="centerY" secondItem="7B7-uy-Lz1" secondAttribute="centerY" id="aTn-7o-QC5"/>
                                     <constraint firstAttribute="height" constant="44" id="lEn-0h-ueZ"/>
                                 </constraints>
@@ -73,6 +82,9 @@
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="closeButtonCenterXCons" destination="FE6-I6-18l" id="hUb-NJ-fJq"/>
+                <outlet property="returnButton" destination="i0o-gk-lnz" id="6l6-9P-OVA"/>
+                <outlet property="returnButtonCenterXCons" destination="4CR-L2-P7l" id="ayv-OW-1x6"/>
                 <outlet property="scrollView" destination="wUZ-Vo-C30" id="N7g-dq-17P"/>
             </connections>
             <point key="canvasLocation" x="-214" y="-111"/>
@@ -81,5 +93,6 @@
     <resources>
         <image name="compose_slogan" width="154" height="48"/>
         <image name="tabbar_compose_background_icon_close" width="25" height="25"/>
+        <image name="tabbar_compose_background_icon_return" width="25" height="25"/>
     </resources>
 </document>

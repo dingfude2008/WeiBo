@@ -13,6 +13,14 @@ class DFComposeTypeView: UIView {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
+    /// 返回前一页按钮
+    @IBOutlet weak var returnButton: UIButton!
+    
+    /// 关闭按钮约束
+    @IBOutlet weak var closeButtonCenterXCons: NSLayoutConstraint!
+    /// 返回前一页按钮约束
+    @IBOutlet weak var returnButtonCenterXCons: NSLayoutConstraint!
+    
     /// 按钮数据数组
     fileprivate let buttonsInfo = [["imageName": "tabbar_compose_idea", "title": "文字", "clsName": "WBComposeViewController"],
                                ["imageName": "tabbar_compose_photo", "title": "照片/视频"],
@@ -57,7 +65,47 @@ class DFComposeTypeView: UIView {
          removeFromSuperview()
 //        hideButtons()
     }
+    
+    
+    /// 点击更多按钮
+    @objc private func clickMore() {
+        print("点击更多")
+        // 1> 将 scrollView 滚动到第二页
+        let offset = CGPoint(x: scrollView.bounds.width, y: 0)
+        scrollView.setContentOffset(offset, animated: true)
+        
+        // 2> 处理底部按钮，让两个按钮分开
+        returnButton.isHidden = false
+        
+        //  两个按钮位于 1/3  2/3 的位置正好， 所以需要 1/2 - 1/6
+        let margin = scrollView.bounds.width / 6
+        
+        closeButtonCenterXCons.constant += margin
+        returnButtonCenterXCons.constant -= margin
+        
+        UIView.animate(withDuration: 0.25) {
+            self.layoutIfNeeded()
+        }
+    }
 
+    // 返回上一页
+    @IBAction func clickReturn() {
+        
+        // 1. 将滚动视图滚动到第 1 页
+        scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+        
+        // 2. 让两个按钮合并
+        closeButtonCenterXCons.constant = 0
+        returnButtonCenterXCons.constant = 0
+        
+        UIView.animate(withDuration: 0.25, animations: {
+            self.layoutIfNeeded()
+            self.returnButton.alpha = 0
+        }) { _ in
+            self.returnButton.isHidden = true
+            self.returnButton.alpha = 1
+        }
+    }
     
     @objc func clickButton(){
         print("测试")
@@ -121,6 +169,16 @@ fileprivate extension DFComposeTypeView {
             
             v.addSubview(btn)
             
+            // 添加监听方法
+            if let actionName = dict["actionName"] {
+                // OC 中使用 NSSelectorFromString(@"clickMore")
+                btn.addTarget(self, action: Selector(actionName), for: .touchUpInside)
+            } else {
+                btn.addTarget(self, action: #selector(clickButton), for: .touchUpInside)
+            }
+            
+            // 4> 设置要展现的类名 - 注意不需要任何的判断，有了就设置，没有就不设置
+            btn.clsName = dict["clsName"]
         }
         
         // 准备常量
