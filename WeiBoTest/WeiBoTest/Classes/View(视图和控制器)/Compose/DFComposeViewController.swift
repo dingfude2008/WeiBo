@@ -8,12 +8,19 @@
 
 import UIKit
 
-class DFComposeViewController: DFBaseViewController {
+class DFComposeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "返回", target: self, action: #selector(close), isBack: true)
+        
+    }
+    
+    @objc fileprivate func close(){
+        
+        dismiss(animated: true, completion: nil)
+        
     }
 
     override func didReceiveMemoryWarning() {

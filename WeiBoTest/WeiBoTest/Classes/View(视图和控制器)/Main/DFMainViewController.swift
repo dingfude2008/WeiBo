@@ -85,10 +85,25 @@ class DFMainViewController: UITabBarController {
         
         print("撰写微博")
         
-        
         let view = DFComposeTypeView.composeTypeView()
         
-        view.show()
+        // 循环引用
+        view.show { [weak view] (clsName) in
+            
+            guard let clsName = clsName,
+                let cls = NSClassFromString(Bundle.main.namespace + "." +  clsName) as? UIViewController.Type  else {
+                view?.removeFromSuperview()
+                return
+            }
+            
+            let vc = cls.init()
+            let nav = UINavigationController(rootViewController: vc)
+            
+            self.present(nav, animated: true, completion: {
+                
+                view?.removeFromSuperview()
+            })
+        }
         
         
 //        let v = DFOAuthViewController()

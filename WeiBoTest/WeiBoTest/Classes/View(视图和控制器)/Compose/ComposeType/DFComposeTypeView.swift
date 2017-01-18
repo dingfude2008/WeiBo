@@ -35,6 +35,9 @@ class DFComposeTypeView: UIView {
                                ["imageName": "tabbar_compose_shooting", "title": "拍摄"]
     ]
     
+    // 完成的回调
+    fileprivate var completionBlock : ((_ clsName:String?)->())?
+    
     // 实例化方法
     class func composeTypeView() -> DFComposeTypeView {
         
@@ -51,8 +54,14 @@ class DFComposeTypeView: UIView {
         return v
     }
     
-    func show(){
+    func show(completion:((_ clsName : String?)->())?){
     
+        // oc 中如果一个block 当前方法用不到，通常会使用属性记录它，在需要的时候使用
+        // 记录闭包
+        
+        
+        completionBlock = completion
+        
         guard let vc = UIApplication.shared.keyWindow?.rootViewController else {
             return
         }
@@ -63,11 +72,12 @@ class DFComposeTypeView: UIView {
         
         showCurrentView()
         
+        
+        
     }
     
     /// 关闭视图
     @IBAction func close() {
-//         removeFromSuperview()
         hideButtons()
     }
     
@@ -149,14 +159,10 @@ class DFComposeTypeView: UIView {
                 alphaAnim.completionBlock = { _,_ in
                 
                     print("完成回调")
+                    // 使用闭包，如果闭包为nil, 就什么也不做
+                    self.completionBlock?(button.clsName)
                 }
-                
             }
-            
-            
-            
-            
-        
         }
         
     }
