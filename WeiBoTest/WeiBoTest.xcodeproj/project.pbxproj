@@ -57,6 +57,7 @@
 		AD9CFA2A1E136B1F0014F870 /* DFOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9CFA291E136B1F0014F870 /* DFOAuthViewController.swift */; };
 		ADA6E1AD1E2F2F2900E71880 /* DFComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA6E1AB1E2F2F2900E71880 /* DFComposeViewController.swift */; };
 		ADA6E1AE1E2F2F2900E71880 /* DFComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADA6E1AC1E2F2F2900E71880 /* DFComposeViewController.xib */; };
+		ADA6E1B01E2FAA4100E71880 /* String+Extersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA6E1AF1E2FAA4100E71880 /* String+Extersion.swift */; };
 		ADA8C3161E0E1E99001CA74E /* DFModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8C3151E0E1E99001CA74E /* DFModalViewController.swift */; };
 		ADAAEB0E1E2E03CF00B6F189 /* DFComposeTypeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADAAEB0D1E2E03CF00B6F189 /* DFComposeTypeView.xib */; };
 		ADAAEB101E2E10DE00B6F189 /* DFComposeTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAAEB0F1E2E10DE00B6F189 /* DFComposeTypeButton.swift */; };
@@ -140,6 +141,7 @@
 		AD9CFA291E136B1F0014F870 /* DFOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFOAuthViewController.swift; sourceTree = "<group>"; };
 		ADA6E1AB1E2F2F2900E71880 /* DFComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFComposeViewController.swift; sourceTree = "<group>"; };
 		ADA6E1AC1E2F2F2900E71880 /* DFComposeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DFComposeViewController.xib; sourceTree = "<group>"; };
+		ADA6E1AF1E2FAA4100E71880 /* String+Extersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extersion.swift"; sourceTree = "<group>"; };
 		ADA8C3151E0E1E99001CA74E /* DFModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFModalViewController.swift; sourceTree = "<group>"; };
 		ADAAEB0D1E2E03CF00B6F189 /* DFComposeTypeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DFComposeTypeView.xib; sourceTree = "<group>"; };
 		ADAAEB0F1E2E10DE00B6F189 /* DFComposeTypeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFComposeTypeButton.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 				AD9B784E1E0CD7D2002F6BEA /* UIBarButtonItem+Extensions.swift */,
 				AD6A8E5B1E20CF6000804B2A /* UIImageView+WebImage.swift */,
 				AD6A8E5D1E20D19E00804B2A /* UIImage+Extensions.swift */,
+				ADA6E1AF1E2FAA4100E71880 /* String+Extersion.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -619,6 +622,7 @@
 				AD877D991E0B76E200299081 /* Bundle+Extension.swift in Sources */,
 				AD89B9E71E0ACA2100D20E72 /* DFNavigationViewController.swift in Sources */,
 				AD6CFB311E19440C0064D06A /* NSString+CZBase64.m in Sources */,
+				ADA6E1B01E2FAA4100E71880 /* String+Extersion.swift in Sources */,
 				AD9B784B1E0CD12E002F6BEA /* DFDemoViewController.swift in Sources */,
 				AD6A8E581E209D0700804B2A /* DFUser.swift in Sources */,
 				AD6A8E5E1E20D19E00804B2A /* UIImage+Extensions.swift in Sources */,

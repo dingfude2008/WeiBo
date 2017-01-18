@@ -54,6 +54,8 @@ class DFTitleButton: UIButton {
             return
         }
         
+        // OC 中不允许直接修改结构体中的值，swift可以
+        
         titleLabel.frame.origin.x = 0
         
         imageView.frame.origin.x = titleLabel.frame.size.width

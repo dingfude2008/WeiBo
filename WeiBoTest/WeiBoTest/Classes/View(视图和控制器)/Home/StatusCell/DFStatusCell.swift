@@ -30,8 +30,11 @@ class DFStatusCell: UITableViewCell {
             /// 设置配图视图的视图模型
             pictureView.viewModel = statusViewModel
             
+            retweetedLabel?.text = statusViewModel?.retweetedAttrText
             
-            retweetedLabel?.text = statusViewModel?.status.retweeted_status?.text
+            sourceLabel.text = statusViewModel?.sourceString
+            
+            //timeLabel.text = statusViewModel?.status.createdDate
         }
     }
     

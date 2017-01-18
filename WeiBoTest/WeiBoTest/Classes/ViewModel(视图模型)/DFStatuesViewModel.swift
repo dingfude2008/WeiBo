@@ -48,6 +48,10 @@ class DFStatesViewModel : CustomStringConvertible {
     /// 被转发的文字
     var retweetedAttrText: String?
     
+    /// 来源字符串
+    var sourceString: String?
+    
+    
     /// 配图视图大小
     var pictureViewSize = CGSize()
     
@@ -94,7 +98,6 @@ class DFStatesViewModel : CustomStringConvertible {
         commentStr = countString(count: model.comments_count, defaultStr: "评论")
         likeStr = countString(count: model.reposts_count, defaultStr: "赞")
         
-        
 //        pictureViewSize = calcPictureViewSize(count: model.pic_urls?.count)
         // 使用最终的结果
         pictureViewSize = calcPictureViewSize(count: picURLs?.count)
@@ -103,6 +106,9 @@ class DFStatesViewModel : CustomStringConvertible {
             + (status.retweeted_status?.user?.screen_name ?? "")
             + ":"
             + (status.retweeted_status?.text ?? "")
+        
+        
+        sourceString = "来自 " + ((model.source?.cz_href()?.text) ?? "")
         
         // 计算行高
         updateRowHeight()
@@ -186,10 +192,7 @@ class DFStatesViewModel : CustomStringConvertible {
         let originalFont  = UIFont.systemFont(ofSize: 15)
         let retweetedFont  = UIFont.systemFont(ofSize: 14)
         
-        
-        
         var height: CGFloat = 0
-        
         
         height += 2 * margin + iconHeight + margin
         
