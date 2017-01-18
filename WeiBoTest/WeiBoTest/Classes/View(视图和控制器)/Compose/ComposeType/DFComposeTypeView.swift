@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import pop
 
 class DFComposeTypeView: UIView {
 
@@ -56,14 +57,18 @@ class DFComposeTypeView: UIView {
             return
         }
         
+        self.alpha = 0
+        
         vc.view.addSubview(self)
+        
+        showCurrentView()
         
     }
     
     /// 关闭视图
     @IBAction func close() {
-         removeFromSuperview()
-//        hideButtons()
+//         removeFromSuperview()
+        hideButtons()
     }
     
     
@@ -112,6 +117,108 @@ class DFComposeTypeView: UIView {
     }
 }
 
+
+// MARK: - 动画相关
+fileprivate extension DFComposeTypeView {
+
+    /// 隐藏按钮
+    func hideButtons(){
+    
+        // 注意，有两个视图，首先要判断是哪个视图
+        let index = scrollView.contentOffset.x / scrollView.bounds.width
+        let v = scrollView.subviews[Int(index)]
+        
+        for (i, btn) in v.subviews.enumerated().reversed() {
+        
+            let anim : POPSpringAnimation = POPSpringAnimation(propertyNamed: kPOPLayerPositionY)
+            
+            anim.fromValue = btn.center.y
+            
+            anim.toValue = btn.center.y + 400
+            
+            anim.beginTime = CACurrentMediaTime() + CFTimeInterval(v.subviews.count - i) * 0.025
+            
+            btn.pop_add(anim, forKey: nil)
+            
+            if i == 0 {
+                // ((POPAnimation?, Bool) -> Swift.Void)!
+                anim.completionBlock = { _, _ in
+                    
+                    self.hideCurrentView()
+                    
+                }
+            }
+        }
+    }
+    
+    /// 隐藏视图
+    func hideCurrentView(){
+        
+        let anim : POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
+        
+        anim.fromValue = 1
+        
+        anim.toValue = 0
+        
+        anim.duration = 0.25
+        
+        self.pop_add(anim, forKey: nil)
+        
+        anim.completionBlock = { _, _ in
+        
+            self.removeFromSuperview()
+        }
+        
+    }
+    
+    /// 动画显示视图
+    func showCurrentView(){
+        
+        // kPOPViewAlpha  这个是view上面的， 要添加到view上
+        let anim : POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
+        
+        anim.fromValue = 0
+        anim.toValue = 1
+        
+        anim.duration = 0.5
+        
+        self.pop_add(anim, forKey: nil)
+        
+        showButtons()
+    }
+    
+    /// 动画显示按钮
+    func showButtons(){
+    
+        // 第一个视图
+        let v = scrollView.subviews[0]
+        
+        for (i, btn) in v.subviews.enumerated() {
+        
+            let anim : POPSpringAnimation = POPSpringAnimation(propertyNamed: kPOPLayerPositionY)
+            
+            anim.fromValue = btn.center.y + 400
+            
+            anim.toValue = btn.center.y
+            
+            // 弹力系数，取值范围 0 - 20 ，数值越大，弹性越大，默认数值 4
+            anim.springBounciness = 8
+            
+            // 弹力速度，取值范围 0 - 20 ，数值越大，速度越快，默认数值 12
+            anim.springSpeed = 8
+            
+            anim.beginTime = CACurrentMediaTime() + CFTimeInterval(i) * 0.025
+            
+            btn.pop_add(anim, forKey: nil)
+        }
+        
+    }
+    
+}
+
+
+
+// MARK: - UI布局
 fileprivate extension DFComposeTypeView {
 
     func  setupUI() {

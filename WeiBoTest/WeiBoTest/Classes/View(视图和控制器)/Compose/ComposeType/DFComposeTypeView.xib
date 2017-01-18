@@ -48,9 +48,9 @@
                                     <constraint firstAttribute="height" constant="44" id="lEn-0h-ueZ"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wUZ-Vo-C30">
+                            <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wUZ-Vo-C30">
                                 <rect key="frame" x="0.0" y="343" width="375" height="224"/>
-                                <color key="backgroundColor" red="1" green="0.73145522939999996" blue="0.32281763029999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="224" id="ku2-Ir-OL6"/>
                                 </constraints>
