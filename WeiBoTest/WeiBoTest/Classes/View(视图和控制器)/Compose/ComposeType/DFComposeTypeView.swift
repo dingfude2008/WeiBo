@@ -23,7 +23,7 @@ class DFComposeTypeView: UIView {
     @IBOutlet weak var returnButtonCenterXCons: NSLayoutConstraint!
     
     /// 按钮数据数组
-    fileprivate let buttonsInfo = [["imageName": "tabbar_compose_idea", "title": "文字", "clsName": "WBComposeViewController"],
+    fileprivate let buttonsInfo = [["imageName": "tabbar_compose_idea", "title": "文字", "clsName": "DFComposeViewController"],
                                ["imageName": "tabbar_compose_photo", "title": "照片/视频"],
                                ["imageName": "tabbar_compose_weibo", "title": "长微博"],
                                ["imageName": "tabbar_compose_lbs", "title": "签到"],
@@ -112,8 +112,53 @@ class DFComposeTypeView: UIView {
         }
     }
     
-    @objc func clickButton(){
-        print("测试")
+    @objc func clickButton(button : DFComposeTypeButton){
+    
+        let index = scrollView.contentOffset.x / scrollView.bounds.width
+        
+        let v = scrollView.subviews[Int(index)]
+
+        for (i, btn) in v.subviews.enumerated().reversed() {
+        
+            // 缩放动画
+            let scaleAnim : POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPViewScaleXY)
+            
+            //
+            let scale = (button == btn) ? 2 : 0.2
+            
+            // 封装 CGPoint CGRect 等使用 NSValue
+            scaleAnim.toValue = NSValue(cgPoint: CGPoint(x: scale, y: scale))
+            
+            scaleAnim.duration = 0.5
+            
+            btn.pop_add(scaleAnim, forKey: nil)
+            
+            
+            let alphaAnim : POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
+            
+            alphaAnim.toValue = 0.2
+            
+            scaleAnim.duration = 0.5
+            
+            btn.pop_add(alphaAnim, forKey: nil)
+            
+            if i == 0 {
+                
+                print("11")
+                
+                alphaAnim.completionBlock = { _,_ in
+                
+                    print("完成回调")
+                }
+                
+            }
+            
+            
+            
+            
+        
+        }
+        
     }
 }
 

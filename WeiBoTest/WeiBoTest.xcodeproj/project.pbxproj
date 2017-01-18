@@ -55,6 +55,8 @@
 		AD9B784F1E0CD7D2002F6BEA /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9B784E1E0CD7D2002F6BEA /* UIBarButtonItem+Extensions.swift */; };
 		AD9CFA271E13681A0014F870 /* WeBoTestCommond.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9CFA261E13681A0014F870 /* WeBoTestCommond.swift */; };
 		AD9CFA2A1E136B1F0014F870 /* DFOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9CFA291E136B1F0014F870 /* DFOAuthViewController.swift */; };
+		ADA6E1AD1E2F2F2900E71880 /* DFComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA6E1AB1E2F2F2900E71880 /* DFComposeViewController.swift */; };
+		ADA6E1AE1E2F2F2900E71880 /* DFComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADA6E1AC1E2F2F2900E71880 /* DFComposeViewController.xib */; };
 		ADA8C3161E0E1E99001CA74E /* DFModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8C3151E0E1E99001CA74E /* DFModalViewController.swift */; };
 		ADAAEB0E1E2E03CF00B6F189 /* DFComposeTypeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADAAEB0D1E2E03CF00B6F189 /* DFComposeTypeView.xib */; };
 		ADAAEB101E2E10DE00B6F189 /* DFComposeTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAAEB0F1E2E10DE00B6F189 /* DFComposeTypeButton.swift */; };
@@ -136,6 +138,8 @@
 		AD9B784E1E0CD7D2002F6BEA /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
 		AD9CFA261E13681A0014F870 /* WeBoTestCommond.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeBoTestCommond.swift; sourceTree = "<group>"; };
 		AD9CFA291E136B1F0014F870 /* DFOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFOAuthViewController.swift; sourceTree = "<group>"; };
+		ADA6E1AB1E2F2F2900E71880 /* DFComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFComposeViewController.swift; sourceTree = "<group>"; };
+		ADA6E1AC1E2F2F2900E71880 /* DFComposeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DFComposeViewController.xib; sourceTree = "<group>"; };
 		ADA8C3151E0E1E99001CA74E /* DFModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFModalViewController.swift; sourceTree = "<group>"; };
 		ADAAEB0D1E2E03CF00B6F189 /* DFComposeTypeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DFComposeTypeView.xib; sourceTree = "<group>"; };
 		ADAAEB0F1E2E10DE00B6F189 /* DFComposeTypeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFComposeTypeButton.swift; sourceTree = "<group>"; };
@@ -448,6 +452,8 @@
 			isa = PBXGroup;
 			children = (
 				ADBF162C1E2D1F0E0019AD2E /* ComposeType */,
+				ADA6E1AB1E2F2F2900E71880 /* DFComposeViewController.swift */,
+				ADA6E1AC1E2F2F2900E71880 /* DFComposeViewController.xib */,
 			);
 			name = "Compose(撰写微博)";
 			path = Compose;
@@ -544,6 +550,7 @@
 				ADBF162A1E2D1B8A0019AD2E /* CZMeituanRefreshView.xib in Resources */,
 				ADAAEB121E2E10F800B6F189 /* DFComposeTypeButton.xib in Resources */,
 				AD6829E91E1A59B7001C8074 /* DFWelecomView.xib in Resources */,
+				ADA6E1AE1E2F2F2900E71880 /* DFComposeViewController.xib in Resources */,
 				AD6A8E541E208C1100804B2A /* DFStatusNormalCell.xib in Resources */,
 				AD89B9CE1E0AC29B00D20E72 /* Assets.xcassets in Resources */,
 				ADAE90EA1E222A880046CCC0 /* DFStatusRetweetedCell.xib in Resources */,
@@ -644,6 +651,7 @@
 				AD6A8E5A1E20AC1300804B2A /* DFStatuesViewModel.swift in Sources */,
 				AD89B9EF1E0ACAD800D20E72 /* DFDiscoverViewController.swift in Sources */,
 				AD6CFB341E19440C0064D06A /* UIButton+CZAddition.m in Sources */,
+				ADA6E1AD1E2F2F2900E71880 /* DFComposeViewController.swift in Sources */,
 				AD6829E51E1A4C36001C8074 /* DFNewFeatureView.swift in Sources */,
 				AD6CFB361E19440C0064D06A /* UILabel+CZAddition.m in Sources */,
 				AD6A8E621E211F1B00804B2A /* DFStatusPictureView.swift in Sources */,
