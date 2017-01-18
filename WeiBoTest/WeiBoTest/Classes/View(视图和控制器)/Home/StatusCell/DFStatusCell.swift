@@ -32,9 +32,7 @@ class DFStatusCell: UITableViewCell {
             
             retweetedLabel?.text = statusViewModel?.retweetedAttrText
             
-            sourceLabel.text = statusViewModel?.sourceString
-            
-            //timeLabel.text = statusViewModel?.status.createdDate
+            sourceLabel.text = statusViewModel?.status.source
         }
     }
     

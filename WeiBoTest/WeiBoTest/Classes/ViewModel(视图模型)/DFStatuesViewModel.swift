@@ -48,10 +48,6 @@ class DFStatesViewModel : CustomStringConvertible {
     /// 被转发的文字
     var retweetedAttrText: String?
     
-    /// 来源字符串
-    var sourceString: String?
-    
-    
     /// 配图视图大小
     var pictureViewSize = CGSize()
     
@@ -106,9 +102,6 @@ class DFStatesViewModel : CustomStringConvertible {
             + (status.retweeted_status?.user?.screen_name ?? "")
             + ":"
             + (status.retweeted_status?.text ?? "")
-        
-        
-        sourceString = "来自 " + ((model.source?.cz_href()?.text) ?? "")
         
         // 计算行高
         updateRowHeight()

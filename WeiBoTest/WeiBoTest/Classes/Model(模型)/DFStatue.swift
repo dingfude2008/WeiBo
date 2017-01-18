@@ -30,8 +30,12 @@ class DFStatue: NSObject {
     /// 微博创建日期
     var createdDate: Date?
     
-    /// 微博来源 - 发布微博使用的客户端
-    var source: String?
+    /// 微博来源 - 发布微博使用的客户端  // 胖模型原理，可以介绍视图模型开辟新的属性占用的空间
+    var source: String? {
+        didSet{
+            source = "来源于" + (source?.cz_href()?.text ?? "")
+        }
+    }
     
     /// 被转发的原创微博
     var retweeted_status: DFStatue?
