@@ -69,6 +69,10 @@
 		ADBF16291E2D1B8A0019AD2E /* CZMeituanRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBF16271E2D1B8A0019AD2E /* CZMeituanRefreshView.swift */; };
 		ADBF162A1E2D1B8A0019AD2E /* CZMeituanRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADBF16281E2D1B8A0019AD2E /* CZMeituanRefreshView.xib */; };
 		ADBF162E1E2D1F540019AD2E /* DFComposeTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBF162D1E2D1F540019AD2E /* DFComposeTypeView.swift */; };
+		ADC2BC351E31EBA300F91140 /* CZEmoticonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC2BC301E31EBA200F91140 /* CZEmoticonManager.swift */; };
+		ADC2BC361E31EBA300F91140 /* HMEmoticon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ADC2BC311E31EBA300F91140 /* HMEmoticon.bundle */; };
+		ADC2BC371E31EBA300F91140 /* CZEmoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC2BC331E31EBA300F91140 /* CZEmoticon.swift */; };
+		ADC2BC381E31EBA300F91140 /* CZEmoticonPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC2BC341E31EBA300F91140 /* CZEmoticonPackage.swift */; };
 		C9E32DCED09678901ACA536F /* Pods_WeiBoTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4D222A027863A6EFFC0BA20 /* Pods_WeiBoTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -153,6 +157,10 @@
 		ADBF16271E2D1B8A0019AD2E /* CZMeituanRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZMeituanRefreshView.swift; sourceTree = "<group>"; };
 		ADBF16281E2D1B8A0019AD2E /* CZMeituanRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CZMeituanRefreshView.xib; sourceTree = "<group>"; };
 		ADBF162D1E2D1F540019AD2E /* DFComposeTypeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFComposeTypeView.swift; sourceTree = "<group>"; };
+		ADC2BC301E31EBA200F91140 /* CZEmoticonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmoticonManager.swift; sourceTree = "<group>"; };
+		ADC2BC311E31EBA300F91140 /* HMEmoticon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HMEmoticon.bundle; sourceTree = "<group>"; };
+		ADC2BC331E31EBA300F91140 /* CZEmoticon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmoticon.swift; sourceTree = "<group>"; };
+		ADC2BC341E31EBA300F91140 /* CZEmoticonPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmoticonPackage.swift; sourceTree = "<group>"; };
 		B4D222A027863A6EFFC0BA20 /* Pods_WeiBoTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeiBoTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -414,6 +422,7 @@
 		AD99A6891E27874F002512E1 /* UI框架 */ = {
 			isa = PBXGroup;
 			children = (
+				ADC2BC2F1E31EBA200F91140 /* Emoticon */,
 				AD99A68A1E27874F002512E1 /* CZRefreshControl */,
 			);
 			path = "UI框架";
@@ -471,6 +480,25 @@
 				ADAAEB111E2E10F800B6F189 /* DFComposeTypeButton.xib */,
 			);
 			path = ComposeType;
+			sourceTree = "<group>";
+		};
+		ADC2BC2F1E31EBA200F91140 /* Emoticon */ = {
+			isa = PBXGroup;
+			children = (
+				ADC2BC301E31EBA200F91140 /* CZEmoticonManager.swift */,
+				ADC2BC311E31EBA300F91140 /* HMEmoticon.bundle */,
+				ADC2BC321E31EBA300F91140 /* Model */,
+			);
+			path = Emoticon;
+			sourceTree = "<group>";
+		};
+		ADC2BC321E31EBA300F91140 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ADC2BC331E31EBA300F91140 /* CZEmoticon.swift */,
+				ADC2BC341E31EBA300F91140 /* CZEmoticonPackage.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		FC6DFACCAA95AA20606015C8 /* Pods */ = {
@@ -553,6 +581,7 @@
 				ADBF162A1E2D1B8A0019AD2E /* CZMeituanRefreshView.xib in Resources */,
 				ADAAEB121E2E10F800B6F189 /* DFComposeTypeButton.xib in Resources */,
 				AD6829E91E1A59B7001C8074 /* DFWelecomView.xib in Resources */,
+				ADC2BC361E31EBA300F91140 /* HMEmoticon.bundle in Resources */,
 				ADA6E1AE1E2F2F2900E71880 /* DFComposeViewController.xib in Resources */,
 				AD6A8E541E208C1100804B2A /* DFStatusNormalCell.xib in Resources */,
 				AD89B9CE1E0AC29B00D20E72 /* Assets.xcassets in Resources */,
@@ -650,6 +679,7 @@
 				AD89B9E51E0AC9D900D20E72 /* DFMainViewController.swift in Sources */,
 				AD89B9ED1E0ACACF00D20E72 /* DFMessageViewController.swift in Sources */,
 				AD9CFA2A1E136B1F0014F870 /* DFOAuthViewController.swift in Sources */,
+				ADC2BC371E31EBA300F91140 /* CZEmoticon.swift in Sources */,
 				AD6CFB2E1E19440C0064D06A /* NSArray+Log.m in Sources */,
 				AD9CFA271E13681A0014F870 /* WeBoTestCommond.swift in Sources */,
 				AD6A8E5A1E20AC1300804B2A /* DFStatuesViewModel.swift in Sources */,
@@ -658,11 +688,13 @@
 				ADA6E1AD1E2F2F2900E71880 /* DFComposeViewController.swift in Sources */,
 				AD6829E51E1A4C36001C8074 /* DFNewFeatureView.swift in Sources */,
 				AD6CFB361E19440C0064D06A /* UILabel+CZAddition.m in Sources */,
+				ADC2BC381E31EBA300F91140 /* CZEmoticonPackage.swift in Sources */,
 				AD6A8E621E211F1B00804B2A /* DFStatusPictureView.swift in Sources */,
 				AD4B7B7C1E2A3E3B003CEB47 /* CZRefreshView.swift in Sources */,
 				AD99A68C1E27876B002512E1 /* CZRefreshControl.swift in Sources */,
 				AD6A8E561E2097F700804B2A /* DFStatusCell.swift in Sources */,
 				AD6CFB2F1E19440C0064D06A /* NSAttributedString+CZAdditon.m in Sources */,
+				ADC2BC351E31EBA300F91140 /* CZEmoticonManager.swift in Sources */,
 				AD8CB78C1E0FA55E00BA3CC3 /* DFVisitorView.swift in Sources */,
 				AD89B9F31E0ACB8D00D20E72 /* DFHomeViewController.swift in Sources */,
 				AD9A27F61E11089500B1B4E3 /* DFNetwokrManager.swift in Sources */,
