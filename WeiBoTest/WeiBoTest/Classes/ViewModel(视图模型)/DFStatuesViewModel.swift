@@ -26,6 +26,11 @@ import Foundation
  
  */
 
+fileprivate let originalFont = UIFont.systemFont(ofSize: 15)
+
+fileprivate let retweetedFont = UIFont.systemFont(ofSize: 14)
+
+
 /// 单条微博的视图模型
 class DFStatesViewModel : CustomStringConvertible {
     
@@ -45,8 +50,11 @@ class DFStatesViewModel : CustomStringConvertible {
     /// 点赞文字
     var likeStr: String?
     
-    /// 被转发的文字
-    var retweetedAttrText: String?
+    /// 微博正文的属性稳步
+    var statuesAttrText: NSAttributedString?
+    
+    /// 被转发的文字的属性文本
+    var retweetedAttrText: NSAttributedString?
     
     /// 配图视图大小
     var pictureViewSize = CGSize()
@@ -98,10 +106,16 @@ class DFStatesViewModel : CustomStringConvertible {
         // 使用最终的结果
         pictureViewSize = calcPictureViewSize(count: picURLs?.count)
         
-        retweetedAttrText = "@"
+        // 微博正文文字的属性文本
+        statuesAttrText = CZEmoticonManager.shared.emoticonString(model.text ?? "", originalFont)
+        
+        // 转发微博文字的属性文本
+        let rText = "@"
             + (status.retweeted_status?.user?.screen_name ?? "")
             + ":"
             + (status.retweeted_status?.text ?? "")
+        
+        retweetedAttrText = CZEmoticonManager.shared.emoticonString(rText, retweetedFont)
         
         // 计算行高
         updateRowHeight()
@@ -182,8 +196,6 @@ class DFStatesViewModel : CustomStringConvertible {
         
         // 显示尺寸
         let viewSize = CGSize(width: UIScreen.cz_screenWidth() - 2 * margin, height: CGFloat(MAXFLOAT))
-        let originalFont  = UIFont.systemFont(ofSize: 15)
-        let retweetedFont  = UIFont.systemFont(ofSize: 14)
         
         var height: CGFloat = 0
         
@@ -197,12 +209,13 @@ class DFStatesViewModel : CustomStringConvertible {
          
          */
     
-        if let text = status.text {
+        // 这里替换成属性文本
+        if let text = statuesAttrText {
         
-            height += (text as NSString).boundingRect(with: viewSize,
-                                                      options: [.usesLineFragmentOrigin],
-                                                      attributes: [NSFontAttributeName :  originalFont],
-                                                      context: nil).height
+            // 因为属性文本中已经包含了字体属性，所以不需要字体了
+            height += text.boundingRect(with: viewSize,
+                                        options: [.usesLineFragmentOrigin],
+                                        context: nil).height
         }
         
         if status.retweeted_status != nil {
@@ -212,10 +225,9 @@ class DFStatesViewModel : CustomStringConvertible {
             // 转发文本的高度 - 一定用 retweetedAttrText，拼接了 @用户名:微博文字
             if let text = retweetedAttrText {
             
-                height += (text as NSString).boundingRect(with: viewSize,
-                                                          options: [.usesLineFragmentOrigin],
-                                                          attributes: [NSFontAttributeName :  retweetedFont],
-                                                          context: nil).height
+                height += text.boundingRect(with: viewSize,
+                                            options: [.usesLineFragmentOrigin],
+                                            context: nil).height
             }
         }
         

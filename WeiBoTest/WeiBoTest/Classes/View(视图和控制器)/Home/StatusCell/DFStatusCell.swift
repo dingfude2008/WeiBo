@@ -13,8 +13,12 @@ class DFStatusCell: UITableViewCell {
     var statusViewModel : DFStatesViewModel? {
         didSet{
             
-            /// 设置正文
-            statusLabel.text = statusViewModel?.status.text
+            /// 设置正文的属性文本
+            statusLabel.attributedText = statusViewModel?.statuesAttrText
+            
+            //  设置转发微博的文字的属性文本
+            retweetedLabel?.attributedText = statusViewModel?.retweetedAttrText
+            
             /// 设置昵称
             nameLabel.text = statusViewModel?.status.user?.screen_name
             /// 设置会员图标
@@ -30,7 +34,7 @@ class DFStatusCell: UITableViewCell {
             /// 设置配图视图的视图模型
             pictureView.viewModel = statusViewModel
             
-            retweetedLabel?.text = statusViewModel?.retweetedAttrText
+            
             
             sourceLabel.text = statusViewModel?.status.source
         }

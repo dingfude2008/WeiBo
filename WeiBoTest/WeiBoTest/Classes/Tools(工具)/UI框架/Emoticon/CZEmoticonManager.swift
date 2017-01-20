@@ -30,14 +30,13 @@ class CZEmoticonManager {
 // MARK: - 表情字符串的处理
 extension CZEmoticonManager {
 
-    
     /// 将给定的文本转换为属性稳步
     ///  注意，替换的时候应该倒叙遍历，因为替换的时候，Range在不断的变化，从后向前遍历就可以避免
     /// - Parameters:
     ///   - string: 字符串
     ///   - font: 字体大小
     /// - Returns: 属性文本
-    func emoticonString(string: String, font:UIFont) -> NSAttributedString {
+    func emoticonString(_ string: String, _ font:UIFont) -> NSAttributedString {
     
         let attrString = NSMutableAttributedString(string: string)
         
@@ -64,6 +63,10 @@ extension CZEmoticonManager {
             print(subStr)
         }
         
+        // 4. *** 统一设置一遍字符串的属性，除了需要设置字体，还需要设置`颜色`！
+        attrString.addAttributes([NSFontAttributeName: font,
+                                  NSForegroundColorAttributeName: UIColor.darkGray],
+                                 range: NSRange(location: 0, length: attrString.length))
         
         return attrString
     }

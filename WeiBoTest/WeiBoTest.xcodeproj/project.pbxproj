@@ -73,6 +73,8 @@
 		ADC2BC361E31EBA300F91140 /* HMEmoticon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ADC2BC311E31EBA300F91140 /* HMEmoticon.bundle */; };
 		ADC2BC371E31EBA300F91140 /* CZEmoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC2BC331E31EBA300F91140 /* CZEmoticon.swift */; };
 		ADC2BC381E31EBA300F91140 /* CZEmoticonPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC2BC341E31EBA300F91140 /* CZEmoticonPackage.swift */; };
+		ADC87CD31E31F6390032FE25 /* NSArray+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC87CD01E31F6390032FE25 /* NSArray+CZAddition.m */; };
+		ADC87CD41E31F6390032FE25 /* NSObject+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC87CD21E31F6390032FE25 /* NSObject+CZAddition.m */; };
 		C9E32DCED09678901ACA536F /* Pods_WeiBoTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4D222A027863A6EFFC0BA20 /* Pods_WeiBoTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -161,6 +163,10 @@
 		ADC2BC311E31EBA300F91140 /* HMEmoticon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HMEmoticon.bundle; sourceTree = "<group>"; };
 		ADC2BC331E31EBA300F91140 /* CZEmoticon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmoticon.swift; sourceTree = "<group>"; };
 		ADC2BC341E31EBA300F91140 /* CZEmoticonPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmoticonPackage.swift; sourceTree = "<group>"; };
+		ADC87CCF1E31F6390032FE25 /* NSArray+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+CZAddition.h"; sourceTree = "<group>"; };
+		ADC87CD01E31F6390032FE25 /* NSArray+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+CZAddition.m"; sourceTree = "<group>"; };
+		ADC87CD11E31F6390032FE25 /* NSObject+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CZAddition.h"; sourceTree = "<group>"; };
+		ADC87CD21E31F6390032FE25 /* NSObject+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CZAddition.m"; sourceTree = "<group>"; };
 		B4D222A027863A6EFFC0BA20 /* Pods_WeiBoTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeiBoTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -227,6 +233,10 @@
 			isa = PBXGroup;
 			children = (
 				AD6CFB151E19440C0064D06A /* CZAdditions.h */,
+				ADC87CCF1E31F6390032FE25 /* NSArray+CZAddition.h */,
+				ADC87CD01E31F6390032FE25 /* NSArray+CZAddition.m */,
+				ADC87CD11E31F6390032FE25 /* NSObject+CZAddition.h */,
+				ADC87CD21E31F6390032FE25 /* NSObject+CZAddition.m */,
 				AD6CFB161E19440C0064D06A /* NSArray+Log.h */,
 				AD6CFB171E19440C0064D06A /* NSArray+Log.m */,
 				AD6CFB181E19440C0064D06A /* NSAttributedString+CZAdditon.h */,
@@ -672,9 +682,11 @@
 				ADAB54D61E1234EB00E0CCC5 /* DFStatuesListViewModel.swift in Sources */,
 				ADBF162E1E2D1F540019AD2E /* DFComposeTypeView.swift in Sources */,
 				ADA8C3161E0E1E99001CA74E /* DFModalViewController.swift in Sources */,
+				ADC87CD31E31F6390032FE25 /* NSArray+CZAddition.m in Sources */,
 				AD9B784F1E0CD7D2002F6BEA /* UIBarButtonItem+Extensions.swift in Sources */,
 				AD89B9C71E0AC29B00D20E72 /* AppDelegate.swift in Sources */,
 				AD6A8E5C1E20CF6000804B2A /* UIImageView+WebImage.swift in Sources */,
+				ADC87CD41E31F6390032FE25 /* NSObject+CZAddition.m in Sources */,
 				AD6829E11E1A3FE7001C8074 /* DFTitleButton.swift in Sources */,
 				AD89B9E51E0AC9D900D20E72 /* DFMainViewController.swift in Sources */,
 				AD89B9ED1E0ACACF00D20E72 /* DFMessageViewController.swift in Sources */,
