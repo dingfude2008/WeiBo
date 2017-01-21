@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DFComposeViewController" customModule="WeiBoTest" customModuleProvider="target">
             <connections>
+                <outlet property="sendButton" destination="3CB-b1-x4T" id="DgS-DN-a3m"/>
                 <outlet property="textView" destination="18A-Eg-rRs" id="K0F-jJ-EMY"/>
                 <outlet property="toolbar" destination="zz8-4D-Mlp" id="K2w-XH-9e4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -46,5 +47,23 @@
                 <constraint firstAttribute="bottom" secondItem="zz8-4D-Mlp" secondAttribute="bottom" id="qXA-LX-xOl"/>
             </constraints>
         </view>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3CB-b1-x4T">
+            <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+            <state key="normal" title="发布" backgroundImage="common_button_orange"/>
+            <state key="disabled" backgroundImage="common_button_white_disable">
+                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+            </state>
+            <state key="highlighted" backgroundImage="common_button_orange_highlighted"/>
+            <connections>
+                <action selector="postStatus" destination="-1" eventType="touchUpInside" id="raj-yI-0aY"/>
+            </connections>
+        </button>
     </objects>
+    <resources>
+        <image name="common_button_orange" width="11" height="35"/>
+        <image name="common_button_orange_highlighted" width="11" height="35"/>
+        <image name="common_button_white_disable" width="11" height="35"/>
+    </resources>
 </document>

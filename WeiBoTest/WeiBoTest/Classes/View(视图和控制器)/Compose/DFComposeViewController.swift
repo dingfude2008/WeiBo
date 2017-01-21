@@ -15,10 +15,16 @@ class DFComposeViewController: UIViewController {
     /// 底部工具栏
     @IBOutlet weak var toolbar: UIToolbar!
     
+    /// 发布按钮
+    @IBOutlet var sendButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "返回", target: self, action: #selector(close), isBack: true)
+        
+        setupUI()
         
     }
     
@@ -27,21 +33,42 @@ class DFComposeViewController: UIViewController {
         dismiss(animated: true, completion: nil)
         
     }
+    
+    /// 发布微博
+    @IBAction func postStatus() {
+        print("发布微博")
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
+
+
+private extension DFComposeViewController {
+    
+    func setupUI() {
+        
+        view.backgroundColor = UIColor.white
+        
+        setupNavigationBar()
+        //setupToolbar()
+    }
+    
+    /// 设置导航栏
+    func setupNavigationBar() {
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "关闭", target: self, action: #selector(close))
+        
+        // 设置发送按钮
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: sendButton)
+        // 设置标题视图
+        //navigationItem.titleView = titleLabel
+        
+//        sendButton.isEnabled = false
+    }
+}
+

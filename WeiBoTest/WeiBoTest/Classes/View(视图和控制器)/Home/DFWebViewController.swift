@@ -27,6 +27,8 @@ class DFWebViewController: DFBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
