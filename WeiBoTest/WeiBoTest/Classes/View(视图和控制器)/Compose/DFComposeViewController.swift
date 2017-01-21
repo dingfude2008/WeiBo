@@ -10,6 +10,11 @@ import UIKit
 
 class DFComposeViewController: UIViewController {
 
+    /// 文本编辑视图
+    @IBOutlet weak var textView: UITextView!
+    /// 底部工具栏
+    @IBOutlet weak var toolbar: UIToolbar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

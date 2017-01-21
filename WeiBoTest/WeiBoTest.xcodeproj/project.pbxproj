@@ -47,6 +47,7 @@
 		AD89B9EF1E0ACAD800D20E72 /* DFDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD89B9EE1E0ACAD800D20E72 /* DFDiscoverViewController.swift */; };
 		AD89B9F11E0ACAE200D20E72 /* DFProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD89B9F01E0ACAE200D20E72 /* DFProfileViewController.swift */; };
 		AD89B9F31E0ACB8D00D20E72 /* DFHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD89B9F21E0ACB8D00D20E72 /* DFHomeViewController.swift */; };
+		AD8A37D71E330096007D6BC5 /* DFWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8A37D61E330096007D6BC5 /* DFWebViewController.swift */; };
 		AD8CB78C1E0FA55E00BA3CC3 /* DFVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8CB78B1E0FA55E00BA3CC3 /* DFVisitorView.swift */; };
 		AD99A68C1E27876B002512E1 /* CZRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD99A68B1E27876B002512E1 /* CZRefreshControl.swift */; };
 		AD9A27F61E11089500B1B4E3 /* DFNetwokrManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9A27F51E11089500B1B4E3 /* DFNetwokrManager.swift */; };
@@ -138,6 +139,7 @@
 		AD89B9EE1E0ACAD800D20E72 /* DFDiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFDiscoverViewController.swift; sourceTree = "<group>"; };
 		AD89B9F01E0ACAE200D20E72 /* DFProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFProfileViewController.swift; sourceTree = "<group>"; };
 		AD89B9F21E0ACB8D00D20E72 /* DFHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFHomeViewController.swift; sourceTree = "<group>"; };
+		AD8A37D61E330096007D6BC5 /* DFWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFWebViewController.swift; sourceTree = "<group>"; };
 		AD8CB78B1E0FA55E00BA3CC3 /* DFVisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFVisitorView.swift; sourceTree = "<group>"; };
 		AD99A68B1E27876B002512E1 /* CZRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZRefreshControl.swift; sourceTree = "<group>"; };
 		AD9A27F51E11089500B1B4E3 /* DFNetwokrManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFNetwokrManager.swift; sourceTree = "<group>"; };
@@ -372,6 +374,7 @@
 				AD89B9F21E0ACB8D00D20E72 /* DFHomeViewController.swift */,
 				AD9B784A1E0CD12E002F6BEA /* DFDemoViewController.swift */,
 				ADA8C3151E0E1E99001CA74E /* DFModalViewController.swift */,
+				AD8A37D61E330096007D6BC5 /* DFWebViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -672,6 +675,7 @@
 				AD877D991E0B76E200299081 /* Bundle+Extension.swift in Sources */,
 				AD89B9E71E0ACA2100D20E72 /* DFNavigationViewController.swift in Sources */,
 				AD6CFB311E19440C0064D06A /* NSString+CZBase64.m in Sources */,
+				AD8A37D71E330096007D6BC5 /* DFWebViewController.swift in Sources */,
 				ADA6E1B01E2FAA4100E71880 /* String+Extersion.swift in Sources */,
 				AD9B784B1E0CD12E002F6BEA /* DFDemoViewController.swift in Sources */,
 				AD6A8E581E209D0700804B2A /* DFUser.swift in Sources */,

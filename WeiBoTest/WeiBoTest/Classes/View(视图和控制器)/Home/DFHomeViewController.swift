@@ -135,6 +135,10 @@ extension DFHomeViewController : DFStatusCellDelegate {
 
     func statusCellDidSelectedURLString(cell: DFStatusCell, urlString: String) {
         print(urlString)
+        
+        let vc = DFWebViewController()
+        vc.urlString = urlString
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
