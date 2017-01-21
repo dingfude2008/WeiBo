@@ -63,6 +63,7 @@ extension CZEmoticonManager {
             print(subStr)
         }
         
+        // 如果不设置，会造成高度计算不对，导致单元格高度计算计算错误
         // 4. *** 统一设置一遍字符串的属性，除了需要设置字体，还需要设置`颜色`！
         attrString.addAttributes([NSFontAttributeName: font,
                                   NSForegroundColorAttributeName: UIColor.darkGray],

@@ -75,6 +75,7 @@
 		ADC2BC381E31EBA300F91140 /* CZEmoticonPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC2BC341E31EBA300F91140 /* CZEmoticonPackage.swift */; };
 		ADC87CD31E31F6390032FE25 /* NSArray+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC87CD01E31F6390032FE25 /* NSArray+CZAddition.m */; };
 		ADC87CD41E31F6390032FE25 /* NSObject+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC87CD21E31F6390032FE25 /* NSObject+CZAddition.m */; };
+		ADFA2ECC1E32F2D2007DFBA8 /* FFLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFA2ECB1E32F2D2007DFBA8 /* FFLabel.swift */; };
 		C9E32DCED09678901ACA536F /* Pods_WeiBoTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4D222A027863A6EFFC0BA20 /* Pods_WeiBoTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -167,6 +168,7 @@
 		ADC87CD01E31F6390032FE25 /* NSArray+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+CZAddition.m"; sourceTree = "<group>"; };
 		ADC87CD11E31F6390032FE25 /* NSObject+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CZAddition.h"; sourceTree = "<group>"; };
 		ADC87CD21E31F6390032FE25 /* NSObject+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CZAddition.m"; sourceTree = "<group>"; };
+		ADFA2ECB1E32F2D2007DFBA8 /* FFLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFLabel.swift; sourceTree = "<group>"; };
 		B4D222A027863A6EFFC0BA20 /* Pods_WeiBoTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeiBoTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -432,6 +434,7 @@
 		AD99A6891E27874F002512E1 /* UI框架 */ = {
 			isa = PBXGroup;
 			children = (
+				ADFA2ECA1E32F2D2007DFBA8 /* FFLabel */,
 				ADC2BC2F1E31EBA200F91140 /* Emoticon */,
 				AD99A68A1E27874F002512E1 /* CZRefreshControl */,
 			);
@@ -509,6 +512,14 @@
 				ADC2BC341E31EBA300F91140 /* CZEmoticonPackage.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		ADFA2ECA1E32F2D2007DFBA8 /* FFLabel */ = {
+			isa = PBXGroup;
+			children = (
+				ADFA2ECB1E32F2D2007DFBA8 /* FFLabel.swift */,
+			);
+			path = FFLabel;
 			sourceTree = "<group>";
 		};
 		FC6DFACCAA95AA20606015C8 /* Pods */ = {
@@ -675,6 +686,7 @@
 				ADAB54D41E1234C200E0CCC5 /* DFStatue.swift in Sources */,
 				AD6CFB371E19440C0064D06A /* UIScreen+CZAddition.m in Sources */,
 				ADAAEB101E2E10DE00B6F189 /* DFComposeTypeButton.swift in Sources */,
+				ADFA2ECC1E32F2D2007DFBA8 /* FFLabel.swift in Sources */,
 				AD6CFB141E1933560064D06A /* DFUserAccount.swift in Sources */,
 				AD89B9F11E0ACAE200D20E72 /* DFProfileViewController.swift in Sources */,
 				AD6CFB331E19440C0064D06A /* NSString+CZPath.m in Sources */,
