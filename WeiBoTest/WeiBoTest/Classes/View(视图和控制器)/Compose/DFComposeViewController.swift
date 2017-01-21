@@ -18,6 +18,10 @@ class DFComposeViewController: UIViewController {
     /// 发布按钮
     @IBOutlet var sendButton: UIButton!
     
+    /// 标题标签 - 换行的热键 option + 回车
+    /// 逐行选中文本并且设置属性
+    /// 如果要想调整行间距，可以增加一个空行，设置空行的字体，从而影响到lineHeight
+    @IBOutlet var titleLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,9 +70,9 @@ private extension DFComposeViewController {
         // 设置发送按钮
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: sendButton)
         // 设置标题视图
-        //navigationItem.titleView = titleLabel
+        navigationItem.titleView = titleLabel
         
-//        sendButton.isEnabled = false
+        sendButton.isEnabled = false
     }
 }
 
