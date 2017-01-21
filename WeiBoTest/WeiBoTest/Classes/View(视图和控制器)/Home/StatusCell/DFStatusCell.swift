@@ -8,8 +8,23 @@
 
 import UIKit
 
+/// 微博 Cell 的协议
+/// 如果需要设置可选的协议
+/// - 需要遵守 NSObjectProtocol 协议
+/// - 协议需要 @objc
+/// - 方法需要 @objc optional
+
+@objc protocol DFStatusCellDelegate : NSObjectProtocol {
+    
+    // 微博 Cell 中选中  URL 字符串
+    @objc optional func statusCellDidSelectedURLString(cell: DFStatusCell, urlString: String)
+}
+
 class DFStatusCell: UITableViewCell {
 
+    /// 可选代理
+    weak var delegate : DFStatusCellDelegate?
+    
     var statusViewModel : DFStatesViewModel? {
         didSet{
             
@@ -53,10 +68,10 @@ class DFStatusCell: UITableViewCell {
     /// 认证图标
     @IBOutlet weak var vipIconView: UIImageView!
     /// 微博正文
-    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var statusLabel: FFLabel!
     
     /// 被转发微博的正文 --- 注意：这里是可选的，因为有一个xib中这个控件
-    @IBOutlet weak var retweetedLabel: UILabel?
+    @IBOutlet weak var retweetedLabel: FFLabel?
     
     
     /// 底部视图
@@ -81,3 +96,25 @@ class DFStatusCell: UITableViewCell {
         
     }
 }
+
+// MARK: - 实现label的点击协议
+extension DFStatusCell : FFLabelDelegate {
+    
+    func labelDidSelectedLinkText(label: FFLabel, text: String) {
+        
+        // 判断是否是URL
+        if !text.hasPrefix("http://") {
+            return
+        }
+        
+        // 智能提示建议我们插入 ！ 但是如果插入了 ！ 代理对象没有实现可选的方法就会崩溃
+        // 这里插入 ？ 如果代理对象没有实现方法，就什么也不做
+        delegate?.statusCellDidSelectedURLString?(cell: self, urlString: text)
+        
+        
+        
+    }
+    
+}
+
+
