@@ -90,6 +90,11 @@ extension DFHomeViewController{
         
         cell.statusViewModel = statesViewModel
         
+        // 设置代理
+        // 这里不适用block的原因是，在这里需要给每一个cell赋值一个block, 太浪费内存
+        // 使用delegate 只是传递了一个指针
+        cell.delegate = self
+        
         // 返回cell
         return cell
     }
@@ -125,6 +130,14 @@ extension DFHomeViewController{
     
     
 }
+// MARK: - 实现协议
+extension DFHomeViewController : DFStatusCellDelegate {
+
+    func statusCellDidSelectedURLString(cell: DFStatusCell, urlString: String) {
+        print(urlString)
+    }
+}
+
 
 
 // MARK: - 设置 UI

@@ -94,6 +94,10 @@ class DFStatusCell: UITableViewCell {
         // 使用栅格化必须指定分辨率
         self.layer.rasterizationScale = UIScreen.main.scale
         
+        // 设置代理
+        statusLabel.delegate = self
+        
+        retweetedLabel?.delegate = self
     }
 }
 
