@@ -182,18 +182,18 @@ class CZRefreshControl: UIControl {
         if sv.isDragging {
          
             if height > CZRefreshOffset && refreshView.refreshState == .Normal {
-                print("放手刷新")
+                //print("放手刷新")
                 refreshView.refreshState = .Pulling
             } else if height <= CZRefreshOffset && refreshView.refreshState == .Pulling {
-                print("加把劲")
+                //print("加把劲")
                 refreshView.refreshState = .Normal
             }
         } else {
             
-            print("放手")
+            //print("放手")
             
             if refreshView.refreshState == .Pulling {
-                print("准备刷新")
+                //print("准备刷新")
                 
                 self.beginRefreshing()
                 

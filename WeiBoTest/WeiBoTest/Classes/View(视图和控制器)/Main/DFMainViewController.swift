@@ -216,7 +216,7 @@ extension DFMainViewController {
     
     fileprivate func setupTimer(){
     
-        timer = Timer.scheduledTimer(timeInterval: 8.0, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 28.0, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
     }
     
     

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class DFComposeViewController: UIViewController {
 
@@ -85,6 +86,38 @@ class DFComposeViewController: UIViewController {
     /// 发布微博
     @IBAction func postStatus() {
         print("发布微博")
+        
+        guard let text = textView.text else {
+            return
+        }
+        
+//        DFNetwokrManager.shared.postStatues(text: text) { (result, isSuccess) in
+//            print(result ?? "")
+//        }
+        // 2. 发布微博
+        // FIXME: - 临时测试发布带图片的微博
+        let image: UIImage? = nil
+        
+        DFNetwokrManager.shared.postStatue(text: text, image: image) { (result, isSuccess) in
+            // print(result)
+            
+            // 修改指示器样式
+            SVProgressHUD.setDefaultStyle(.dark)
+            
+            let message = isSuccess ? "发布成功" : "网络不给力"
+            
+            SVProgressHUD.showInfo(withStatus: message)
+            
+            // 如果成功，延迟一段时间关闭当前窗口
+            if isSuccess {
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: { 
+                    // 恢复样式
+                    SVProgressHUD.setDefaultStyle(.light)
+
+                    self.close()
+                })
+            }
+        }
     }
     
 

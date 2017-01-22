@@ -12,7 +12,7 @@ class CZMeituanRefreshView: CZRefreshView {
 
     override var parentViewHeight : CGFloat {
         didSet{
-            print("父视图的高度为：\(parentViewHeight)")
+            //print("父视图的高度为：\(parentViewHeight)")
             
             // 最小到 23
             if parentViewHeight < 23 {

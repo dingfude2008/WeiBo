@@ -139,7 +139,45 @@ extension DFNetwokrManager {
     
 }
 
+// MARK: - 发布微博
+extension DFNetwokrManager{
 
+    /// 发布微博接口
+    ///
+    /// - Parameters:
+    ///   - text: 文本内容
+    ///   - image: 图片
+    ///   - complection: 完成回调
+    func postStatue(text : String, image:UIImage? = nil, complection:@escaping (_ result:[String:AnyObject]?, _ isSuccess:Bool)->()){
+        
+        let urlString : String
+        
+        if image == nil {
+            
+            urlString = "https://api.weibo.com/2/statuses/update.json"
+        }else {
+        
+            urlString = "https://upload.api.weibo.com/2/statuses/upload.json"
+        }
+        
+        let params = ["status":text]
+        
+        var data: Data?
+        var name: String?
+        
+        if image != nil {
+            
+            name = "pic"
+            data = UIImagePNGRepresentation(image!)
+        }
+        
+        tokenRequest(method: .POST, URLString: urlString, parameters: params as [String : AnyObject]?, name: name, data: data) { (json, isSuccess) in
+            complection(json as? [String : AnyObject], isSuccess)
+        }
+        
+    }
+    
+}
 
 
 

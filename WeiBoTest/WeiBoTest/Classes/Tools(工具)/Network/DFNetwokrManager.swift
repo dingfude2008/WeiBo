@@ -8,7 +8,10 @@
 
 import UIKit
 import AFNetworking
-
+/**
+ - 如果日常开发中，发现网络请求返回的状态码是 405，不支持的网络请求方法
+ - 首先应该查找网路请求方法是否正确
+ */
 enum DFHTTPMethod {
     case GET
     case POST
@@ -53,8 +56,15 @@ class DFNetwokrManager: AFHTTPSessionManager {
     
     
     
-    
-    func tokenRequest(method : DFHTTPMethod = .GET, URLString : String, parameters:[String: AnyObject]?, complection:@escaping (_ json : Any?, _ isSuccess: Bool)->()){
+    /// 专门负责拼接 token 的网络请求方法
+    ///
+    /// - parameter method:     GET / POST
+    /// - parameter URLString:  URLString
+    /// - parameter parameters: 参数字典
+    /// - parameter name:       上传文件使用的字段名，默认为 nil，不上传文件
+    /// - parameter data:       上传文件的二进制数据，默认为 nil，不上传文件
+    /// - parameter completion: 完成回调
+    func tokenRequest(method : DFHTTPMethod = .GET, URLString : String, parameters:[String: AnyObject]?,  name : String? = nil, data : Data? = nil, complection:@escaping (_ json : Any?, _ isSuccess: Bool)->()){
         
         
         guard let token = userAccount.access_token  else {
@@ -68,7 +78,6 @@ class DFNetwokrManager: AFHTTPSessionManager {
             complection(nil, false)
             
             return
-            
         }
         
         var parameters = parameters
@@ -80,8 +89,13 @@ class DFNetwokrManager: AFHTTPSessionManager {
         
         parameters!["access_token"] = token as AnyObject
         
-        request(URLString: URLString, parameters: parameters, complection: complection)
-        
+        if let name = name,
+            let data = data {
+            
+            print("未完成")
+        } else {
+            request(method: method, URLString: URLString, parameters: parameters, complection: complection)
+        }
     }
     
     func request(method : DFHTTPMethod = .GET, URLString : String, parameters:[String: AnyObject]?, complection:@escaping (_ json : Any?, _ isSuccess: Bool)->()) {
