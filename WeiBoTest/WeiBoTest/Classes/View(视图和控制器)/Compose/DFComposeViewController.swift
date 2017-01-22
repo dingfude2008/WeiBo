@@ -32,13 +32,30 @@ class DFComposeViewController: UIViewController {
 
         setupUI()
         
-        
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyboardChanged),
                                                name: NSNotification.Name.UIKeyboardWillChangeFrame,
                                                object: nil)
         
     }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        textView.becomeFirstResponder()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        textView.resignFirstResponder()
+    }
+    
+    
     
     @objc fileprivate func keyboardChanged(n:NSNotification){
         
