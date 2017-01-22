@@ -166,7 +166,6 @@ extension DFNetwokrManager{
         var name: String?
         
         if image != nil {
-            
             name = "pic"
             data = UIImagePNGRepresentation(image!)
         }

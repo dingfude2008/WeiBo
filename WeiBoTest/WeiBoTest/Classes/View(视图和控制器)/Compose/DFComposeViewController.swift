@@ -96,8 +96,8 @@ class DFComposeViewController: UIViewController {
 //        }
         // 2. 发布微博
         // FIXME: - 临时测试发布带图片的微博
-        let image: UIImage? = nil
-        
+//        let image: UIImage? = nil
+        let image: UIImage? = UIImage(named: "icon_small_kangaroo_loading_1")
         DFNetwokrManager.shared.postStatue(text: text, image: image) { (result, isSuccess) in
             // print(result)
             
