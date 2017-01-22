@@ -32,6 +32,8 @@ fileprivate extension DFComposeTextView{
     func setupUI() {
         
         /// 监听变化 self 只管自己的变化，别的不管
+        // - 通知是一对多，如果其他控件监听当前文本视图的通知，不会影响
+        // - 但是如果使用代理，其他控件就无法使用代理监听通知！
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(textChanged),
                                                name: NSNotification.Name.UITextViewTextDidChange, object: self)

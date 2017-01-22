@@ -95,6 +95,26 @@ class DFComposeViewController: UIViewController {
 
 }
 
+// MARK: - UITextViewDelegate
+/**
+ 通知：一对多，只要有注册的监听者，在注销监听之前，都可以接收到通知！
+ 代理：一对一，最后设置的代理对象有效！
+ 
+ 苹果日常开发中，代理的监听方式是最多的！
+ 
+ - 代理是发生事件时，直接让代理执行协议方法！
+ 代理的效率更高
+ 直接的反向传值
+ - 通知是发生事件时，将通知发送给通知中心，通知中心再`广播`通知！
+ 通知相对要低一些
+ 如果层次嵌套的非常深，可以使用通知传值
+ */
+extension DFComposeViewController :  UITextViewDelegate{
+    func textViewDidChange(_ textView: UITextView) {
+        sendButton.isEnabled = textView.hasText
+    }
+}
+
 
 private extension DFComposeViewController {
     
