@@ -12,7 +12,7 @@ import SVProgressHUD
 class DFComposeViewController: UIViewController {
 
     /// 文本编辑视图
-    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var textView: DFComposeTextView!
     /// 底部工具栏
     @IBOutlet weak var toolbar: UIToolbar!
     
@@ -26,6 +26,12 @@ class DFComposeViewController: UIViewController {
     /// 逐行选中文本并且设置属性
     /// 如果要想调整行间距，可以增加一个空行，设置空行的字体，从而影响到lineHeight, 字体大小约等于字体大小
     @IBOutlet var titleLabel: UILabel!
+    
+    
+    /// 懒加载 键盘视图
+    lazy var emoticomView : CZEmoticonInputView = CZEmoticonInputView.inputView { [weak self] (em) in
+        self?.textView.insertEmoticon(em)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +60,6 @@ class DFComposeViewController: UIViewController {
         
         textView.resignFirstResponder()
     }
-    
     
     
     @objc fileprivate func keyboardChanged(n:NSNotification){
@@ -87,10 +92,10 @@ class DFComposeViewController: UIViewController {
     /// 切换键盘
     @objc fileprivate func emoticonKeyboard(){
     
-        let textInputView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 253))
-        textInputView.backgroundColor = UIColor.red
+//        let textInputView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 253))
+//        textInputView.backgroundColor = UIColor.red
         
-        textView.inputView = (textView.inputView == nil) ? textInputView : nil
+        textView.inputView = (textView.inputView == nil) ? emoticomView : nil
         
         // 3> !!!刷新键盘视图
         textView.reloadInputViews()
@@ -101,17 +106,13 @@ class DFComposeViewController: UIViewController {
     @IBAction func postStatus() {
         print("发布微博")
         
-        guard let text = textView.text else {
-            return
-        }
+        // 获取属性文本的字符
+        let text = textView.emoticonText
         
-//        DFNetwokrManager.shared.postStatues(text: text) { (result, isSuccess) in
-//            print(result ?? "")
-//        }
         // 2. 发布微博
         // FIXME: - 临时测试发布带图片的微博
-//        let image: UIImage? = nil
-        let image: UIImage? = UIImage(named: "icon_small_kangaroo_loading_1")
+        let image: UIImage? = nil
+//        let image: UIImage? = UIImage(named: "icon_small_kangaroo_loading_1")
         DFNetwokrManager.shared.postStatue(text: text, image: image) { (result, isSuccess) in
             // print(result)
             
