@@ -171,6 +171,8 @@ extension DFNetwokrManager{
             data = UIImagePNGRepresentation(image!)
         }
         
+        
+        
         tokenRequest(method: .POST, URLString: urlString, parameters: params as [String : AnyObject]?, name: name, data: data) { (json, isSuccess) in
             complection(json as? [String : AnyObject], isSuccess)
         }
