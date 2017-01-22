@@ -15,6 +15,7 @@
                 <outlet property="textView" destination="18A-Eg-rRs" id="K0F-jJ-EMY"/>
                 <outlet property="titleLabel" destination="k5l-Lq-955" id="UZC-DQ-uCF"/>
                 <outlet property="toolbar" destination="zz8-4D-Mlp" id="K2w-XH-9e4"/>
+                <outlet property="toolbarBottomCons" destination="qXA-LX-xOl" id="jHu-jS-ixT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -45,7 +46,7 @@
                 <constraint firstAttribute="trailing" secondItem="zz8-4D-Mlp" secondAttribute="trailing" id="bgk-km-iuu"/>
                 <constraint firstItem="zz8-4D-Mlp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="cqs-xb-jSS"/>
                 <constraint firstAttribute="trailing" secondItem="18A-Eg-rRs" secondAttribute="trailing" id="iys-HA-CAJ"/>
-                <constraint firstAttribute="bottom" secondItem="zz8-4D-Mlp" secondAttribute="bottom" id="qXA-LX-xOl"/>
+                <constraint firstAttribute="bottom" secondItem="zz8-4D-Mlp" secondAttribute="bottom" symbolic="YES" id="qXA-LX-xOl"/>
             </constraints>
         </view>
         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3CB-b1-x4T">
