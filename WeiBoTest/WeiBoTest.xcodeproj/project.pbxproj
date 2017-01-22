@@ -57,6 +57,16 @@
 		AD9CFA271E13681A0014F870 /* WeBoTestCommond.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9CFA261E13681A0014F870 /* WeBoTestCommond.swift */; };
 		AD9CFA2A1E136B1F0014F870 /* DFOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9CFA291E136B1F0014F870 /* DFOAuthViewController.swift */; };
 		ADA0FF2D1E3447A80000A96B /* WBComposeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA0FF2C1E3447A80000A96B /* WBComposeTextView.swift */; };
+		ADA0FF581E3500530000A96B /* CZEmoticonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA0FF4C1E3500530000A96B /* CZEmoticonManager.swift */; };
+		ADA0FF591E3500530000A96B /* HMEmoticon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ADA0FF4D1E3500530000A96B /* HMEmoticon.bundle */; };
+		ADA0FF5A1E3500530000A96B /* CZEmoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA0FF4F1E3500530000A96B /* CZEmoticon.swift */; };
+		ADA0FF5B1E3500530000A96B /* CZEmoticonAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA0FF501E3500530000A96B /* CZEmoticonAttachment.swift */; };
+		ADA0FF5C1E3500530000A96B /* CZEmoticonPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA0FF511E3500530000A96B /* CZEmoticonPackage.swift */; };
+		ADA0FF5D1E3500530000A96B /* CZEmoticonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA0FF531E3500530000A96B /* CZEmoticonCell.swift */; };
+		ADA0FF5E1E3500530000A96B /* CZEmoticonInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA0FF541E3500530000A96B /* CZEmoticonInputView.swift */; };
+		ADA0FF5F1E3500530000A96B /* CZEmoticonInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADA0FF551E3500530000A96B /* CZEmoticonInputView.xib */; };
+		ADA0FF601E3500530000A96B /* CZEmoticonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA0FF561E3500530000A96B /* CZEmoticonLayout.swift */; };
+		ADA0FF611E3500530000A96B /* CZEmoticonToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA0FF571E3500530000A96B /* CZEmoticonToolbar.swift */; };
 		ADA6E1AD1E2F2F2900E71880 /* DFComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA6E1AB1E2F2F2900E71880 /* DFComposeViewController.swift */; };
 		ADA6E1AE1E2F2F2900E71880 /* DFComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADA6E1AC1E2F2F2900E71880 /* DFComposeViewController.xib */; };
 		ADA6E1B01E2FAA4100E71880 /* String+Extersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA6E1AF1E2FAA4100E71880 /* String+Extersion.swift */; };
@@ -71,10 +81,6 @@
 		ADBF16291E2D1B8A0019AD2E /* CZMeituanRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBF16271E2D1B8A0019AD2E /* CZMeituanRefreshView.swift */; };
 		ADBF162A1E2D1B8A0019AD2E /* CZMeituanRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADBF16281E2D1B8A0019AD2E /* CZMeituanRefreshView.xib */; };
 		ADBF162E1E2D1F540019AD2E /* DFComposeTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBF162D1E2D1F540019AD2E /* DFComposeTypeView.swift */; };
-		ADC2BC351E31EBA300F91140 /* CZEmoticonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC2BC301E31EBA200F91140 /* CZEmoticonManager.swift */; };
-		ADC2BC361E31EBA300F91140 /* HMEmoticon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ADC2BC311E31EBA300F91140 /* HMEmoticon.bundle */; };
-		ADC2BC371E31EBA300F91140 /* CZEmoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC2BC331E31EBA300F91140 /* CZEmoticon.swift */; };
-		ADC2BC381E31EBA300F91140 /* CZEmoticonPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC2BC341E31EBA300F91140 /* CZEmoticonPackage.swift */; };
 		ADC87CD31E31F6390032FE25 /* NSArray+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC87CD01E31F6390032FE25 /* NSArray+CZAddition.m */; };
 		ADC87CD41E31F6390032FE25 /* NSObject+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC87CD21E31F6390032FE25 /* NSObject+CZAddition.m */; };
 		ADFA2ECC1E32F2D2007DFBA8 /* FFLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFA2ECB1E32F2D2007DFBA8 /* FFLabel.swift */; };
@@ -150,6 +156,16 @@
 		AD9CFA261E13681A0014F870 /* WeBoTestCommond.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeBoTestCommond.swift; sourceTree = "<group>"; };
 		AD9CFA291E136B1F0014F870 /* DFOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFOAuthViewController.swift; sourceTree = "<group>"; };
 		ADA0FF2C1E3447A80000A96B /* WBComposeTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBComposeTextView.swift; sourceTree = "<group>"; };
+		ADA0FF4C1E3500530000A96B /* CZEmoticonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmoticonManager.swift; sourceTree = "<group>"; };
+		ADA0FF4D1E3500530000A96B /* HMEmoticon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HMEmoticon.bundle; sourceTree = "<group>"; };
+		ADA0FF4F1E3500530000A96B /* CZEmoticon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmoticon.swift; sourceTree = "<group>"; };
+		ADA0FF501E3500530000A96B /* CZEmoticonAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmoticonAttachment.swift; sourceTree = "<group>"; };
+		ADA0FF511E3500530000A96B /* CZEmoticonPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmoticonPackage.swift; sourceTree = "<group>"; };
+		ADA0FF531E3500530000A96B /* CZEmoticonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmoticonCell.swift; sourceTree = "<group>"; };
+		ADA0FF541E3500530000A96B /* CZEmoticonInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmoticonInputView.swift; sourceTree = "<group>"; };
+		ADA0FF551E3500530000A96B /* CZEmoticonInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CZEmoticonInputView.xib; sourceTree = "<group>"; };
+		ADA0FF561E3500530000A96B /* CZEmoticonLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmoticonLayout.swift; sourceTree = "<group>"; };
+		ADA0FF571E3500530000A96B /* CZEmoticonToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmoticonToolbar.swift; sourceTree = "<group>"; };
 		ADA6E1AB1E2F2F2900E71880 /* DFComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFComposeViewController.swift; sourceTree = "<group>"; };
 		ADA6E1AC1E2F2F2900E71880 /* DFComposeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DFComposeViewController.xib; sourceTree = "<group>"; };
 		ADA6E1AF1E2FAA4100E71880 /* String+Extersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extersion.swift"; sourceTree = "<group>"; };
@@ -164,10 +180,6 @@
 		ADBF16271E2D1B8A0019AD2E /* CZMeituanRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZMeituanRefreshView.swift; sourceTree = "<group>"; };
 		ADBF16281E2D1B8A0019AD2E /* CZMeituanRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CZMeituanRefreshView.xib; sourceTree = "<group>"; };
 		ADBF162D1E2D1F540019AD2E /* DFComposeTypeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFComposeTypeView.swift; sourceTree = "<group>"; };
-		ADC2BC301E31EBA200F91140 /* CZEmoticonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmoticonManager.swift; sourceTree = "<group>"; };
-		ADC2BC311E31EBA300F91140 /* HMEmoticon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HMEmoticon.bundle; sourceTree = "<group>"; };
-		ADC2BC331E31EBA300F91140 /* CZEmoticon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmoticon.swift; sourceTree = "<group>"; };
-		ADC2BC341E31EBA300F91140 /* CZEmoticonPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmoticonPackage.swift; sourceTree = "<group>"; };
 		ADC87CCF1E31F6390032FE25 /* NSArray+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+CZAddition.h"; sourceTree = "<group>"; };
 		ADC87CD01E31F6390032FE25 /* NSArray+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+CZAddition.m"; sourceTree = "<group>"; };
 		ADC87CD11E31F6390032FE25 /* NSObject+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CZAddition.h"; sourceTree = "<group>"; };
@@ -439,8 +451,8 @@
 		AD99A6891E27874F002512E1 /* UI框架 */ = {
 			isa = PBXGroup;
 			children = (
+				ADA0FF4B1E3500530000A96B /* Emoticon */,
 				ADFA2ECA1E32F2D2007DFBA8 /* FFLabel */,
-				ADC2BC2F1E31EBA200F91140 /* Emoticon */,
 				AD99A68A1E27874F002512E1 /* CZRefreshControl */,
 			);
 			path = "UI框架";
@@ -486,6 +498,39 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		ADA0FF4B1E3500530000A96B /* Emoticon */ = {
+			isa = PBXGroup;
+			children = (
+				ADA0FF4C1E3500530000A96B /* CZEmoticonManager.swift */,
+				ADA0FF4D1E3500530000A96B /* HMEmoticon.bundle */,
+				ADA0FF4E1E3500530000A96B /* Model */,
+				ADA0FF521E3500530000A96B /* View */,
+			);
+			path = Emoticon;
+			sourceTree = "<group>";
+		};
+		ADA0FF4E1E3500530000A96B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ADA0FF4F1E3500530000A96B /* CZEmoticon.swift */,
+				ADA0FF501E3500530000A96B /* CZEmoticonAttachment.swift */,
+				ADA0FF511E3500530000A96B /* CZEmoticonPackage.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ADA0FF521E3500530000A96B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ADA0FF531E3500530000A96B /* CZEmoticonCell.swift */,
+				ADA0FF541E3500530000A96B /* CZEmoticonInputView.swift */,
+				ADA0FF551E3500530000A96B /* CZEmoticonInputView.xib */,
+				ADA0FF561E3500530000A96B /* CZEmoticonLayout.swift */,
+				ADA0FF571E3500530000A96B /* CZEmoticonToolbar.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		ADBF162B1E2D1F0E0019AD2E /* Compose(撰写微博) */ = {
 			isa = PBXGroup;
 			children = (
@@ -507,25 +552,6 @@
 				ADAAEB111E2E10F800B6F189 /* DFComposeTypeButton.xib */,
 			);
 			path = ComposeType;
-			sourceTree = "<group>";
-		};
-		ADC2BC2F1E31EBA200F91140 /* Emoticon */ = {
-			isa = PBXGroup;
-			children = (
-				ADC2BC301E31EBA200F91140 /* CZEmoticonManager.swift */,
-				ADC2BC311E31EBA300F91140 /* HMEmoticon.bundle */,
-				ADC2BC321E31EBA300F91140 /* Model */,
-			);
-			path = Emoticon;
-			sourceTree = "<group>";
-		};
-		ADC2BC321E31EBA300F91140 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				ADC2BC331E31EBA300F91140 /* CZEmoticon.swift */,
-				ADC2BC341E31EBA300F91140 /* CZEmoticonPackage.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		ADFA2ECA1E32F2D2007DFBA8 /* FFLabel */ = {
@@ -616,11 +642,12 @@
 				ADBF162A1E2D1B8A0019AD2E /* CZMeituanRefreshView.xib in Resources */,
 				ADAAEB121E2E10F800B6F189 /* DFComposeTypeButton.xib in Resources */,
 				AD6829E91E1A59B7001C8074 /* DFWelecomView.xib in Resources */,
-				ADC2BC361E31EBA300F91140 /* HMEmoticon.bundle in Resources */,
+				ADA0FF591E3500530000A96B /* HMEmoticon.bundle in Resources */,
 				ADA6E1AE1E2F2F2900E71880 /* DFComposeViewController.xib in Resources */,
 				AD6A8E541E208C1100804B2A /* DFStatusNormalCell.xib in Resources */,
 				AD89B9CE1E0AC29B00D20E72 /* Assets.xcassets in Resources */,
 				ADAE90EA1E222A880046CCC0 /* DFStatusRetweetedCell.xib in Resources */,
+				ADA0FF5F1E3500530000A96B /* CZEmoticonInputView.xib in Resources */,
 				ADAC9E6A1E2C87B8001A8303 /* CZHumanRefreshView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -683,12 +710,14 @@
 				AD6CFB351E19440C0064D06A /* UIColor+CZAddition.m in Sources */,
 				AD9A27F81E111B1800B1B4E3 /* DFNetworking+Extension.swift in Sources */,
 				AD6A8E601E21155000804B2A /* DFStatusToolBar.swift in Sources */,
+				ADA0FF5E1E3500530000A96B /* CZEmoticonInputView.swift in Sources */,
 				AD877D991E0B76E200299081 /* Bundle+Extension.swift in Sources */,
 				AD89B9E71E0ACA2100D20E72 /* DFNavigationViewController.swift in Sources */,
 				AD6CFB311E19440C0064D06A /* NSString+CZBase64.m in Sources */,
 				AD8A37D71E330096007D6BC5 /* DFWebViewController.swift in Sources */,
 				ADA6E1B01E2FAA4100E71880 /* String+Extersion.swift in Sources */,
 				AD9B784B1E0CD12E002F6BEA /* DFDemoViewController.swift in Sources */,
+				ADA0FF5B1E3500530000A96B /* CZEmoticonAttachment.swift in Sources */,
 				AD6A8E581E209D0700804B2A /* DFUser.swift in Sources */,
 				AD6A8E5E1E20D19E00804B2A /* UIImage+Extensions.swift in Sources */,
 				AD6829E71E1A4C4A001C8074 /* DFWelecomView.swift in Sources */,
@@ -696,6 +725,7 @@
 				AD89B9E91E0ACA6700D20E72 /* DFBaseViewController.swift in Sources */,
 				AD6CFB321E19440C0064D06A /* NSString+CZHash.m in Sources */,
 				AD6A8E641E21265600804B2A /* DFStatusPicture.swift in Sources */,
+				ADA0FF581E3500530000A96B /* CZEmoticonManager.swift in Sources */,
 				AD6CFB391E19440C0064D06A /* UIViewController+CZAddition.m in Sources */,
 				ADBF16291E2D1B8A0019AD2E /* CZMeituanRefreshView.swift in Sources */,
 				ADAB54D41E1234C200E0CCC5 /* DFStatue.swift in Sources */,
@@ -703,7 +733,9 @@
 				ADAAEB101E2E10DE00B6F189 /* DFComposeTypeButton.swift in Sources */,
 				ADA0FF2D1E3447A80000A96B /* WBComposeTextView.swift in Sources */,
 				ADFA2ECC1E32F2D2007DFBA8 /* FFLabel.swift in Sources */,
+				ADA0FF611E3500530000A96B /* CZEmoticonToolbar.swift in Sources */,
 				AD6CFB141E1933560064D06A /* DFUserAccount.swift in Sources */,
+				ADA0FF5D1E3500530000A96B /* CZEmoticonCell.swift in Sources */,
 				AD89B9F11E0ACAE200D20E72 /* DFProfileViewController.swift in Sources */,
 				AD6CFB331E19440C0064D06A /* NSString+CZPath.m in Sources */,
 				AD6CFB381E19440C0064D06A /* UIView+CZAddition.m in Sources */,
@@ -712,6 +744,7 @@
 				ADA8C3161E0E1E99001CA74E /* DFModalViewController.swift in Sources */,
 				ADC87CD31E31F6390032FE25 /* NSArray+CZAddition.m in Sources */,
 				AD9B784F1E0CD7D2002F6BEA /* UIBarButtonItem+Extensions.swift in Sources */,
+				ADA0FF5A1E3500530000A96B /* CZEmoticon.swift in Sources */,
 				AD89B9C71E0AC29B00D20E72 /* AppDelegate.swift in Sources */,
 				AD6A8E5C1E20CF6000804B2A /* UIImageView+WebImage.swift in Sources */,
 				ADC87CD41E31F6390032FE25 /* NSObject+CZAddition.m in Sources */,
@@ -719,7 +752,6 @@
 				AD89B9E51E0AC9D900D20E72 /* DFMainViewController.swift in Sources */,
 				AD89B9ED1E0ACACF00D20E72 /* DFMessageViewController.swift in Sources */,
 				AD9CFA2A1E136B1F0014F870 /* DFOAuthViewController.swift in Sources */,
-				ADC2BC371E31EBA300F91140 /* CZEmoticon.swift in Sources */,
 				AD6CFB2E1E19440C0064D06A /* NSArray+Log.m in Sources */,
 				AD9CFA271E13681A0014F870 /* WeBoTestCommond.swift in Sources */,
 				AD6A8E5A1E20AC1300804B2A /* DFStatuesViewModel.swift in Sources */,
@@ -728,16 +760,16 @@
 				ADA6E1AD1E2F2F2900E71880 /* DFComposeViewController.swift in Sources */,
 				AD6829E51E1A4C36001C8074 /* DFNewFeatureView.swift in Sources */,
 				AD6CFB361E19440C0064D06A /* UILabel+CZAddition.m in Sources */,
-				ADC2BC381E31EBA300F91140 /* CZEmoticonPackage.swift in Sources */,
 				AD6A8E621E211F1B00804B2A /* DFStatusPictureView.swift in Sources */,
 				AD4B7B7C1E2A3E3B003CEB47 /* CZRefreshView.swift in Sources */,
 				AD99A68C1E27876B002512E1 /* CZRefreshControl.swift in Sources */,
 				AD6A8E561E2097F700804B2A /* DFStatusCell.swift in Sources */,
 				AD6CFB2F1E19440C0064D06A /* NSAttributedString+CZAdditon.m in Sources */,
-				ADC2BC351E31EBA300F91140 /* CZEmoticonManager.swift in Sources */,
 				AD8CB78C1E0FA55E00BA3CC3 /* DFVisitorView.swift in Sources */,
+				ADA0FF601E3500530000A96B /* CZEmoticonLayout.swift in Sources */,
 				AD89B9F31E0ACB8D00D20E72 /* DFHomeViewController.swift in Sources */,
 				AD9A27F61E11089500B1B4E3 /* DFNetwokrManager.swift in Sources */,
+				ADA0FF5C1E3500530000A96B /* CZEmoticonPackage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

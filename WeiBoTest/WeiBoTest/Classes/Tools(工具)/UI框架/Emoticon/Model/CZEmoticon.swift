@@ -23,7 +23,30 @@ class CZEmoticon: NSObject {
     var png : String?
     
     /// emoji的十六进制编码
-    var code : String?
+    var code : String? {
+        didSet{
+            
+            guard let code = code else{
+                return
+            }
+            
+            let scanner = Scanner(string: code)
+            
+            // 无符号16进制整数
+            var result : UInt32 = 0
+            scanner.scanHexInt32(&result)
+            
+            guard let unicodeScalar = UnicodeScalar(result)
+                else {
+                return
+            }
+            
+            emoji = String(Character(unicodeScalar))
+        }
+    }
+    
+    /// emoji字符串
+    var emoji:String?
     
     /// 表情模型所在的目录  这个属性是为了，让图片加载的更方便，因为只有加上目录，才能加载图片
     var directory: String?
@@ -55,7 +78,10 @@ class CZEmoticon: NSObject {
             return NSAttributedString(string: "")
         }
         
-        let attachment = NSTextAttachment()
+        let attachment = CZEmoticonAttachment()
+        
+        // 在这里记住 chs, 可以在获取的时候获得
+        attachment.chs = chs
         
         attachment.image = image
         
@@ -63,7 +89,12 @@ class CZEmoticon: NSObject {
         
         attachment.bounds = CGRect(x: 0, y: -4, width: height, height: height)
         
-        return NSAttributedString(attachment: attachment)
+        // 插入的字符的显示，跟随前一个字符的属性，但是本身没有属性，所以，这里需要把前一个字符的属性赋值给自己
+        let attrStrM = NSMutableAttributedString(attributedString: NSAttributedString(attachment: attachment))
+        // 因为只输入一个字符，所以使用 NSMakeRange(0, 1)  这是使用 addAttributes 不能使用setAttributes
+        attrStrM.addAttributes([NSFontAttributeName:font], range: NSMakeRange(0, 1))
+        
+        return attrStrM
     }
     
     

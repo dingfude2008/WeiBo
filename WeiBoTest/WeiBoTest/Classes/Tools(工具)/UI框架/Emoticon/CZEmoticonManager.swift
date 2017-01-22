@@ -19,6 +19,14 @@ class CZEmoticonManager {
     /// 表情包的懒加载数组  使用懒加载后，第一次加载就会初始化为空数组
     /// 第一组为最近表情
     lazy var packages = [CZEmoticonPackage]()
+    
+    
+    /// 表情素材的bundle  懒加载 闭包
+    lazy var bundle : Bundle = {
+        let path = Bundle.main.path(forResource: "HMEmoticon.bundle", ofType: nil)
+        return Bundle(path: path!)!
+    }()
+    
 
     /// 构造函数， 如果在init 之前增加 private 可以让调用在必须走shared调用对象
     /// oc 要重写 allocWithZone 方法

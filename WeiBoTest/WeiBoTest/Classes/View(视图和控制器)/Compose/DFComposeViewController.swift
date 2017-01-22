@@ -22,7 +22,6 @@ class DFComposeViewController: UIViewController {
     /// 工具栏底部约束  监听键盘输入更改这个属性来实现工具栏联动
     @IBOutlet weak var toolbarBottomCons: NSLayoutConstraint!
     
-    
     /// 标题标签 - 换行的热键 option + 回车
     /// 逐行选中文本并且设置属性
     /// 如果要想调整行间距，可以增加一个空行，设置空行的字体，从而影响到lineHeight, 字体大小约等于字体大小
@@ -77,11 +76,26 @@ class DFComposeViewController: UIViewController {
         
     }
     
+    
     @objc fileprivate func close(){
         
         dismiss(animated: true, completion: nil)
         
     }
+    
+    
+    /// 切换键盘
+    @objc fileprivate func emoticonKeyboard(){
+    
+        let textInputView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 253))
+        textInputView.backgroundColor = UIColor.red
+        
+        textView.inputView = (textView.inputView == nil) ? textInputView : nil
+        
+        // 3> !!!刷新键盘视图
+        textView.reloadInputViews()
+    }
+    
     
     /// 发布微博
     @IBAction func postStatus() {
@@ -197,6 +211,12 @@ private extension DFComposeViewController {
             btn.setImage(imageHL, for: .highlighted)
             
             btn.sizeToFit()
+            
+            if let actionName = s["actionName"] {
+                
+                btn.addTarget(self, action: Selector(actionName), for: .touchUpInside)
+            }
+            
             
             // 追加按钮
             items.append(UIBarButtonItem(customView: btn))

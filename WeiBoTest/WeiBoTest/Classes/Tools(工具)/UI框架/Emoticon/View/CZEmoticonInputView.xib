@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="zO2-Du-K5H" customClass="CZEmoticonInputView" customModule="刷新控件测试项目" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="253"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aBN-aE-6qc" userLabel="底部工具栏" customClass="CZEmoticonToolbar" customModule="刷新控件测试项目" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="213" width="375" height="40"/>
+                    <color key="backgroundColor" red="0.1545598503" green="1" blue="0.028586729410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="1V1-Hy-FCL"/>
+                    </constraints>
+                </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="xPT-l8-ucY">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="213"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="T7B-7h-pbk" customClass="CZEmoticonLayout" customModule="刷新控件测试项目" customModuleProvider="target">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="zO2-Du-K5H" id="uXP-qC-S1p"/>
+                    </connections>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="aBN-aE-6qc" firstAttribute="top" secondItem="xPT-l8-ucY" secondAttribute="bottom" id="4Fu-wE-Az1"/>
+                <constraint firstItem="xPT-l8-ucY" firstAttribute="leading" secondItem="zO2-Du-K5H" secondAttribute="leading" id="TlY-MW-buB"/>
+                <constraint firstItem="aBN-aE-6qc" firstAttribute="leading" secondItem="zO2-Du-K5H" secondAttribute="leading" id="Xz4-5v-l1P"/>
+                <constraint firstAttribute="bottom" secondItem="aBN-aE-6qc" secondAttribute="bottom" id="a1G-Ek-BfG"/>
+                <constraint firstItem="xPT-l8-ucY" firstAttribute="top" secondItem="zO2-Du-K5H" secondAttribute="top" id="hKq-Fn-f3d"/>
+                <constraint firstAttribute="trailing" secondItem="xPT-l8-ucY" secondAttribute="trailing" id="kTd-Dv-Pmv"/>
+                <constraint firstAttribute="trailing" secondItem="aBN-aE-6qc" secondAttribute="trailing" id="qrr-bQ-QFi"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="collectionView" destination="xPT-l8-ucY" id="WKu-fM-wNx"/>
+                <outlet property="toolbar" destination="aBN-aE-6qc" id="Thf-Or-51Y"/>
+            </connections>
+            <point key="canvasLocation" x="24.5" y="52.5"/>
+        </view>
+    </objects>
+</document>
