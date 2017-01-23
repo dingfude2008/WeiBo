@@ -78,6 +78,7 @@
 		ADAB54D61E1234EB00E0CCC5 /* DFStatuesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB54D51E1234EB00E0CCC5 /* DFStatuesListViewModel.swift */; };
 		ADAB8D1F1E35DF1A0059B9E4 /* CZSQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB8D1D1E35DF1A0059B9E4 /* CZSQLiteManager.swift */; };
 		ADAB8D201E35DF1A0059B9E4 /* status.sql in Resources */ = {isa = PBXBuildFile; fileRef = ADAB8D1E1E35DF1A0059B9E4 /* status.sql */; };
+		ADAB8D221E35E1C00059B9E4 /* WBStatusListDAL.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB8D211E35E1C00059B9E4 /* WBStatusListDAL.swift */; };
 		ADAC9E6A1E2C87B8001A8303 /* CZHumanRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADAC9E691E2C87B8001A8303 /* CZHumanRefreshView.xib */; };
 		ADAE90EA1E222A880046CCC0 /* DFStatusRetweetedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADAE90E91E222A880046CCC0 /* DFStatusRetweetedCell.xib */; };
 		ADBF16291E2D1B8A0019AD2E /* CZMeituanRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBF16271E2D1B8A0019AD2E /* CZMeituanRefreshView.swift */; };
@@ -179,6 +180,7 @@
 		ADAB54D51E1234EB00E0CCC5 /* DFStatuesListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFStatuesListViewModel.swift; sourceTree = "<group>"; };
 		ADAB8D1D1E35DF1A0059B9E4 /* CZSQLiteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZSQLiteManager.swift; sourceTree = "<group>"; };
 		ADAB8D1E1E35DF1A0059B9E4 /* status.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = status.sql; sourceTree = "<group>"; };
+		ADAB8D211E35E1C00059B9E4 /* WBStatusListDAL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusListDAL.swift; sourceTree = "<group>"; };
 		ADAC9E691E2C87B8001A8303 /* CZHumanRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CZHumanRefreshView.xib; sourceTree = "<group>"; };
 		ADAE90E91E222A880046CCC0 /* DFStatusRetweetedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DFStatusRetweetedCell.xib; sourceTree = "<group>"; };
 		ADBF16271E2D1B8A0019AD2E /* CZMeituanRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZMeituanRefreshView.swift; sourceTree = "<group>"; };
@@ -422,6 +424,7 @@
 			children = (
 				ADAB54D51E1234EB00E0CCC5 /* DFStatuesListViewModel.swift */,
 				AD6A8E591E20AC1300804B2A /* DFStatuesViewModel.swift */,
+				ADAB8D211E35E1C00059B9E4 /* WBStatusListDAL.swift */,
 			);
 			path = "ViewModel(视图模型)";
 			sourceTree = "<group>";
@@ -777,6 +780,7 @@
 				AD6CFB361E19440C0064D06A /* UILabel+CZAddition.m in Sources */,
 				AD6A8E621E211F1B00804B2A /* DFStatusPictureView.swift in Sources */,
 				AD4B7B7C1E2A3E3B003CEB47 /* CZRefreshView.swift in Sources */,
+				ADAB8D221E35E1C00059B9E4 /* WBStatusListDAL.swift in Sources */,
 				AD99A68C1E27876B002512E1 /* CZRefreshControl.swift in Sources */,
 				AD6A8E561E2097F700804B2A /* DFStatusCell.swift in Sources */,
 				AD6CFB2F1E19440C0064D06A /* NSAttributedString+CZAdditon.m in Sources */,
