@@ -76,6 +76,8 @@
 		ADAAEB121E2E10F800B6F189 /* DFComposeTypeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADAAEB111E2E10F800B6F189 /* DFComposeTypeButton.xib */; };
 		ADAB54D41E1234C200E0CCC5 /* DFStatue.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB54D31E1234C200E0CCC5 /* DFStatue.swift */; };
 		ADAB54D61E1234EB00E0CCC5 /* DFStatuesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB54D51E1234EB00E0CCC5 /* DFStatuesListViewModel.swift */; };
+		ADAB8D1F1E35DF1A0059B9E4 /* CZSQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB8D1D1E35DF1A0059B9E4 /* CZSQLiteManager.swift */; };
+		ADAB8D201E35DF1A0059B9E4 /* status.sql in Resources */ = {isa = PBXBuildFile; fileRef = ADAB8D1E1E35DF1A0059B9E4 /* status.sql */; };
 		ADAC9E6A1E2C87B8001A8303 /* CZHumanRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADAC9E691E2C87B8001A8303 /* CZHumanRefreshView.xib */; };
 		ADAE90EA1E222A880046CCC0 /* DFStatusRetweetedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADAE90E91E222A880046CCC0 /* DFStatusRetweetedCell.xib */; };
 		ADBF16291E2D1B8A0019AD2E /* CZMeituanRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBF16271E2D1B8A0019AD2E /* CZMeituanRefreshView.swift */; };
@@ -175,6 +177,8 @@
 		ADAAEB111E2E10F800B6F189 /* DFComposeTypeButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DFComposeTypeButton.xib; sourceTree = "<group>"; };
 		ADAB54D31E1234C200E0CCC5 /* DFStatue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFStatue.swift; sourceTree = "<group>"; };
 		ADAB54D51E1234EB00E0CCC5 /* DFStatuesListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFStatuesListViewModel.swift; sourceTree = "<group>"; };
+		ADAB8D1D1E35DF1A0059B9E4 /* CZSQLiteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZSQLiteManager.swift; sourceTree = "<group>"; };
+		ADAB8D1E1E35DF1A0059B9E4 /* status.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = status.sql; sourceTree = "<group>"; };
 		ADAC9E691E2C87B8001A8303 /* CZHumanRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CZHumanRefreshView.xib; sourceTree = "<group>"; };
 		ADAE90E91E222A880046CCC0 /* DFStatusRetweetedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DFStatusRetweetedCell.xib; sourceTree = "<group>"; };
 		ADBF16271E2D1B8A0019AD2E /* CZMeituanRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZMeituanRefreshView.swift; sourceTree = "<group>"; };
@@ -349,6 +353,7 @@
 		AD89B9DA1E0AC82000D20E72 /* Tools(工具) */ = {
 			isa = PBXGroup;
 			children = (
+				ADAB8D1C1E35DF1A0059B9E4 /* SQLite */,
 				AD99A6891E27874F002512E1 /* UI框架 */,
 				AD9A27F41E10FCCD00B1B4E3 /* Network */,
 				AD877D971E0B763300299081 /* Extension */,
@@ -531,6 +536,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		ADAB8D1C1E35DF1A0059B9E4 /* SQLite */ = {
+			isa = PBXGroup;
+			children = (
+				ADAB8D1D1E35DF1A0059B9E4 /* CZSQLiteManager.swift */,
+				ADAB8D1E1E35DF1A0059B9E4 /* status.sql */,
+			);
+			path = SQLite;
+			sourceTree = "<group>";
+		};
 		ADBF162B1E2D1F0E0019AD2E /* Compose(撰写微博) */ = {
 			isa = PBXGroup;
 			children = (
@@ -644,6 +658,7 @@
 				AD6829E91E1A59B7001C8074 /* DFWelecomView.xib in Resources */,
 				ADA0FF591E3500530000A96B /* HMEmoticon.bundle in Resources */,
 				ADA6E1AE1E2F2F2900E71880 /* DFComposeViewController.xib in Resources */,
+				ADAB8D201E35DF1A0059B9E4 /* status.sql in Resources */,
 				AD6A8E541E208C1100804B2A /* DFStatusNormalCell.xib in Resources */,
 				AD89B9CE1E0AC29B00D20E72 /* Assets.xcassets in Resources */,
 				ADAE90EA1E222A880046CCC0 /* DFStatusRetweetedCell.xib in Resources */,
@@ -765,6 +780,7 @@
 				AD99A68C1E27876B002512E1 /* CZRefreshControl.swift in Sources */,
 				AD6A8E561E2097F700804B2A /* DFStatusCell.swift in Sources */,
 				AD6CFB2F1E19440C0064D06A /* NSAttributedString+CZAdditon.m in Sources */,
+				ADAB8D1F1E35DF1A0059B9E4 /* CZSQLiteManager.swift in Sources */,
 				AD8CB78C1E0FA55E00BA3CC3 /* DFVisitorView.swift in Sources */,
 				ADA0FF601E3500530000A96B /* CZEmoticonLayout.swift in Sources */,
 				AD89B9F31E0ACB8D00D20E72 /* DFHomeViewController.swift in Sources */,
