@@ -41,7 +41,11 @@ class DFStatuesListViewModel {
         let max_id   : Int64 = (!pullup ? 0: (statuesList.last?.status.id ?? 0))
         
         
-        DFNetwokrManager.shared.statusList(since_id: since_id, max_id: max_id) { (list, isSuccess) in
+        DFStatusListDAL.loadStatus(since_id: since_id, max_id: max_id) { (list, isSuccess) in
+            
+//        }
+//        
+//        DFNetwokrManager.shared.statusList(since_id: since_id, max_id: max_id) { (list, isSuccess) in
             
             // 网络失败就返回
             if !isSuccess {

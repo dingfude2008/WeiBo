@@ -173,7 +173,7 @@ extension CZSQLiteManager {
             for dict in array{
             
                 // 从字典中取出微博Id, 将字典序列化成二进制数据
-                guard let statusId = dict["idStr"] as? String,
+                guard let statusId = dict["idstr"] as? String,
                     let jsonData = try? JSONSerialization.data(withJSONObject: dict, options: [])
                     else {
                     continue

@@ -19,7 +19,7 @@ extension DFNetwokrManager {
     ///   - since_id: 最大的id
     ///   - max_id: 最小的id
     ///   - complection: 回调， list: 微博数据， isSuccess:是否成功
-    func statusList(since_id : Int64 = 0, max_id : Int64 = 0, complection:@escaping (_ list:[[String: Any]]?, _ isSuccess: Bool)->()){
+    func statusList(since_id : Int64 = 0, max_id : Int64 = 0, complection:@escaping (_ list:[[String: AnyObject]]?, _ isSuccess: Bool)->()){
         
         let urlString = "https://api.weibo.com/2/statuses/friends_timeline.json"
         
@@ -121,7 +121,7 @@ extension DFNetwokrManager {
     /// 加载用户信息
     ///
     /// - Parameter dict: 返回
-    func loadUserInfo(complection: @escaping ([String: Any])->()){
+    func loadUserInfo(complection: @escaping ([String: AnyObject])->()){
         
         guard let uid = userAccount.uid else {
             return
@@ -132,7 +132,7 @@ extension DFNetwokrManager {
         let params = ["uid" : uid]
         
         tokenRequest(URLString: urlString, parameters: params as [String : AnyObject]?) { (json, isSuccess) in
-            complection((json as? [String : Any]) ?? [:])
+            complection((json as? [String : AnyObject]) ?? [:])
         }
     }
     
