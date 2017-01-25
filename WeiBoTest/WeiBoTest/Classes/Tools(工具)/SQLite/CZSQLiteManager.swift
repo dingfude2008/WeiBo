@@ -10,6 +10,10 @@ import Foundation
 import FMDB
 
 
+/// 最大缓存时间， 以 s 为单位
+fileprivate let maxDBCacheTime : TimeInterval = -60 // -5 * 24 * 60 * 60
+
+
 /*
  1，数据库本质是存在沙盒中的一个文件，首先需要创建和打开数据库
     FMDB- 队列
@@ -48,6 +52,40 @@ class CZSQLiteManager {
         queue = FMDatabaseQueue(path: path)
         
         createTable()
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(cleanDBCache),
+                                               name: NSNotification.Name.UIApplicationDidEnterBackground,
+                                               object: nil)
+        
+    }
+    
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    
+    
+    /// 清理数据库缓存
+    @objc fileprivate func cleanDBCache(){
+        print("清理数据库缓存")
+        
+        let dateString = Date.cz_dateString(delta: maxDBCacheTime)
+        
+        let sql = "DELETE FROM T_Status WHERE createTime < ?"
+        
+        queue.inDatabase { (db) in
+            
+            // 因为 db 是可选的，下面的方法返回的是一个可选的 Bool 值， 即， true/false/nil
+            if db?.executeUpdate(sql, withArgumentsIn: [dateString]) == true {
+                
+                print("删除了\(db?.changes())条记录")
+            }
+            
+        }
+        
+        
         
     }
 }
