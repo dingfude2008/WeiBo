@@ -8,14 +8,40 @@
 
 import UIKit
 
+@objc protocol CZEmoticonToolbarDelegate: NSObjectProtocol {
+    
+    /// 表情工具栏选中分组项索引
+    ///
+    /// - parameter toolbar: 工具栏
+    /// - parameter index:   索引
+    func emoticonToolbarDidSelectedItemIndex(toolbar: CZEmoticonToolbar, index: Int)
+}
+
 class CZEmoticonToolbar: UIView {
 
+    /// 代理对象
+    var delegate : CZEmoticonToolbarDelegate?
+    
+    
+    
+    /// 选中分组索引
+    var selectedIndex : Int = 0 {
+    
+        didSet {
+            // 1. 取消所有的选中状态
+            for btn in subviews as! [UIButton] {
+                btn.isSelected = false
+            }
+            
+            // 2. 设置 index 对应的选中状态
+            (subviews[selectedIndex] as! UIButton).isSelected = true
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
         setupUI()
-        
-        
     }
     
     
@@ -31,7 +57,13 @@ class CZEmoticonToolbar: UIView {
             
             btn.frame = rect.offsetBy(dx: CGFloat(i) * w, dy: 0)
         }
+    }
+    
+    /// 点击分组按钮的方法
+    @objc fileprivate func clickItem(btn : UIButton){
         
+        // 通知代理执行协议方法
+        delegate?.emoticonToolbarDidSelectedItemIndex(toolbar: self, index: btn.tag)
     }
 
 }
@@ -42,7 +74,7 @@ fileprivate extension CZEmoticonToolbar {
         
         let manager = CZEmoticonManager.shared
         
-        for p in manager.packages {
+        for (i, p) in manager.packages.enumerated() {
         
             let btn = UIButton()
             
@@ -80,8 +112,13 @@ fileprivate extension CZEmoticonToolbar {
             
             addSubview(btn)
             
+            btn.tag = i
+            
+            btn.addTarget(self, action: #selector(clickItem), for: .touchUpInside)
         }
     
+        (subviews[0] as! UIButton).isSelected = true
+        
     }
     
 }

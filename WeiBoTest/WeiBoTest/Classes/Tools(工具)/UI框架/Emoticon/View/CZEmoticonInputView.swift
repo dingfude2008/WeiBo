@@ -33,13 +33,29 @@ class CZEmoticonInputView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-//        let nib = UINib(nibName: "CZEmoticonCell", bundle: nil)
-//        collectionView.register(nib, forCellWithReuseIdentifier: cellId)
-        
         // 使用纯代码加载
         collectionView.register(CZEmoticonCell.self, forCellWithReuseIdentifier: cellId)
+        
+        
+        // 设置工具栏代理
+        toolbar.delegate = self
     }
     
+}
+
+// MARK: - CZEmoticonToolbarDelegate
+extension CZEmoticonInputView: CZEmoticonToolbarDelegate {
+    
+    func emoticonToolbarDidSelectedItemIndex(toolbar: CZEmoticonToolbar, index: Int) {
+        
+        // 让 collectionView 发生滚动 -> 每一个分组的第0页
+        let indexPath = IndexPath(item: 0, section: index)
+        
+        collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
+        
+        // 设置分组按钮的选中状态
+        toolbar.selectedIndex = index
+    }
 }
 
 
