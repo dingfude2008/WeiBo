@@ -71,6 +71,9 @@ class DFStatusPictureView: UIView {
                 
                 iv.cz_setImage(urlString: statusPicModel.thumbnail_pic, placeholderImage: nil)
                 
+                // 判断是否是 gif，根据扩展名
+                iv.subviews[0].isHidden = (((statusPicModel.thumbnail_pic ?? "") as NSString).pathExtension.lowercased() != "gif")
+
                 iv.isHidden = false
                 
                 index += 1
