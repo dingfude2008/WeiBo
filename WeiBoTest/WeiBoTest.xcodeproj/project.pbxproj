@@ -80,6 +80,7 @@
 		ADAB8D201E35DF1A0059B9E4 /* status.sql in Resources */ = {isa = PBXBuildFile; fileRef = ADAB8D1E1E35DF1A0059B9E4 /* status.sql */; };
 		ADAB8D221E35E1C00059B9E4 /* DFStatusListDAL.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB8D211E35E1C00059B9E4 /* DFStatusListDAL.swift */; };
 		ADAB8D241E3844670059B9E4 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB8D231E3844670059B9E4 /* Date+Extensions.swift */; };
+		ADAB8D261E387E2D0059B9E4 /* CZEmoticonTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB8D251E387E2D0059B9E4 /* CZEmoticonTipView.swift */; };
 		ADAC9E6A1E2C87B8001A8303 /* CZHumanRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADAC9E691E2C87B8001A8303 /* CZHumanRefreshView.xib */; };
 		ADAE90EA1E222A880046CCC0 /* DFStatusRetweetedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADAE90E91E222A880046CCC0 /* DFStatusRetweetedCell.xib */; };
 		ADBF16291E2D1B8A0019AD2E /* CZMeituanRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBF16271E2D1B8A0019AD2E /* CZMeituanRefreshView.swift */; };
@@ -183,6 +184,7 @@
 		ADAB8D1E1E35DF1A0059B9E4 /* status.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = status.sql; sourceTree = "<group>"; };
 		ADAB8D211E35E1C00059B9E4 /* DFStatusListDAL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFStatusListDAL.swift; sourceTree = "<group>"; };
 		ADAB8D231E3844670059B9E4 /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		ADAB8D251E387E2D0059B9E4 /* CZEmoticonTipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmoticonTipView.swift; sourceTree = "<group>"; };
 		ADAC9E691E2C87B8001A8303 /* CZHumanRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CZHumanRefreshView.xib; sourceTree = "<group>"; };
 		ADAE90E91E222A880046CCC0 /* DFStatusRetweetedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DFStatusRetweetedCell.xib; sourceTree = "<group>"; };
 		ADBF16271E2D1B8A0019AD2E /* CZMeituanRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZMeituanRefreshView.swift; sourceTree = "<group>"; };
@@ -534,6 +536,7 @@
 			isa = PBXGroup;
 			children = (
 				ADA0FF531E3500530000A96B /* CZEmoticonCell.swift */,
+				ADAB8D251E387E2D0059B9E4 /* CZEmoticonTipView.swift */,
 				ADA0FF541E3500530000A96B /* CZEmoticonInputView.swift */,
 				ADA0FF551E3500530000A96B /* CZEmoticonInputView.xib */,
 				ADA0FF561E3500530000A96B /* CZEmoticonLayout.swift */,
@@ -763,6 +766,7 @@
 				AD6CFB381E19440C0064D06A /* UIView+CZAddition.m in Sources */,
 				ADAB54D61E1234EB00E0CCC5 /* DFStatuesListViewModel.swift in Sources */,
 				ADBF162E1E2D1F540019AD2E /* DFComposeTypeView.swift in Sources */,
+				ADAB8D261E387E2D0059B9E4 /* CZEmoticonTipView.swift in Sources */,
 				ADA8C3161E0E1E99001CA74E /* DFModalViewController.swift in Sources */,
 				ADC87CD31E31F6390032FE25 /* NSArray+CZAddition.m in Sources */,
 				AD9B784F1E0CD7D2002F6BEA /* UIBarButtonItem+Extensions.swift in Sources */,

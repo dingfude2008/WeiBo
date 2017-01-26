@@ -73,6 +73,26 @@ extension CZEmoticonInputView : CZEmoticonCellDelegate {
     func emoticonCellDidSelectedEmoticon(cell: CZEmoticonCell, em: CZEmoticon?) {
         
         selectedEmoticonCallBack?(em)
+        
+        // 添加最近使用表情
+        guard let em = em else {
+            return
+        }
+        
+        // 如果是当前的 colloctionView 的分组是最近， 就不添加最近使用的表情
+        let indexPath = collectionView.indexPathsForVisibleItems[0]
+        if indexPath.section == 0 {
+            return
+        }
+        
+        // 刷新最近
+        CZEmoticonManager.shared.recentEmoticon(em: em)
+        
+        // 刷新数据 - 第 0 组
+        var indexSet = IndexSet()
+        indexSet.insert(0)
+        
+        collectionView.reloadSections(indexSet)
     }
     
 }

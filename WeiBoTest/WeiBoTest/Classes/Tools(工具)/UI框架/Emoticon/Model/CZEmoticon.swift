@@ -22,6 +22,9 @@ class CZEmoticon: NSObject {
     /// 表情图片的名称，用于本地的图文混排
     var png : String?
     
+    /// 表情使用次数
+    var times : Int = 0
+    
     /// emoji的十六进制编码
     var code : String? {
         didSet{

@@ -54,6 +54,8 @@ class CZEmoticonCell: UICollectionViewCell {
         }
     }
     
+    fileprivate lazy var tipView : CZEmoticonTipView = CZEmoticonTipView()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
@@ -63,8 +65,21 @@ class CZEmoticonCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func willMove(toWindow newWindow: UIWindow?) {
+        super.willMove(toWindow: newWindow)
+        
+        guard let w = newWindow else {
+            return
+        }
+        
+        w.addSubview(tipView)
+        
+        tipView.isHidden = true
+        
+    }
+    
     // 点击事件
-    @objc func selectedEmoticonButton(button:UIButton){
+    @objc func selectedEmoticonButton(_ button:UIButton){
     
         let tag = button.tag
         
@@ -75,7 +90,66 @@ class CZEmoticonCell: UICollectionViewCell {
         }
         
         delegate?.emoticonCellDidSelectedEmoticon(cell: self, em: emo)
-
+    }
+    
+    
+    /// 长按手势
+    /// 可以保证一个对象监听两种点击手势，而且不用考虑手势冲突
+    @objc func longGesture(gesture:UILongPressGestureRecognizer){
+    
+        print("长按手势")
+        
+        // 1 获取触摸位置
+        let location = gesture.location(in: self)
+        
+        // 2 获取触摸位置的按钮
+        guard let button = buttonWithLocation(location) else {
+            
+            tipView.isHidden = true
+            return
+        }
+        // 3 处理手势状态
+        
+        switch gesture.state {
+            case .began, .changed:
+            
+                tipView.isHidden = false
+            
+                /// 坐标系转换，将参照 cell 的坐标系，转换为参照 window 的坐标
+                let center = self.convert(button.center, to: window)
+            
+                // 设置 tipView 的位置
+                tipView.center = center
+                
+                if button.tag < (emoticons?.count ?? 0) {
+                    tipView.emoticon = emoticons?[button.tag]
+                }
+            break
+            case .ended:
+            
+                tipView.isHidden = true
+                selectedEmoticonButton(button)
+            break
+            case .cancelled, .failed:
+                tipView.isHidden = true
+            break
+            default:
+            break
+                
+            }
+    }
+    
+    // 根据在Cell中的位置，获取这个位置的按钮
+    fileprivate func buttonWithLocation(_ location:CGPoint) -> UIButton?{
+    
+        for btn in contentView.subviews {
+            
+            if btn.frame.contains(location) && !btn.isHidden && btn != contentView.subviews.last {
+                return (btn as? UIButton)
+            }
+        }
+        
+        return nil
     }
     
 }
@@ -131,5 +205,13 @@ private extension CZEmoticonCell {
         // 设置图像
         let image = UIImage(named: "compose_emotion_delete_highlighted", in: CZEmoticonManager.shared.bundle, compatibleWith: nil)
         removeButton.setImage(image, for: [])
+        
+        
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longGesture))
+        
+        longPress.minimumPressDuration = 0.1
+        
+        self.addGestureRecognizer(longPress)
+        
     }
 }
