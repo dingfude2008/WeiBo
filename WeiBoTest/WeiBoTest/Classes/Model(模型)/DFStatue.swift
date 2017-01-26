@@ -17,6 +17,13 @@ class DFStatue: NSObject {
     /// 微博信息内容
     var text: String? = ""
     
+    var created_at : String? {
+        didSet{
+            createdDate = Date.cz_sinaDate(string: created_at ?? "")
+        }
+    }
+    var createDate : Date?
+    
     /// 转发数
     var reposts_count: Int = 0
     /// 评论数

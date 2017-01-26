@@ -49,9 +49,11 @@ class DFStatusCell: UITableViewCell {
             /// 设置配图视图的视图模型
             pictureView.viewModel = statusViewModel
             
-            
-            
+            // 设置来源
             sourceLabel.text = statusViewModel?.status.source
+            
+            // 设置时间
+            timeLabel.text = statusViewModel?.status.createdDate?.cz_dateDescription
         }
     }
     
