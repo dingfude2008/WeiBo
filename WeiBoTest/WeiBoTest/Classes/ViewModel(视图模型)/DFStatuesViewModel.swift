@@ -159,8 +159,6 @@ class DFStatesViewModel : CustomStringConvertible {
         }
         
         // 过高图片处理，图片填充模式就是 scaleToFill，高度减小，会自动裁切
-        
-        
         // 特例：有些图像，本身就是很窄，很长！-> 定义一个 minHeight，思路同上！
         // 在工作中，如果看到代码中有些疑惑的分支处理！千万不要动！
         

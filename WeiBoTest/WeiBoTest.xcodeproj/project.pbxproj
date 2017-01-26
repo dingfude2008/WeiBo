@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD3F78321E39CA9A00B34D83 /* HMPhotoBrowserAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3F78291E39CA9A00B34D83 /* HMPhotoBrowserAnimator.m */; };
+		AD3F78331E39CA9A00B34D83 /* HMPhotoBrowserController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3F782B1E39CA9A00B34D83 /* HMPhotoBrowserController.m */; };
+		AD3F78341E39CA9A00B34D83 /* HMPhotoBrowserPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3F782D1E39CA9A00B34D83 /* HMPhotoBrowserPhotos.m */; };
+		AD3F78351E39CA9A00B34D83 /* HMPhotoProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3F782F1E39CA9A00B34D83 /* HMPhotoProgressView.m */; };
+		AD3F78361E39CA9A00B34D83 /* HMPhotoViewerController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3F78311E39CA9A00B34D83 /* HMPhotoViewerController.m */; };
 		AD44B5E21E1A91310003E14B /* DFNewFeatureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD44B5E11E1A91310003E14B /* DFNewFeatureView.xib */; };
 		AD4B7B7C1E2A3E3B003CEB47 /* CZRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4B7B7A1E2A3E3B003CEB47 /* CZRefreshView.swift */; };
 		AD4B7B7D1E2A3E3B003CEB47 /* CZRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD4B7B7B1E2A3E3B003CEB47 /* CZRefreshView.xib */; };
@@ -95,6 +100,16 @@
 /* Begin PBXFileReference section */
 		4AF718AD705ED045705C27A5 /* Pods-WeiBoTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiBoTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeiBoTest/Pods-WeiBoTest.debug.xcconfig"; sourceTree = "<group>"; };
 		5CA185177CF14B93DFF61D7F /* Pods-WeiBoTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiBoTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeiBoTest/Pods-WeiBoTest.release.xcconfig"; sourceTree = "<group>"; };
+		AD3F78281E39CA9A00B34D83 /* HMPhotoBrowserAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMPhotoBrowserAnimator.h; sourceTree = "<group>"; };
+		AD3F78291E39CA9A00B34D83 /* HMPhotoBrowserAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMPhotoBrowserAnimator.m; sourceTree = "<group>"; };
+		AD3F782A1E39CA9A00B34D83 /* HMPhotoBrowserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMPhotoBrowserController.h; sourceTree = "<group>"; };
+		AD3F782B1E39CA9A00B34D83 /* HMPhotoBrowserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMPhotoBrowserController.m; sourceTree = "<group>"; };
+		AD3F782C1E39CA9A00B34D83 /* HMPhotoBrowserPhotos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMPhotoBrowserPhotos.h; sourceTree = "<group>"; };
+		AD3F782D1E39CA9A00B34D83 /* HMPhotoBrowserPhotos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMPhotoBrowserPhotos.m; sourceTree = "<group>"; };
+		AD3F782E1E39CA9A00B34D83 /* HMPhotoProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMPhotoProgressView.h; sourceTree = "<group>"; };
+		AD3F782F1E39CA9A00B34D83 /* HMPhotoProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMPhotoProgressView.m; sourceTree = "<group>"; };
+		AD3F78301E39CA9A00B34D83 /* HMPhotoViewerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMPhotoViewerController.h; sourceTree = "<group>"; };
+		AD3F78311E39CA9A00B34D83 /* HMPhotoViewerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMPhotoViewerController.m; sourceTree = "<group>"; };
 		AD44B5E11E1A91310003E14B /* DFNewFeatureView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DFNewFeatureView.xib; sourceTree = "<group>"; };
 		AD4B7B7A1E2A3E3B003CEB47 /* CZRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZRefreshView.swift; sourceTree = "<group>"; };
 		AD4B7B7B1E2A3E3B003CEB47 /* CZRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CZRefreshView.xib; sourceTree = "<group>"; };
@@ -216,6 +231,23 @@
 				B4D222A027863A6EFFC0BA20 /* Pods_WeiBoTest.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AD3F78271E39CA9A00B34D83 /* PhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				AD3F782A1E39CA9A00B34D83 /* HMPhotoBrowserController.h */,
+				AD3F782B1E39CA9A00B34D83 /* HMPhotoBrowserController.m */,
+				AD3F78281E39CA9A00B34D83 /* HMPhotoBrowserAnimator.h */,
+				AD3F78291E39CA9A00B34D83 /* HMPhotoBrowserAnimator.m */,
+				AD3F782C1E39CA9A00B34D83 /* HMPhotoBrowserPhotos.h */,
+				AD3F782D1E39CA9A00B34D83 /* HMPhotoBrowserPhotos.m */,
+				AD3F782E1E39CA9A00B34D83 /* HMPhotoProgressView.h */,
+				AD3F782F1E39CA9A00B34D83 /* HMPhotoProgressView.m */,
+				AD3F78301E39CA9A00B34D83 /* HMPhotoViewerController.h */,
+				AD3F78311E39CA9A00B34D83 /* HMPhotoViewerController.m */,
+			);
+			path = PhotoBrowser;
 			sourceTree = "<group>";
 		};
 		AD6829DF1E1A3FBB001C8074 /* TitleButton */ = {
@@ -464,6 +496,7 @@
 		AD99A6891E27874F002512E1 /* UI框架 */ = {
 			isa = PBXGroup;
 			children = (
+				AD3F78271E39CA9A00B34D83 /* PhotoBrowser */,
 				ADA0FF4B1E3500530000A96B /* Emoticon */,
 				ADFA2ECA1E32F2D2007DFBA8 /* FFLabel */,
 				AD99A68A1E27874F002512E1 /* CZRefreshControl */,
@@ -746,6 +779,7 @@
 				AD6A8E5E1E20D19E00804B2A /* UIImage+Extensions.swift in Sources */,
 				AD6829E71E1A4C4A001C8074 /* DFWelecomView.swift in Sources */,
 				AD6CFB301E19440C0064D06A /* NSObject+CZRuntime.m in Sources */,
+				AD3F78341E39CA9A00B34D83 /* HMPhotoBrowserPhotos.m in Sources */,
 				AD89B9E91E0ACA6700D20E72 /* DFBaseViewController.swift in Sources */,
 				AD6CFB321E19440C0064D06A /* NSString+CZHash.m in Sources */,
 				AD6A8E641E21265600804B2A /* DFStatusPicture.swift in Sources */,
@@ -763,6 +797,7 @@
 				ADA0FF5D1E3500530000A96B /* CZEmoticonCell.swift in Sources */,
 				AD89B9F11E0ACAE200D20E72 /* DFProfileViewController.swift in Sources */,
 				AD6CFB331E19440C0064D06A /* NSString+CZPath.m in Sources */,
+				AD3F78361E39CA9A00B34D83 /* HMPhotoViewerController.m in Sources */,
 				AD6CFB381E19440C0064D06A /* UIView+CZAddition.m in Sources */,
 				ADAB54D61E1234EB00E0CCC5 /* DFStatuesListViewModel.swift in Sources */,
 				ADBF162E1E2D1F540019AD2E /* DFComposeTypeView.swift in Sources */,
@@ -783,10 +818,13 @@
 				AD6A8E5A1E20AC1300804B2A /* DFStatuesViewModel.swift in Sources */,
 				AD89B9EF1E0ACAD800D20E72 /* DFDiscoverViewController.swift in Sources */,
 				AD6CFB341E19440C0064D06A /* UIButton+CZAddition.m in Sources */,
+				AD3F78331E39CA9A00B34D83 /* HMPhotoBrowserController.m in Sources */,
 				ADA6E1AD1E2F2F2900E71880 /* DFComposeViewController.swift in Sources */,
+				AD3F78321E39CA9A00B34D83 /* HMPhotoBrowserAnimator.m in Sources */,
 				AD6829E51E1A4C36001C8074 /* DFNewFeatureView.swift in Sources */,
 				AD6CFB361E19440C0064D06A /* UILabel+CZAddition.m in Sources */,
 				AD6A8E621E211F1B00804B2A /* DFStatusPictureView.swift in Sources */,
+				AD3F78351E39CA9A00B34D83 /* HMPhotoProgressView.m in Sources */,
 				AD4B7B7C1E2A3E3B003CEB47 /* CZRefreshView.swift in Sources */,
 				ADAB8D221E35E1C00059B9E4 /* DFStatusListDAL.swift in Sources */,
 				AD99A68C1E27876B002512E1 /* CZRefreshControl.swift in Sources */,
