@@ -16,6 +16,9 @@ class CZEmoticonInputView: UIView {
     /// 工具栏
     @IBOutlet weak var toolbar: CZEmoticonToolbar!
     
+    @IBOutlet weak var pageControl: UIPageControl!
+    
+    
     /// 记录回调
     fileprivate var selectedEmoticonCallBack : ((_ emoticon: CZEmoticon?)->())?
     
@@ -39,6 +42,22 @@ class CZEmoticonInputView: UIView {
         
         // 设置工具栏代理
         toolbar.delegate = self
+        
+        // 设置分页控件的图片
+        let bundle = CZEmoticonManager.shared.bundle
+        
+        guard let normalImage = UIImage(named: "compose_keyboard_dot_normal", in: bundle, compatibleWith: nil),
+            let selectedImage = UIImage(named: "compose_keyboard_dot_selected", in: bundle, compatibleWith: nil) else {
+                return
+        }
+        
+        // 使用填充图片设置颜色 但是有缺点，会有锯齿
+        //        pageControl.pageIndicatorTintColor = UIColor(patternImage: normalImage)
+        //        pageControl.currentPageIndicatorTintColor = UIColor(patternImage: selectedImage)
+        
+        // 使用 KVC 设置私有成员属性
+        pageControl.setValue(normalImage, forKey: "_pageImage")
+        pageControl.setValue(selectedImage, forKey: "_currentPageImage")
     }
     
 }
@@ -58,6 +77,48 @@ extension CZEmoticonInputView: CZEmoticonToolbarDelegate {
     }
 }
 
+extension CZEmoticonInputView : UICollectionViewDelegate {
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        // 1 获取中心点
+        var center = scrollView.center
+        center.x += scrollView.contentOffset.x
+        
+        print("center:\(center.x)")
+        
+        // 2 获取当前显示的 cell 的 indexPath
+        let paths = collectionView.indexPathsForVisibleItems
+        
+        // 3 判断中心点在哪一个 indexPath 上，在哪一个页面上
+        var targetIndexPath : IndexPath?
+        for indexPath in paths {
+            
+            let cell = collectionView.cellForItem(at: indexPath)
+            if cell?.frame.contains(center) == true {
+                targetIndexPath = indexPath
+                break
+            }
+        }
+        
+        
+        // 4 判断是否找到 目标的 indexPath
+        
+        guard let target = targetIndexPath else {
+            return
+        }
+        
+        // 5 设置 ToolBar. 设置分页控件
+        
+        print("target.section:\(target.section)")
+        
+        toolbar.selectedIndex = target.section
+        
+        pageControl.numberOfPages = collectionView.numberOfItems(inSection: target.section)
+        pageControl.currentPage = target.item
+    }
+
+}
 
 // MARK: - UICollectionViewDataSource
 extension CZEmoticonInputView : UICollectionViewDataSource {
