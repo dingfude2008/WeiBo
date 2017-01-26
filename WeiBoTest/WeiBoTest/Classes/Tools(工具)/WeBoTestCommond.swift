@@ -41,3 +41,26 @@ let DFStatusPictureViewInnerMargin = CGFloat(3)
 let DFStatusPictureViewWidth = UIScreen.cz_screenWidth() - 2 * DFStatusPictureViewOutterMargin
 // 每个 Item 默认的宽度
 let DFStatusPictureItemWidth = (DFStatusPictureViewWidth - 2 * DFStatusPictureViewInnerMargin) / 3
+
+
+// MARK: - 照片浏览通知定义
+/// @param selectedIndex    选中照片索引
+/// @param urls             浏览照片 URL 字符串数组
+/// @param parentImageViews 父视图的图像视图数组，用户展现和解除转场动画参照
+/// 微博 Cell 浏览照片通知
+let DFStatusCellBrowserPhotoNotification = "DFStatusCellBrowserPhotoNotification"
+/// 选中索引 Key
+let DFStatusCellBrowserPhotoSelectedIndexKey = "DFStatusCellBrowserPhotoSelectedIndexKey"
+/// 浏览照片 URL 字符串 Key
+let DFStatusCellBrowserPhotoURLsKey = "DFStatusCellBrowserPhotoURLsKey"
+/// 父视图的图像视图数组 Key
+let DFStatusCellBrowserPhotoImageViewsKey = "DFStatusCellBrowserPhotoImageViewsKey"
+
+
+
+
+
+
+
+
+

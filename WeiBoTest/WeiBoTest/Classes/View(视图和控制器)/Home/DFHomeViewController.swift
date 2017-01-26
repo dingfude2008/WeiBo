@@ -18,15 +18,40 @@ class DFHomeViewController: DFBaseViewController {
 
     fileprivate lazy var listViewModel = DFStatuesListViewModel()
     
-//    fileprivate lazy var statusList = [String]()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
-        //print("111 - >\(supportedInterfaceOrientations)")
+        // 注册通知
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(browserPhoto),
+            name: NSNotification.Name(rawValue: DFStatusCellBrowserPhotoNotification),
+            object: nil)
+    }
+    
+    deinit {
+        // 注销通知
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    /// 浏览照片通知监听方法
+    @objc private func browserPhoto(n: Notification) {
+    
+        // 1. 从 通知的 userInfo 提取参数
+        guard let selectedIndex = n.userInfo?[DFStatusCellBrowserPhotoSelectedIndexKey] as? Int,
+            let urls = n.userInfo?[DFStatusCellBrowserPhotoURLsKey] as? [String],
+            let imageViewList = n.userInfo?[DFStatusCellBrowserPhotoImageViewsKey] as? [UIImageView]
+            else {
+                return
+        }
         
+        // 2. 展现照片浏览控制器
+        let vc = HMPhotoBrowserController.photoBrowser(
+            withSelectedIndex: selectedIndex,
+            urls: urls,
+            parentImageViews: imageViewList)
+        
+        present(vc, animated: true, completion: nil)
     }
     
     
