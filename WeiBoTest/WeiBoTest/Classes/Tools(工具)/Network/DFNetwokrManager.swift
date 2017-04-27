@@ -36,13 +36,6 @@ class DFNetwokrManager: AFHTTPSessionManager {
     
     lazy var userAccount = DFUserAccount()
     
-    // 网络令牌
-//    var accessToken : String? //  = "2.0055AFfCxR3neD64a0a1e2b7qMS3WE" // 默认值
-//    
-//    
-//    // 用户id
-//    var uid : String?  = "2439288592"
-    
     
     /// 计算性属性（只读属性，省略了 get）
     var userLogon : Bool {
@@ -64,7 +57,12 @@ class DFNetwokrManager: AFHTTPSessionManager {
     /// - parameter name:       上传文件使用的字段名，默认为 nil，不上传文件
     /// - parameter data:       上传文件的二进制数据，默认为 nil，不上传文件
     /// - parameter completion: 完成回调
-    func tokenRequest(method : DFHTTPMethod = .GET, URLString : String, parameters:[String: AnyObject]?,  name : String? = nil, data : Data? = nil, complection:@escaping (_ json : Any?, _ isSuccess: Bool)->()){
+    func tokenRequest(method : DFHTTPMethod = .GET,
+                      URLString : String,
+                      parameters:[String: AnyObject]?,
+                      name : String? = nil,
+                      data : Data? = nil,
+                      complection:@escaping (_ json : Any?, _ isSuccess: Bool)->()){
         
         
         guard let token = userAccount.access_token  else {
@@ -99,7 +97,10 @@ class DFNetwokrManager: AFHTTPSessionManager {
         }
     }
     
-    func upload(URLString : String, parameters:[String: AnyObject]?, name:String,data:Data, completion:@escaping (_ json : Any?, _ isSuccess: Bool)->()){
+    func upload(URLString : String,
+                parameters:[String: AnyObject]?,
+                name:String,data:Data,
+                completion:@escaping (_ json : Any?, _ isSuccess: Bool)->()){
         
         post(URLString, parameters: parameters, constructingBodyWith: { (formData) in
             // 创建 formData

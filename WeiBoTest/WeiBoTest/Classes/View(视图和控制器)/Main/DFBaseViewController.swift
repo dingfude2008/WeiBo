@@ -101,9 +101,6 @@ class DFBaseViewController: UIViewController, UITableViewDataSource, UITableView
         // 如果子类不实现任何方法，默认关闭上下拉刷新
         refreshControl?.endRefreshing()
     }
-    
-    
-
 }
 
 
@@ -156,7 +153,6 @@ extension DFBaseViewController {
         setupNavigationBar()
         
         DFNetwokrManager.shared.userLogon ? setupTableView() : setupVisitorView()
-        
     }
     
     
@@ -248,7 +244,6 @@ extension DFBaseViewController {
     
     // 在显示最后一行的时候做上拉刷新
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
         
         let row = indexPath.row
         

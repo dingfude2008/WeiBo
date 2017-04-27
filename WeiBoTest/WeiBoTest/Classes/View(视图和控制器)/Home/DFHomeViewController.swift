@@ -86,9 +86,6 @@ class DFHomeViewController: DFBaseViewController {
             }
             
         }
-        
-        
-        
     }
 }
 

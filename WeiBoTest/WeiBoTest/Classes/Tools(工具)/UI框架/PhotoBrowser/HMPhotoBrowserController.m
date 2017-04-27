@@ -11,6 +11,7 @@
 #import "HMPhotoViewerController.h"
 #import "HMPhotoBrowserAnimator.h"
 
+
 @interface HMPhotoBrowserController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIGestureRecognizerDelegate>
 
 @end
@@ -151,6 +152,7 @@
     UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     
     [actionSheet addAction:[UIAlertAction actionWithTitle:@"保存至相册" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        
         UIImageWriteToSavedPhotosAlbum(_currentViewer.imageView.image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
     }]];
     [actionSheet addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];

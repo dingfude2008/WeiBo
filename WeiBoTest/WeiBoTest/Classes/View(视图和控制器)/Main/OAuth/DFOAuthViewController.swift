@@ -11,7 +11,6 @@ import SVProgressHUD
 
 
 
-
 class DFOAuthViewController: UIViewController {
 
     fileprivate lazy var webView = UIWebView()
@@ -145,6 +144,10 @@ extension DFOAuthViewController : UIWebViewDelegate {
     
     func webViewDidFinishLoad(_ webView: UIWebView) {
         SVProgressHUD.dismiss()
+        
+        
+        
+        
     }
     
     

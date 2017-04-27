@@ -15,6 +15,7 @@ class DFMainViewController: UITabBarController {
     /// 定时器
     fileprivate var timer : Timer?
     
+    /// Cmd + Option + /
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,6 +32,12 @@ class DFMainViewController: UITabBarController {
         NotificationCenter.default.addObserver(self, selector: #selector(userLogin), name: NSNotification.Name(rawValue: WeiBoTestUserShouldLoginNotification), object: nil)
         
         
+        #if FREE_VERSION
+            print("1")
+        #else
+            print("2")
+        #endif
+
     }
     
     

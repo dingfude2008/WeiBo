@@ -88,6 +88,7 @@
 		ADAB8D261E387E2D0059B9E4 /* CZEmoticonTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB8D251E387E2D0059B9E4 /* CZEmoticonTipView.swift */; };
 		ADAC9E6A1E2C87B8001A8303 /* CZHumanRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADAC9E691E2C87B8001A8303 /* CZHumanRefreshView.xib */; };
 		ADAE90EA1E222A880046CCC0 /* DFStatusRetweetedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADAE90E91E222A880046CCC0 /* DFStatusRetweetedCell.xib */; };
+		ADB524B51E482C740083249D /* DFAlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB524B41E482C740083249D /* DFAlamofireManager.swift */; };
 		ADBF16291E2D1B8A0019AD2E /* CZMeituanRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBF16271E2D1B8A0019AD2E /* CZMeituanRefreshView.swift */; };
 		ADBF162A1E2D1B8A0019AD2E /* CZMeituanRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADBF16281E2D1B8A0019AD2E /* CZMeituanRefreshView.xib */; };
 		ADBF162E1E2D1F540019AD2E /* DFComposeTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBF162D1E2D1F540019AD2E /* DFComposeTypeView.swift */; };
@@ -202,6 +203,7 @@
 		ADAB8D251E387E2D0059B9E4 /* CZEmoticonTipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmoticonTipView.swift; sourceTree = "<group>"; };
 		ADAC9E691E2C87B8001A8303 /* CZHumanRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CZHumanRefreshView.xib; sourceTree = "<group>"; };
 		ADAE90E91E222A880046CCC0 /* DFStatusRetweetedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DFStatusRetweetedCell.xib; sourceTree = "<group>"; };
+		ADB524B41E482C740083249D /* DFAlamofireManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFAlamofireManager.swift; sourceTree = "<group>"; };
 		ADBF16271E2D1B8A0019AD2E /* CZMeituanRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZMeituanRefreshView.swift; sourceTree = "<group>"; };
 		ADBF16281E2D1B8A0019AD2E /* CZMeituanRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CZMeituanRefreshView.xib; sourceTree = "<group>"; };
 		ADBF162D1E2D1F540019AD2E /* DFComposeTypeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFComposeTypeView.swift; sourceTree = "<group>"; };
@@ -523,6 +525,7 @@
 				AD6CFB121E19332C0064D06A /* Model */,
 				AD9A27F51E11089500B1B4E3 /* DFNetwokrManager.swift */,
 				AD9A27F71E111B1800B1B4E3 /* DFNetworking+Extension.swift */,
+				ADB524B41E482C740083249D /* DFAlamofireManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -818,6 +821,7 @@
 				AD6A8E5A1E20AC1300804B2A /* DFStatuesViewModel.swift in Sources */,
 				AD89B9EF1E0ACAD800D20E72 /* DFDiscoverViewController.swift in Sources */,
 				AD6CFB341E19440C0064D06A /* UIButton+CZAddition.m in Sources */,
+				ADB524B51E482C740083249D /* DFAlamofireManager.swift in Sources */,
 				AD3F78331E39CA9A00B34D83 /* HMPhotoBrowserController.m in Sources */,
 				ADA6E1AD1E2F2F2900E71880 /* DFComposeViewController.swift in Sources */,
 				AD3F78321E39CA9A00B34D83 /* HMPhotoBrowserAnimator.m in Sources */,
@@ -943,6 +947,7 @@
 				INFOPLIST_FILE = WeiBoTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D FREE_VERSION";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xinyi.WeiBoTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = WeiBoTest/WeiBoTest_Bridge.h;
@@ -960,6 +965,7 @@
 				INFOPLIST_FILE = WeiBoTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D FREE_VERSION";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xinyi.WeiBoTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = WeiBoTest/WeiBoTest_Bridge.h;
